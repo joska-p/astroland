@@ -1,9 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import data from "../data/paintings.json"
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Roland Potin Eizner - Homepage.">
   <main>
     <h1 class="text-3xl font-bold underline">Hello world!</h1>
+
+    <div role="list" class="link-card-grid">
+      {
+        data.map((painting) => (
+          <div>
+            <img
+              src={"sleepy-star/paintings/normal/" + painting.filename}
+              alt={painting.title}
+              height={painting.imageHeight}
+              width={painting.imageWidth}
+            />
+            <h2>{painting.title}</h2>
+          </div>
+        ))
+      }
+    </div>
   </main>
 </Layout>
