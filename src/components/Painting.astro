@@ -25,9 +25,7 @@ if (!images[imagePath]) {
 ---
 
 <div class="card">
-  <a href={`/sleepy-star/paintings/${slug}`}>
-    <h1 class="text-3xl font-bold underline">{title}</h1>
-    <p>year: {year}</p>
-    <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} /></a
-  >
+  <h1 class="text-3xl font-bold underline">{title}</h1>
+  <p>year: {year}</p>
+  <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} />
 </div>
