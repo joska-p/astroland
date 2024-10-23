@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import { getCollection } from "astro:content"
+
+export async function getStaticPaths() {
+  const paintingsCollection = await getCollection("paintings")
+
+  return paintingsCollection.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { painting: entry.data },
+  }))
+}
+
+const { painting } = Astro.props
+---
+
+<Layout title=`Roland Potin Eizner - ${painting.title}.`>
+  <main>
+    <h1 class="text-3xl font-bold underline">{painting.title}</h1>
+    <p>{painting.year}</p>
+    <img
+      src=`/sleepy-star/paintings/normal/${painting.filename}`
+      alt={painting.title}
+      height={painting.imageHeight}
+      width={painting.imageWidth}
+    />
+  </main>
+</Layout>

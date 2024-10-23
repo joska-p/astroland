@@ -1,4 +1,6 @@
 ---
+import Navigation from "./Navigation.astro"
+
 interface Props {
   title: string
 }
@@ -29,6 +31,13 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body>
+    <Navigation
+      links={[
+        { name: "Homepage", href: "/sleepy-star" },
+        { name: "Paintings", href: "/sleepy-star/paintings" },
+        { name: "About", href: "/sleepy-star/about" },
+      ]}
+    />
     <slot />
   </body>
 </html>
