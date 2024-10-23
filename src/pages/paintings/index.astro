@@ -1,6 +1,7 @@
 ---
 import Layout from "../../components/layouts/Layout.astro"
 import { getCollection } from "astro:content"
+import Card from "../../components/Card.astro"
 
 const paintingsCollection = await getCollection("paintings")
 const paintings = paintingsCollection
@@ -11,20 +12,7 @@ const paintings = paintingsCollection
 <Layout title="Roland Potin Eizner - Paintings.">
   <main>
     <div role="list">
-      {
-        paintings.map((painting) => (
-          <a href={`/sleepy-star/paintings/${painting.slug}`}>
-            <h2>{painting.title}</h2>
-            <p>{painting.year}</p>
-            <img
-              src={`/sleepy-star/paintings/square/${painting.filename}`}
-              alt={painting.title}
-              height={painting.thumbnailHeight}
-              width={painting.thumbnailWidth}
-            />
-          </a>
-        ))
-      }
+      {paintings.map((painting) => <Card painting={painting} />)}
     </div>
   </main>
 </Layout>
