@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions"
 import Navigation from "./Navigation.astro"
 
 interface Props {
@@ -23,12 +24,13 @@ const { title } = Astro.props
     <link
       rel="shortcut icon"
       type="image/png"
-      href="/sleepy-star/images/favicon-32x32.png"
+      href="/sleepy-star/favicon-32x32.png"
       sizes="32x32"
     />
-    <link rel="apple-touch-icon" type="image/png" href="/sleepy-star/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" type="image/png" href="/sleepy-star/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Navigation
