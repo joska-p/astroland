@@ -25,14 +25,12 @@ const paintings = defineCollection({
   schema: painting,
 })
 
-const resumeItem = z.object({
-  years: z.array(z.string()),
-  events: z.array(z.string()),
-})
-
 const resume = defineCollection({
-  type: "data",
-  schema: resumeItem,
+  type: "content",
+  schema: z.object({
+    start: z.number(),
+    end: z.number(),
+  }),
 })
 
 export const collections = {

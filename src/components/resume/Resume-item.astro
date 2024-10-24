@@ -1,12 +1,22 @@
 ---
 interface Props {
-  years: string[]
-  events: string[]
+  start: number
+  end?: number
 }
 
-const { years, events } = Astro.props
+const { start, end } = Astro.props
 ---
 
+<article class="flex">
+  <h2 class="border-t border-solid border-gray-500 px-3 py-1 font-semibold">
+    <span class="block">{start}</span>{end && <span class="block"> - {end}</span>}
+  </h2>
+  <div class="flex-grow border-b border-l border-solid border-gray-500">
+    <slot />
+  </div>
+</article>
+
+<!-- 
 <article class="flex">
   <h2 class="border-t border-solid border-gray-500 px-3 py-1 font-semibold">
     {years.map((year) => <span class="block">{year}</span>)}
@@ -14,4 +24,4 @@ const { years, events } = Astro.props
   <ul class="flex-grow border-b border-l border-solid border-gray-500">
     {events.map((event) => <li class="px-3 py-1" set:html={event} />)}
   </ul>
-</article>
+</article> -->

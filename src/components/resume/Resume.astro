@@ -1,13 +1,30 @@
 ---
 import { getCollection } from "astro:content"
-import ResumeItem from "./Resume-item.astro"
+import Prose from "../typography/Prose.astro"
 
 const resumeCollection = await getCollection("resume")
-const resume = resumeCollection
-  .map((entry) => entry.data)
-  .sort((a, b) => parseInt(b.years[0]) - parseInt(a.years[0]))
+const resume = await Promise.all(
+  resumeCollection
+    .sort((a, b) => b.data.start - a.data.start)
+    .map(async (entry) => {
+      const { Content } = await entry.render()
+      return { ...entry.data, Content }
+    })
+)
 ---
 
 <section class="flex flex-col gap-10">
-  {resume.map((entry) => <ResumeItem years={entry.years} events={entry.events} />)}
+  {
+    resume.map(({ start, end, Content }) => (
+      <article class="flex">
+        <h2 class="border-t border-solid border-gray-500 px-3 py-1 font-semibold flex-shrink-0">
+          {end && <span class="block">{end}</span>}
+          <span class="block">{start}</span>
+        </h2>
+        <Prose>
+          <Content />
+        </Prose>
+      </article>
+    ))
+  }
 </section>
