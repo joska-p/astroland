@@ -1,0 +1,32 @@
+---
+import Navigation from "../navigation/Navigation.astro"
+
+const links = [
+  {
+    title: "Homepage",
+    href: "/sleepy-star",
+  },
+  {
+    title: "Paintings",
+    href: "/sleepy-star/paintings",
+  },
+  {
+    title: "About",
+    href: "/sleepy-star/about",
+  },
+]
+---
+
+<header
+  class="container mx-auto flex flex-col gap-2 items-center justify-between sm:gap-6 py-5 sm:px-0 md:py-10 md:flex-row"
+  transition:persist="header"
+>
+  <a
+    title="Retourner sur la page d'accueil"
+    href="/sleepy-star"
+    class="flex-shrink-0 pt-4 font-daniel text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+  >
+    Roland Potin Eizner
+  </a>
+  <Navigation links={links} />
+</header>

@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Daniel";
+    font-style: normal;
+    src: url("/src/assets/fonts/daniel.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Danielbd";
+    font-style: bold;
+    src: url("/src/assets/fonts/danielbd.ttf");
+    font-display: swap;
+  }
+}

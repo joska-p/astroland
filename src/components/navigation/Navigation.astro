@@ -1,15 +1,28 @@
 ---
-import Link from "./Link.astro"
+import Link from "../navigation/Link.astro"
+
+type Link = {
+  title: string
+  href: string
+}
 
 interface Props {
-  links: {
-    name: string
-    href: string
-  }[]
+  links: Link[]
 }
+
 const { links } = Astro.props
 ---
 
-<nav class="flex flex-row gap-4">
-  {links.map((link) => <Link href={link.href} name={link.name} />)}
+<nav>
+  <ul
+    class="flex flex-row text-center flex-grow justify-between gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10"
+  >
+    {
+      links.map((link) => (
+        <li>
+          <Link title={link.title} href={link.href} />
+        </li>
+      ))
+    }
+  </ul>
 </nav>

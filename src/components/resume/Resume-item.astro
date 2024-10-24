@@ -1,0 +1,17 @@
+---
+interface Props {
+  years: string[]
+  events: string[]
+}
+
+const { years, events } = Astro.props
+---
+
+<article class="flex">
+  <h2 class="border-t border-solid border-gray-500 px-3 py-1 font-semibold">
+    {years.map((year) => <span class="block">{year}</span>)}
+  </h2>
+  <ul class="flex-grow border-b border-l border-solid border-gray-500">
+    {events.map((event) => <li class="px-3 py-1" set:html={event} />)}
+  </ul>
+</article>

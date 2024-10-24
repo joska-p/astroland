@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content"
+import ResumeItem from "./Resume-item.astro"
+
+const resumeCollection = await getCollection("resume")
+const resume = resumeCollection
+  .map((entry) => entry.data)
+  .sort((a, b) => parseInt(b.years[0]) - parseInt(a.years[0]))
+---
+
+<section class="flex flex-col gap-10">
+  {resume.map((entry) => <ResumeItem years={entry.years} events={entry.events} />)}
+</section>

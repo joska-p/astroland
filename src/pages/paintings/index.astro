@@ -10,9 +10,7 @@ const paintings = paintingsCollection
 ---
 
 <Layout title="Roland Potin Eizner - Paintings.">
-  <main>
-    <div role="list">
-      {paintings.map((painting) => <Card painting={painting} />)}
-    </div>
-  </main>
+  <div class="grid grid-cols-3 gap-4">
+    {paintings.map((painting) => <Card painting={painting} />)}
+  </div>
 </Layout>
