@@ -9,14 +9,12 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
+  "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.2",
     "astro": "^4.16.6",
     "tailwindcss": "^3.4.14",
-    "typescript": "^5.6.3"
-  },
-  "devDependencies": {
+    "typescript": "^5.6.3",
     "@tailwindcss/typography": "^0.5.15"
   }
 }
