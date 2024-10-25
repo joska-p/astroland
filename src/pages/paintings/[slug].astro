@@ -5,11 +5,11 @@ import Painting from "../../components/Painting.astro"
 
 export async function getStaticPaths() {
   const paintingsCollection = await getCollection("paintings")
-
-  return paintingsCollection.map((entry) => ({
+  const paintings = paintingsCollection.map((entry) => ({
     params: { slug: entry.data.slug },
     props: { painting: entry.data },
   }))
+  return paintings
 }
 
 const { painting } = Astro.props

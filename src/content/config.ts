@@ -29,7 +29,7 @@ const resume = defineCollection({
   type: "content",
   schema: z.object({
     start: z.number(),
-    end: z.number(),
+    end: z.number().optional(),
   }),
 })
 
