@@ -1,7 +1,8 @@
 ---
 import Layout from "../../components/layouts/Layout.astro"
+import Grid from "../../components/painting/Grid.astro"
+import List from "../../components/painting/List.astro"
 import { getCollection } from "astro:content"
-import Card from "../../components/Card.astro"
 
 const paintingsCollection = await getCollection("paintings")
 const paintings = paintingsCollection
@@ -10,7 +11,5 @@ const paintings = paintingsCollection
 ---
 
 <Layout title="Roland Potin Eizner - Paintings.">
-  <div class="grid grid-cols-3 gap-4">
-    {paintings.map((painting) => <Card painting={painting} />)}
-  </div>
+  <List paintings={paintings} />
 </Layout>

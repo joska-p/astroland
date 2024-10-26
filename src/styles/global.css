@@ -16,3 +16,16 @@
     font-display: swap;
   }
 }
+
+.shape-circle {
+  shape-outside: circle(50%);
+}
+
+.grid-stack {
+  display: grid;
+  grid-template-areas: "grid-stack";
+}
+
+.grid-stack > * {
+  grid-area: grid-stack;
+}

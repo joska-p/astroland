@@ -1,7 +1,7 @@
 ---
 import Layout from "../../components/layouts/Layout.astro"
 import { getCollection } from "astro:content"
-import Painting from "../../components/Painting.astro"
+import Single from "../../components/painting/Single.astro"
 
 export async function getStaticPaths() {
   const paintingsCollection = await getCollection("paintings")
@@ -16,5 +16,5 @@ const { painting } = Astro.props
 ---
 
 <Layout title=`Roland Potin Eizner - ${painting.title}.`>
-  <Painting painting={painting} />
+  <Single painting={painting} />
 </Layout>

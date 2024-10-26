@@ -1,0 +1,18 @@
+---
+import Card from "./Card.astro"
+
+interface Props {
+  paintings: {
+    title: string
+    year: number
+    slug: string
+    filename: string
+  }[]
+}
+
+const { paintings } = Astro.props
+---
+
+<div class="grid grid-cols-3 gap-4">
+  {paintings.map((painting) => <Card painting={painting} />)}
+</div>

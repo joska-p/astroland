@@ -9,7 +9,15 @@ const { start, end } = Astro.props
 
 <article class="flex">
   <h2 class="border-t border-solid border-gray-500 px-3 py-1 font-semibold">
-    <span class="block">{start}</span>{end && <span class="block"> - {end}</span>}
+    <span class="block"> <time datetime={String(start)}>{start}</time></span>
+    {
+      end && (
+        <span class="block">
+          {" "}
+          - <time datetime={String(end)}>{end}</time>
+        </span>
+      )
+    }
   </h2>
   <div class="flex-grow border-b border-l border-solid border-gray-500">
     <slot />
