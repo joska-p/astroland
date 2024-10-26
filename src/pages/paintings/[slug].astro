@@ -4,17 +4,16 @@ import { getCollection } from "astro:content"
 import Single from "../../components/painting/Single.astro"
 
 export async function getStaticPaths() {
-  const paintingsCollection = await getCollection("paintings")
-  const paintings = paintingsCollection.map((entry) => ({
-    params: { slug: entry.data.slug },
-    props: { painting: entry.data },
+  const paintings = await getCollection("paintings")
+  return paintings.map((painting) => ({
+    params: { slug: painting.data.slug },
+    props: { painting: painting.data },
   }))
-  return paintings
 }
 
 const { painting } = Astro.props
 ---
 
-<Layout title=`Roland Potin Eizner - ${painting.title}.`>
+<Layout title=`${painting.title} - Roland Potin Eizner.`>
   <Single painting={painting} />
 </Layout>

@@ -9,11 +9,12 @@ interface Props {
     filename: string
     width: number
     height: number
+    slug: string
   }
 }
 
 const { painting } = Astro.props
-const { title, year, width, height, filename } = painting
+const { title, year, width, height, filename, slug } = painting
 const imagePath = `/src/assets/paintings/normal/${filename}`
 const images = import.meta.glob<{ default: ImageMetadata }>(
   `/src/assets/paintings/normal/*.{jpeg,jpg,png,gif}`
@@ -25,17 +26,21 @@ if (!images[imagePath]) {
 }
 ---
 
-<article class="h-screen grid grid-cols-2 items-center justify-items-center text-center">
+<article id={slug} class="min-h-screen mb-20 grid grid-cols-2 justify-items-center items-center">
   <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} />
   <header>
     <h2 class="mb-8 text-4xl">{title}</h2>
-    <ul>
-      <li>
-        <span class="mb-4 tracking-widest text-amber-900">Année:</span>
-        <time datetime={String(year)}>{year}</time>
-      </li>
-      <li><span class="mb-4 tracking-widest text-amber-900">Hauteur:</span> {height} cm</li>
-      <li><span class="mb-4 tracking-widest text-amber-900">Largeur:</span> {width} cm</li>
-    </ul>
+    <p class="flex flex-row gap-2">
+      <span class="text-right tracking-widest text-amber-900 w-1/2">Année:</span>
+      <span class="w-1/2 text-left"><time datetime={String(year)}>{year}</time></span>
+    </p>
+    <p class="flex flex-row gap-2">
+      <span class="text-right tracking-widest text-amber-900 w-1/2">Hauteur:</span>
+      <span class="w-1/2 text-left">{height} cm</span>
+    </p>
+    <p class="flex flex-row gap-2">
+      <span class="text-right tracking-widest text-amber-900 w-1/2">Largeur:</span>
+      <span class="w-1/2 text-left">{width} cm</span>
+    </p>
   </header>
 </article>
