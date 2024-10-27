@@ -13,7 +13,6 @@ const { start, end } = Astro.props
     {
       end && (
         <span class="block">
-          {" "}
           - <time datetime={String(end)}>{end}</time>
         </span>
       )
@@ -23,13 +22,3 @@ const { start, end } = Astro.props
     <slot />
   </div>
 </article>
-
-<!-- 
-<article class="flex">
-  <h2 class="border-t border-solid border-gray-500 px-3 py-1 font-semibold">
-    {years.map((year) => <span class="block">{year}</span>)}
-  </h2>
-  <ul class="flex-grow border-b border-l border-solid border-gray-500">
-    {events.map((event) => <li class="px-3 py-1" set:html={event} />)}
-  </ul>
-</article> -->

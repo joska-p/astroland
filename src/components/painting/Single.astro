@@ -26,8 +26,13 @@ if (!images[imagePath]) {
 }
 ---
 
-<article id={slug} class="min-h-screen mb-20 grid grid-cols-2 justify-items-center items-center">
-  <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} />
+<article id={slug} class="isolate h-screen grid grid-cols-2 justify-items-center items-center">
+  <Picture
+    src={images[imagePath]()}
+    formats={["avif", "webp"]}
+    alt={title}
+    class="shadow-2xl drop-shadow-2xl"
+  />
   <header>
     <h2 class="mb-8 text-4xl">{title}</h2>
     <p class="flex flex-row gap-2">
