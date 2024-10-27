@@ -36,7 +36,7 @@ if (!images[imagePath]) {
 
 <article
   id={slug}
-  class="grid md:grid-cols-2 gap-6 first:mt-6 md:first:mt-96 md:gap-0 justify-items-center md:items-center snap-center snap-always"
+  class="grid md:grid-cols-2 min-h-screen py-32 md:py-52 justify-items-center md:items-center snap-start snap-always"
 >
   <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} />
   <header>
