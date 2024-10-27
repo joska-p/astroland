@@ -26,7 +26,10 @@ if (!images[imagePath]) {
 }
 ---
 
-<article id={slug} class="isolate h-screen grid grid-cols-2 justify-items-center items-center">
+<article
+  id={slug}
+  class="isolate h-screen grid grid-cols-2 justify-items-center items-center snap-center"
+>
   <Picture
     src={images[imagePath]()}
     formats={["avif", "webp"]}
@@ -34,7 +37,7 @@ if (!images[imagePath]) {
     class="shadow-2xl drop-shadow-2xl"
   />
   <header>
-    <h2 class="mb-8 text-4xl">{title}</h2>
+    <h2 class="mb-8 text-4xl text-center">{title}</h2>
     <p class="flex flex-row gap-2">
       <span class="text-right tracking-widest text-amber-900 w-1/2">Année:</span>
       <span class="w-1/2 text-left"><time datetime={String(year)}>{year}</time></span>
