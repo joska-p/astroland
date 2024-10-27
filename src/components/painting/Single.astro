@@ -36,22 +36,22 @@ if (!images[imagePath]) {
 
 <article
   id={slug}
-  class="grid md:grid-cols-2 min-h-screen py-32 md:py-52 justify-items-center md:items-center snap-start snap-always"
+  class="grid justify-items-center py-32 min-h-screen md:grid-cols-2 md:py-52 md:items-center snap-start snap-always"
 >
   <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} />
   <header>
-    <h2 class="text-2xl md:mb-8 md:text-4xl text-center">{title}</h2>
+    <h2 class="text-2xl text-center md:mb-8 md:text-4xl">{title}</h2>
     <p class="flex flex-row gap-2">
-      <span class="text-right tracking-widest text-amber-900 basis-full">Année:</span>
-      <span class="basis-full text-left"><time datetime={String(year)}>{year}</time></span>
+      <span class="tracking-widest text-right text-amber-900 basis-full">Année:</span>
+      <span class="text-left basis-full"><time datetime={String(year)}>{year}</time></span>
     </p>
     <p class="flex flex-row gap-2">
-      <span class="text-right tracking-widest text-amber-900 basis-full">Hauteur:</span>
-      <span class="basis-full text-left">{height} cm</span>
+      <span class="tracking-widest text-right text-amber-900 basis-full">Hauteur:</span>
+      <span class="text-left basis-full">{height} cm</span>
     </p>
     <p class="flex flex-row gap-2">
-      <span class="text-right tracking-widest text-amber-900 basis-full">Largeur:</span>
-      <span class="basis-full text-left">{width} cm</span>
+      <span class="tracking-widest text-right text-amber-900 basis-full">Largeur:</span>
+      <span class="text-left basis-full">{width} cm</span>
     </p>
   </header>
 </article>
