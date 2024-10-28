@@ -17,15 +17,12 @@
   }
 }
 
-.shape-circle {
-  shape-outside: circle(50%);
-}
-
-.grid-stack {
-  display: grid;
-  grid-template-areas: "grid-stack";
-}
-
-.grid-stack > * {
-  grid-area: grid-stack;
+@layer components {
+  .grid-stack {
+    display: grid;
+    place-content: center;
+  }
+  .grid-stack > * {
+    grid-area: 1 / 1;
+  }
 }
