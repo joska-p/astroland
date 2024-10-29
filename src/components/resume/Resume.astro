@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content"
-import Prose from "../typography/Prose.astro"
 
 const resumeCollection = await getCollection("resume")
 const resume = await Promise.all(
@@ -13,7 +12,7 @@ const resume = await Promise.all(
 )
 ---
 
-<section class="flex flex-col gap-10">
+<section class="space-y-8">
   {
     resume.map(({ start, end, Content }) => (
       <article class="flex">
@@ -21,9 +20,9 @@ const resume = await Promise.all(
           {end && <span class="block">{end}</span>}
           <span class="block">{start}</span>
         </h2>
-        <Prose>
+        <div class="flex-grow max-w-none border-b border-l border-gray-500 border-solid prose prose-ul:list-none">
           <Content />
-        </Prose>
+        </div>
       </article>
     ))
   }
