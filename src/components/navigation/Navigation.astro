@@ -1,13 +1,9 @@
 ---
-import Link from "../navigation/Link.astro"
-
-type Link = {
-  title: string
-  href: string
-}
-
 interface Props {
-  links: Link[]
+  links: {
+    title: string
+    href: string
+  }[]
 }
 
 const { links } = Astro.props
@@ -20,10 +16,11 @@ const { links } = Astro.props
     {
       links.map((link) => (
         <li>
-          <Link title={link.title} href={link.href} />
+          <a href={link.href} class="block md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+            {link.title}
+          </a>
         </li>
       ))
     }
   </ul>
-  <!-- <a href="#main-content" class="fixed right-0 bottom-0 p-5 text-xl">Retour en haut de page</a> -->
 </nav>
