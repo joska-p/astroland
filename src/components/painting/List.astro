@@ -16,9 +16,5 @@ const { paintings } = Astro.props
 ---
 
 <section class="space-y-96">
-  {
-    paintings.map((painting, index) => (
-      <Single painting={painting} next={paintings[index + 1]} previous={paintings[index - 1]} />
-    ))
-  }
+  {paintings.map((painting) => <Single painting={painting} />)}
 </section>

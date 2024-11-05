@@ -11,25 +11,17 @@ interface Props {
     height: number
     slug: string
   }
-  next?: {
-    title: string
-    slug: string
-  }
-  previous?: {
-    title: string
-    slug: string
-  }
 }
 
-const { painting, next, previous } = Astro.props
+const { painting } = Astro.props
 const { title, year, width, height, filename, slug } = painting
-const imagePath = `/src/assets/paintings/normal/${filename}`
+const imagePath = `/src/assets/paintings/${filename}`
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  `/src/assets/paintings/normal/*.{jpeg,jpg,png,gif}`
+  `/src/assets/paintings/*.{jpeg,jpg,png,gif}`
 )
 if (!images[imagePath]) {
   throw new Error(
-    `"${imagePath}" does not exist in glob: "/src/assets/paintings/normal/*.{jpeg,jpg,png,gif}"`
+    `"${imagePath}" does not exist in glob: "/src/assets/paintings/*.{jpeg,jpg,png,gif}"`
   )
 }
 ---

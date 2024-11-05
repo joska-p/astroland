@@ -9,15 +9,6 @@ const painting = z.object({
   height: z.number(),
   width: z.number(),
   slug: z.string(),
-  visible: z.boolean(),
-  featured: z.boolean(),
-  imageWidth: z.number(),
-  imageHeight: z.number(),
-  thumbnailWidth: z.number(),
-  thumbnailHeight: z.number(),
-  imageBlurhash: z.string(),
-  squareBlurhash: z.string(),
-  order: z.number(),
 })
 
 const paintings = defineCollection({
