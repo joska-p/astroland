@@ -1,15 +1,19 @@
 import { writeFile } from "node:fs/promises"
+import path from "node:path"
 import { getPaintings } from "./getPaintings.ts"
-import matter from "gray-matter"
 
-const CONTENT_PATH = "contentGeneration/content/paintings/md/"
+const INPUT_PATH = "src/assets/paintings/"
+const OUTPUT_PATH = "contentGeneration/content/paintings/md/"
 
-const paintings = await getPaintings("src/assets/paintings/")
+const paintings = await getPaintings(INPUT_PATH)
 for (const painting of paintings) {
-  const filename = `${painting.filename.split(".")[0]}.md`
-  const content = `![${painting.title}.](../../assets/paintings/${painting.filename})`
-  await writeFile(`${CONTENT_PATH}${filename}`, matter.stringify(content, painting))
-  console.log(`Successfully wrote ${filename}`)
+  const outputFilePath = path.join(OUTPUT_PATH, `${painting.slug}.md`)
+  const markdownContent = `![${painting.title}](${path.join(INPUT_PATH, painting.filename)})`
+  const frontMatter = Object.entries(painting)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join("\n")
+  await writeFile(outputFilePath, `---\n${frontMatter}\n---\n\n${markdownContent}`)
+  console.log(`Successfully wrote ${painting.slug}.md`)
 }
 
-console.log(`Successfully wrote ${paintings.length} md files`)
+console.log(`Successfully wrote ${paintings.length} md files in ${OUTPUT_PATH}`)

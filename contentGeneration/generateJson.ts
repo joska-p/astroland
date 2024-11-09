@@ -1,12 +1,15 @@
 import { writeFile } from "node:fs/promises"
+import path from "node:path"
 import { getPaintings } from "./getPaintings.ts"
 
-const CONTENT_PATH = "contentGeneration/content/paintings/json/"
+const INPUT_PATH = "src/assets/paintings/"
+const OUTPUT_PATH = "contentGeneration/content/paintings/json/"
 
-const paintings = await getPaintings("src/assets/paintings/")
+const paintings = await getPaintings(INPUT_PATH)
 for (const painting of paintings) {
-  await writeFile(`${CONTENT_PATH}${painting.slug}.json`, JSON.stringify(painting))
+  const outputFilePath = path.join(OUTPUT_PATH, `${painting.slug}.json`)
+  await writeFile(outputFilePath, JSON.stringify(painting))
   console.log(`Successfully wrote ${painting.slug}.json`)
 }
 
-console.log(`Successfully wrote ${paintings.length} json files`)
+console.log(`Successfully wrote ${paintings.length} json files in ${OUTPUT_PATH}`)

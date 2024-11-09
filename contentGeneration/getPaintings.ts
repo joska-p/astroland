@@ -16,7 +16,6 @@ import { readdir } from "node:fs/promises"
 //   "width": 81
 // }
 
-// const IMAGES_PATH = "contentGeneration/assets/paintings/"
 const TITLE_REGEX = /^[^-]*/ // Everything from the start to the first "-"
 const YEAR_REGEX = /-\d{4}-/ // Four digits between "-"
 const DIMENSIONS_REGEX = /-\d+x\d+/ // Two groups of digits with "x" in between
