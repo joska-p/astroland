@@ -1,19 +1,17 @@
 // Example: A cheatsheet of many common Zod datatypes
 import { z, defineCollection } from "astro:content"
 
-const painting = z.object({
-  id: z.string(),
-  filename: z.string(),
-  title: z.string(),
-  year: z.number(),
-  height: z.number(),
-  width: z.number(),
-  slug: z.string(),
-})
-
-const paintings = defineCollection({
+const painting = defineCollection({
   type: "data",
-  schema: painting,
+  schema: z.object({
+    id: z.string(),
+    slug: z.string(),
+    filename: z.string(),
+    title: z.string(),
+    year: z.string(),
+    height: z.string(),
+    width: z.string(),
+  }),
 })
 
 const resume = defineCollection({
@@ -25,6 +23,6 @@ const resume = defineCollection({
 })
 
 export const collections = {
-  paintings: paintings,
+  painting: painting,
   resume: resume,
 }

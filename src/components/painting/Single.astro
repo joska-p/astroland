@@ -5,10 +5,10 @@ import { Picture } from "astro:assets"
 interface Props {
   painting: {
     title: string
-    year: number
+    year: string
     filename: string
-    width: number
-    height: number
+    width: string
+    height: string
     slug: string
   }
 }
@@ -35,15 +35,17 @@ if (!images[imagePath]) {
     <h2 class="text-2xl text-center md:mb-8 md:text-4xl">{title}</h2>
     <p class="flex flex-row gap-2">
       <span class="tracking-widest text-right text-amber-900 basis-full">Année:</span>
-      <span class="text-left basis-full"><time datetime={String(year)}>{year}</time></span>
+      <span class="text-left basis-full"
+        ><time datetime={year}>{year === "0" ? "NC" : year}</time></span
+      >
     </p>
     <p class="flex flex-row gap-2">
       <span class="tracking-widest text-right text-amber-900 basis-full">Hauteur:</span>
-      <span class="text-left basis-full">{height} cm</span>
+      <span class="text-left basis-full">{height === "0" ? "NC" : height + " cm"}</span>
     </p>
     <p class="flex flex-row gap-2">
       <span class="tracking-widest text-right text-amber-900 basis-full">Largeur:</span>
-      <span class="text-left basis-full">{width} cm</span>
+      <span class="text-left basis-full">{width === "0" ? "NC" : width + " cm"}</span>
     </p>
   </header>
 </article>
