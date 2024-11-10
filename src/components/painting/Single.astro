@@ -6,7 +6,7 @@ interface Props {
   painting: {
     title: string
     year: string
-    filename: string
+    filename: ImageMetadata
     width: string
     height: string
     slug: string
@@ -15,24 +15,14 @@ interface Props {
 
 const { painting } = Astro.props
 const { title, year, width, height, filename, slug } = painting
-const imagePath = `/src/assets/paintings/${filename}`
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  `/src/assets/paintings/*.{jpeg,jpg,png,gif}`
-)
-if (!images[imagePath]) {
-  throw new Error(
-    `"${imagePath}" does not exist in glob: "/src/assets/paintings/*.{jpeg,jpg,png,gif}"`
-  )
-}
-//scroll-mt-32 lg:scroll-mt-36 xl:scroll-mt-40 2xl:scroll-mt-44
 ---
 
 <article
   id={slug}
-  class="grid h-full justify-items-center md:grid-cols-2 md:items-center snap-start"
+  class="grid justify-items-center h-full md:grid-cols-2 md:items-center snap-start"
 >
-  <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} />
-  <header>
+  <Picture src={filename} formats={["avif", "webp"]} alt={title} />
+  <header class="mt-2 md:mt-0">
     <h2 class="text-2xl text-center md:mb-8 md:text-4xl">{title}</h2>
     <p class="flex flex-row gap-2">
       <span class="tracking-widest text-right text-amber-900 basis-full">Année:</span>

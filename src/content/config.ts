@@ -3,15 +3,16 @@ import { z, defineCollection } from "astro:content"
 
 const painting = defineCollection({
   type: "data",
-  schema: z.object({
-    id: z.string(),
-    slug: z.string(),
-    filename: z.string(),
-    title: z.string(),
-    year: z.string(),
-    height: z.string(),
-    width: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      id: z.string(),
+      slug: z.string(),
+      filename: image(),
+      title: z.string(),
+      year: z.string(),
+      height: z.string(),
+      width: z.string(),
+    }),
 })
 
 const resume = defineCollection({

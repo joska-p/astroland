@@ -7,9 +7,6 @@ export default {
         daniel: ["Daniel", "cursive"],
         danielbd: ["Danielbd", "cursive"],
       },
-      gridTemplateColumns: {
-        autofill: "repeat(auto-fill, minmax(10rem, 1fr))",
-      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

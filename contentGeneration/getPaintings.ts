@@ -58,7 +58,7 @@ export const getPaintings = async (path: string) => {
     return {
       id,
       slug,
-      filename,
+      filename: `./${filename}`,
       title,
       year,
       height,
