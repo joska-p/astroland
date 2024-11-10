@@ -4,39 +4,36 @@ import { Picture } from "astro:assets"
 
 interface Props {
   painting: {
+    id: string
     title: string
-    year: string
     filename: ImageMetadata
-    width: string
-    height: string
-    slug: string
+    year: number
+    width: number
+    height: number
   }
 }
 
 const { painting } = Astro.props
-const { title, year, width, height, filename, slug } = painting
+const { id, title, year, width, height, filename } = painting
 ---
 
-<article
-  id={slug}
-  class="grid justify-items-center h-full md:grid-cols-2 md:items-center snap-start"
->
+<article id={id} class="grid justify-items-center h-full md:grid-cols-2 md:items-center snap-start">
   <Picture src={filename} formats={["avif", "webp"]} alt={title} />
   <header class="mt-2 md:mt-0">
     <h2 class="text-2xl text-center md:mb-8 md:text-4xl">{title}</h2>
     <p class="flex flex-row gap-2">
       <span class="tracking-widest text-right text-amber-900 basis-full">Année:</span>
       <span class="text-left basis-full"
-        ><time datetime={year}>{year === "0" ? "NC" : year}</time></span
+        ><time datetime={String(year)}>{year === 0 ? "NC" : year}</time></span
       >
     </p>
     <p class="flex flex-row gap-2">
       <span class="tracking-widest text-right text-amber-900 basis-full">Hauteur:</span>
-      <span class="text-left basis-full">{height === "0" ? "NC" : height + " cm"}</span>
+      <span class="text-left basis-full">{height === 0 ? "NC" : height + " cm"}</span>
     </p>
     <p class="flex flex-row gap-2">
       <span class="tracking-widest text-right text-amber-900 basis-full">Largeur:</span>
-      <span class="text-left basis-full">{width === "0" ? "NC" : width + " cm"}</span>
+      <span class="text-left basis-full">{width === 0 ? "NC" : width + " cm"}</span>
     </p>
   </header>
 </article>

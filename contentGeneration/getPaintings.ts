@@ -37,15 +37,6 @@ const extractDimensions = (filename: string) => {
   return { height, width }
 }
 
-const slugify = (text: string) => {
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_-]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-}
-
 export const getPaintings = async (path: string) => {
   const filenames = await readdir(path)
   if (!filenames) throw new Error(`No files found in ${path}`)
@@ -54,10 +45,8 @@ export const getPaintings = async (path: string) => {
     const title = extractTitle(filename).replaceAll("_", " ")
     const year = extractYear(filename)
     const { height, width } = extractDimensions(filename)
-    const slug = slugify(title)
     return {
       id,
-      slug,
       filename: `./${filename}`,
       title,
       year,

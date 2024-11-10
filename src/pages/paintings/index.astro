@@ -4,7 +4,7 @@ import Single from "../../components/painting/Single.astro"
 import { getCollection } from "astro:content"
 
 const collection = await getCollection("painting")
-const paintings = collection.sort((a, b) => parseInt(b.data.year) - parseInt(a.data.year))
+const paintings = collection.sort((a, b) => b.data.year - a.data.year)
 ---
 
 <Layout title="Peintures - Roland Potin Eizner.">
