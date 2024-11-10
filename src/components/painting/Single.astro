@@ -24,11 +24,12 @@ if (!images[imagePath]) {
     `"${imagePath}" does not exist in glob: "/src/assets/paintings/*.{jpeg,jpg,png,gif}"`
   )
 }
+//scroll-mt-32 lg:scroll-mt-36 xl:scroll-mt-40 2xl:scroll-mt-44
 ---
 
 <article
   id={slug}
-  class="grid justify-items-center gap-8 md:gap-0 md:grid-cols-2 md:items-center snap-start scroll-mt-32 lg:scroll-mt-36 xl:scroll-mt-40 2xl:scroll-mt-44"
+  class="grid h-full justify-items-center md:grid-cols-2 md:items-center snap-center"
 >
   <Picture src={images[imagePath]()} formats={["avif", "webp"]} alt={title} />
   <header>

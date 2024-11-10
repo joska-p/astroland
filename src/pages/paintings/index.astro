@@ -8,7 +8,7 @@ const paintings = collection.sort((a, b) => parseInt(b.data.year) - parseInt(a.d
 ---
 
 <Layout title="Peintures - Roland Potin Eizner.">
-  <section class="space-y-96">
+  <section class="space-y-32 md:space-y-80">
     {paintings.map((painting) => <Single painting={painting.data} />)}
   </section>
 </Layout>

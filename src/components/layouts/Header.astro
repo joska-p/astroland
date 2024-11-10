@@ -18,15 +18,13 @@ const links = [
 ---
 
 <header
-  class="container flex sticky top-0 z-10 flex-col gap-2 justify-between items-center py-5 mx-auto bg-inherit sm:gap-6 sm:px-0 md:py-10 md:flex-row"
+  class="container md:flex sticky top-0 z-10 justify-between items-center py-2 mx-auto bg-inherit sm:gap-6 md:py-10 md:flex-row"
   transition:persist="header"
 >
-  <a
-    title="Retourner sur la page d'accueil"
-    href="/sleepy-star"
-    class="flex-shrink-0 pt-4 text-2xl font-daniel sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+  <h1
+    class="flex-shrink-0 text-xl text-center md:text-start font-daniel sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
   >
     Roland Potin Eizner
-  </a>
+  </h1>
   <Navigation links={links} />
 </header>
