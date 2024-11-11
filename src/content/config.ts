@@ -1,5 +1,4 @@
-// Example: A cheatsheet of many common Zod datatypes
-import { z, defineCollection } from "astro:content"
+import { defineCollection, z } from "astro:content"
 
 const painting = defineCollection({
   type: "content",

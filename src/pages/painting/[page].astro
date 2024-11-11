@@ -1,9 +1,9 @@
 ---
-import Root from "../../components/layout/Root.astro"
-import Single from "../../components/painting/Single.astro"
-import { getCollection } from "astro:content"
 import type { GetStaticPaths } from "astro"
+import { getCollection } from "astro:content"
+import Root from "../../components/layout/Root.astro"
 import Pagination from "../../components/navigation/pagination.astro"
+import Single from "../../components/painting/Single.astro"
 
 export const getStaticPaths = (async ({ paginate }) => {
   const paintings = (await getCollection("painting")).sort(
