@@ -46,7 +46,7 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
             href={`/astroland/painting/${num === 1 ? "" : num}`}
             aria-label={ariaLabel}
             aria-current={isCurrent}
-            class="aria-[current=true]:text-slate-50 aria-[current=true]:bg-slate-800 aria-[current=true]:border-slate-800 rounded-md rounded-r-none rounded-l-none border border-r-0 border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-slate-50 hover:bg-slate-800 hover:border-slate-800 focus:text-slate-50 focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-slate-50 active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="hidden md:inline aria-[current=true]:text-slate-50 aria-[current=true]:bg-slate-800 aria-[current=true]:border-slate-800 rounded-md rounded-r-none rounded-l-none border border-r-0 border-slate-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-slate-50 hover:bg-slate-800 hover:border-slate-800 focus:text-slate-50 focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-slate-50 active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
           >
             {num}
