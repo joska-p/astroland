@@ -4,8 +4,8 @@ import { getPaintings } from "./getPaintings.ts"
 
 const INPUT_PATH = "src/content/painting/"
 const OUTPUT_PATH = "contentGeneration/content/paintings/json/"
-
 const paintings = await getPaintings(INPUT_PATH)
+
 for (const painting of paintings) {
   const outputFilePath = path.join(OUTPUT_PATH, `${painting.id}.json`)
   await writeFile(outputFilePath, JSON.stringify(painting))
