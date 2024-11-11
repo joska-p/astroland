@@ -5,7 +5,6 @@ export default {
     extend: {
       fontFamily: {
         daniel: ["Daniel", "cursive"],
-        danielbd: ["Danielbd", "cursive"],
       },
     },
   },

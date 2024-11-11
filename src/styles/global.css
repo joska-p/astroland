@@ -9,12 +9,6 @@
     src: url("/src/assets/fonts/daniel.ttf");
     font-display: swap;
   }
-  @font-face {
-    font-family: "Danielbd";
-    font-style: bold;
-    src: url("/src/assets/fonts/danielbd.ttf");
-    font-display: swap;
-  }
 }
 
 @layer components {
