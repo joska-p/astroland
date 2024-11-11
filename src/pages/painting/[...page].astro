@@ -24,20 +24,25 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
     page.lastPage > 1 && (
       <nav role="navigation" aria-label="Pagination Navigation">
         {page.url.prev && (
-          <a href={page.url.prev} aria-label="Goto Previous Page">
+          <a href={`/astroland${page.url.prev}`} aria-label="Goto Previous Page">
             Previous Page
           </a>
         )}
-        {pageNums.map((num) => (
-          <a
-            href={`/painting/${num === 1 ? "" : num + "/"}`}
-            aria-label={`Goto Page ${num} of ${page.lastPage}`}
-          >
-            {num}
-          </a>
-        ))}
+        {pageNums.map((num) => {
+          const isCurrent = num === page.currentPage
+          const ariaLabel = isCurrent ? `Current page, page ${num}` : `Goto Page ${num}`
+          return (
+            <a
+              href={`/astroland/painting/${num === 1 ? "" : num}`}
+              aria-label={ariaLabel}
+              aria-current={isCurrent}
+            >
+              {num}
+            </a>
+          )
+        })}
         {page.url.next && (
-          <a href={page.url.next} aria-label="Goto Next Page">
+          <a href={`/astroland${page.url.next}`} aria-label="Goto Next Page">
             Next Page
           </a>
         )}
