@@ -2,15 +2,15 @@
 const links = [
   {
     title: "Accueil",
-    href: "/sleepy-star",
+    href: "/astroland",
   },
   {
-    title: "Peintures",
-    href: "/sleepy-star/paintings",
+    title: "Peinture",
+    href: "/astroland/painting",
   },
   {
     title: "À propos",
-    href: "/sleepy-star/about",
+    href: "/astroland/about",
   },
 ]
 ---
@@ -24,14 +24,18 @@ const links = [
   >
     Roland Potin Eizner
   </h1>
-  <nav>
+  <nav role="navigation" aria-label="Site Navigation">
     <ul
       class="flex flex-row gap-8 justify-center text-center md:gap-5 lg:gap-9 xl:gap-10 2xl:gap-11"
     >
       {
         links.map((link) => (
           <li>
-            <a href={link.href} class="block md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+            <a
+              href={link.href}
+              aria-label={`Go to ${link.title} page`}
+              class="block md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
+            >
               {link.title}
             </a>
           </li>

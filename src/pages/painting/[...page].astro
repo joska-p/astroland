@@ -1,0 +1,47 @@
+---
+import Root from "../../components/layout/Root.astro"
+import Single from "../../components/painting/Single.astro"
+import { getCollection } from "astro:content"
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const paintings = (await getCollection("painting")).sort(
+    (a, b) => b.data.year.valueOf() - a.data.year.valueOf()
+  )
+
+  return paginate(paintings, { pageSize: 10 })
+}) satisfies GetStaticPaths
+
+const { page } = Astro.props
+const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
+---
+
+<Root title="Peintures - Roland Potin Eizner.">
+  <section class="space-y-32 md:space-y-80">
+    {page.data.map((painting) => <Single painting={painting.data} />)}
+  </section>
+  {
+    page.lastPage > 1 && (
+      <nav role="navigation" aria-label="Pagination Navigation">
+        {page.url.prev && (
+          <a href={page.url.prev} aria-label="Goto Previous Page">
+            Previous Page
+          </a>
+        )}
+        {pageNums.map((num) => (
+          <a
+            href={`/painting/${num === 1 ? "" : num + "/"}`}
+            aria-label={`Goto Page ${num} of ${page.lastPage}`}
+          >
+            {num}
+          </a>
+        ))}
+        {page.url.next && (
+          <a href={page.url.next} aria-label="Goto Next Page">
+            Next Page
+          </a>
+        )}
+      </nav>
+    )
+  }
+</Root>
