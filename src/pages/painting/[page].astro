@@ -1,0 +1,24 @@
+---
+import Root from "../../components/layout/Root.astro"
+import Single from "../../components/painting/Single.astro"
+import { getCollection } from "astro:content"
+import type { GetStaticPaths } from "astro"
+import Pagination from "../../components/navigation/pagination.astro"
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const paintings = (await getCollection("painting")).sort(
+    (a, b) => b.data.year.valueOf() - a.data.year.valueOf()
+  )
+
+  return paginate(paintings, { pageSize: 10 })
+}) satisfies GetStaticPaths
+
+const { page } = Astro.props
+---
+
+<Root title="Peintures - Roland Potin Eizner.">
+  <section class="space-y-32 md:space-y-80">
+    {page.data.map((painting) => <Single painting={painting.data} />)}
+  </section>
+  <Pagination page={page} />
+</Root>
