@@ -19,28 +19,26 @@ const links = [
   class="container sticky top-0 z-10 justify-between items-center py-2 mx-auto md:flex bg-inherit sm:gap-6 md:py-10 md:flex-row"
   transition:persist="header"
 >
-  <h1
+  <div
     class="flex-shrink-0 text-2xl text-center md:text-start font-daniel sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
   >
     Roland Potin Eizner
-  </h1>
-  <nav role="navigation" aria-label="Site Navigation">
-    <ul
-      class="flex flex-row gap-8 justify-center text-center md:gap-5 lg:gap-9 xl:gap-10 2xl:gap-11"
-    >
-      {
-        links.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              aria-label={`Go to ${link.title} page`}
-              class="block md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
-            >
-              {link.title}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+  </div>
+  <nav
+    role="navigation"
+    aria-label="Site Navigation"
+    class="flex flex-row gap-8 justify-center text-center md:gap-5 lg:gap-9 xl:gap-10 2xl:gap-11"
+  >
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          aria-label={`Go to ${link.title} page`}
+          class="block md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
+        >
+          {link.title}
+        </a>
+      ))
+    }
   </nav>
 </header>
