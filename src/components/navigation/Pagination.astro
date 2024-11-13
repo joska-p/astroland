@@ -16,7 +16,12 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
 
 {
   page.lastPage > 1 && (
-    <nav role="navigation" aria-label="Pagination Navigation" class="row flex justify-center">
+    <nav
+      role="navigation"
+      id="pagination"
+      aria-label="Pagination Navigation"
+      class="row flex justify-center sticky bottom-0 z-10"
+    >
       {page.url.prev && (
         <a
           href={`/astroland${page.url.prev}`}
