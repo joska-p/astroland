@@ -1,0 +1,13 @@
+---
+import type { Page } from "astro"
+import Pagination from "../navigation/Pagination.astro"
+
+interface Props {
+  page?: Page
+}
+const { page } = Astro.props
+---
+
+<footer class="sticky bottom-0 z-10 bg-inherit">
+  {page && <Pagination page={page} />}
+</footer>
