@@ -22,21 +22,21 @@ const { id, title, year, width, height, filename } = painting
   class="grid justify-items-center md:grid-cols-2 md:items-center snap-start mb-[100vh]"
 >
   <Picture src={filename} formats={["avif", "webp"]} alt={title} />
-  <header class="font-raleway mt-2 md:mt-0">
-    <h2 class="text-2xl font-bold text-center md:mb-8 md:text-4xl">{title}</h2>
+  <header class="mt-2 md:mt-0 font-raleway font-bold">
+    <h2 class="text-2xl text-gray-900 text-center md:mb-8 md:text-4xl">{title}</h2>
     <p class="flex flex-row gap-2">
-      <span class="tracking-widest text-right text-amber-900 basis-full">Année:</span>
-      <span class="text-left basis-full"
+      <span class="tracking-widest text-right basis-full">Année:</span>
+      <span class="text-left basis-full text-gray-900"
         ><time datetime={String(year)}>{year === 0 ? "NC" : year}</time></span
       >
     </p>
     <p class="flex flex-row gap-2">
-      <span class="tracking-widest text-right text-amber-900 basis-full">Hauteur:</span>
-      <span class="text-left basis-full">{height === 0 ? "NC" : height + " cm"}</span>
+      <span class="tracking-widest text-right basis-full">Hauteur:</span>
+      <span class="text-left basis-full text-gray-900">{height === 0 ? "NC" : height + " cm"}</span>
     </p>
     <p class="flex flex-row gap-2">
-      <span class="tracking-widest text-right text-amber-900 basis-full">Largeur:</span>
-      <span class="text-left basis-full">{width === 0 ? "NC" : width + " cm"}</span>
+      <span class="tracking-widest text-right basis-full">Largeur:</span>
+      <span class="text-left basis-full text-gray-900">{width === 0 ? "NC" : width + " cm"}</span>
     </p>
   </header>
 </article>

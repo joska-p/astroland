@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         daniel: ["Daniel", "cursive"],
         sans: ["open-sans", "sans-serif"],
+        mono: ["jetbrains", "monospace"],
         raleway: ["raleway", "sans-serif"],
       },
     },
