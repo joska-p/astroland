@@ -1,16 +1,17 @@
 ---
-const links = [
+const path2lvldeep = (path: string) => path.split("/").slice(0, 3).join("/") + "/"
+const paths = [
   {
     title: "Accueil",
-    href: "/astroland",
+    href: "/astroland/",
   },
   {
     title: "Peinture",
-    href: "/astroland/painting/1",
+    href: "/astroland/painting/1/",
   },
   {
     title: "À propos",
-    href: "/astroland/about",
+    href: "/astroland/about/",
   },
 ]
 ---
@@ -23,15 +24,18 @@ const links = [
       Roland Potin Eizner
     </span>
     {
-      links.map((link) => (
-        <a
-          href={link.href}
-          aria-label={`Go to ${link.title} page`}
-          class="text-gray-800 hover:text-gray-900 ml-4"
-        >
-          {link.title}
-        </a>
-      ))
+      paths.map((path) => {
+        const isCurrent = path2lvldeep(path.href) === path2lvldeep(Astro.url.pathname)
+        return (
+          <a
+            href={path.href}
+            aria-label={`Go to ${path.title} page`}
+            class={`${isCurrent ? "text-gray-900" : "text-gray-600"} hover:text-gray-900 ml-4`}
+          >
+            {path.title}
+          </a>
+        )
+      })
     }
   </nav>
 </header>

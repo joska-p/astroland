@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         daniel: ["Daniel", "cursive"],
+        sans: ["open-sans", "sans-serif"],
+        raleway: ["raleway", "sans-serif"],
       },
     },
   },

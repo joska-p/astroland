@@ -48,7 +48,7 @@ const pageNums = Array.from({ length: page?.lastPage }, (_, i) => i + 1)
         const ariaLabel = isCurrent ? `Current page, page ${num}` : `Goto Page ${num}`
         return (
           <a
-            href={`/astroland/painting/${num}`}
+            href={`/astroland/painting/${num}/`}
             aria-label={ariaLabel}
             aria-current={isCurrent ? "page" : "false"}
             class="aria-[current=false]:hidden md:aria-[current=false]:inline aria-[current=page]:text-gray-50 aria-[current=page]:bg-gray-800 aria-[current=page]:border-gray-800 rounded-md rounded-r-none rounded-l-none border border-r-0 border-gray-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-gray-600 hover:text-gray-50 hover:bg-gray-800 hover:border-gray-800 focus:text-gray-50 focus:bg-gray-800 focus:border-gray-800 active:border-gray-800 active:text-gray-50 active:bg-gray-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
