@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { page } = Astro.props
-const pageNums = Array.from({ length: page?.lastPage }, (_, i) => i + 1)
+const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
 ---
 
 {
@@ -20,7 +20,7 @@ const pageNums = Array.from({ length: page?.lastPage }, (_, i) => i + 1)
       role="navigation"
       id="pagination"
       aria-label="Pagination Navigation"
-      class="flex justify-center sticky bottom-0 z-10"
+      class="flex justify-center snap-end"
     >
       {page.url.prev && (
         <a
@@ -45,7 +45,9 @@ const pageNums = Array.from({ length: page?.lastPage }, (_, i) => i + 1)
       )}
       {pageNums.map((num) => {
         const isCurrent = num === page.currentPage
-        const ariaLabel = isCurrent ? `Current page, page ${num}` : `Goto Page ${num}`
+        const ariaLabel = isCurrent
+          ? `Current page, page ${num} of ${page.lastPage}`
+          : `Goto Page ${num}`
         return (
           <a
             href={`/astroland/painting/${num}/`}

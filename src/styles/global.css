@@ -128,10 +128,9 @@
 
 @layer components {
   .grid-stack {
-    display: grid;
-    place-content: center;
+    @apply grid place-content-center;
   }
   .grid-stack > * {
-    grid-area: 1 / 1;
+    @apply col-span-full row-span-full;
   }
 }
