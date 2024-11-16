@@ -17,8 +17,20 @@ const { page } = Astro.props
 ---
 
 <Root title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
-  <section>
-    {page.data.map((painting) => <Single painting={painting.data} />)}
+  <section class="container mx-auto space-y-[100vh]">
+    {
+      page.data.map((painting) => {
+        const isLastItem = page.data.indexOf(painting) === page.data.length - 1
+        return (
+          <Single painting={painting.data}>
+            {isLastItem && (
+              <footer class="col-span-full">
+                <Pagination page={page} />
+              </footer>
+            )}
+          </Single>
+        )
+      })
+    }
   </section>
-  <Pagination page={page} />
 </Root>
