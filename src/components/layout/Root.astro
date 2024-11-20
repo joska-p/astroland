@@ -11,7 +11,7 @@ interface Props {
 const { title } = Astro.props
 ---
 
-<html lang="fr" class="motion-reduce:scroll-smooth snap-y snap-mandatory flex flex-col min-h-full">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Roland Potin Eizner artiste peintre" />
@@ -22,7 +22,7 @@ const { title } = Astro.props
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="text-gray-800 bg-gray-50 flex flex-col flex-grow">
+  <body class="min-h-svh flex flex-col text-gray-800 bg-gray-50">
     <Header />
     <main id="main-contenty" class="flex-grow">
       <slot />
