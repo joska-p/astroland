@@ -7,4 +7,8 @@ export default defineConfig({
   site: "https://joska-p.github.io",
   base: "/astroland",
   integrations: [tailwind()],
+  prefetch: {
+    defaultStrategy: "load",
+    prefetchAll: true,
+  },
 })
