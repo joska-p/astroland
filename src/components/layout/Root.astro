@@ -24,7 +24,10 @@ const { title } = Astro.props
   </head>
   <body class="flex flex-col text-gray-800 bg-gray-50 min-h-svh">
     <Header />
-    <main id="main-contenty" class="flex-grow">
+    <main
+      id="main-contenty"
+      class="flex-grow overflow-y-scroll motion-reduce:scroll-smooth snap-y snap-mandatory h-[calc(100vh-var(--header-height)-var(--footer-height))]"
+    >
       <slot />
     </main>
     <Footer />

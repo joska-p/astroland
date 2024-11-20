@@ -1,12 +1,10 @@
 ---
-
+import Menu from "../navigation/Menu.astro"
 ---
 
-<footer class="h-8 bg-gray-500" id="footer">
-  <span
-    class="mr-auto text-2xl sm:hidden font-daniel sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
-  >
-    Roland Potin Eizner
-  </span>
+<footer class="content-center h-8 bg-gray-200">
+  <nav class="flex justify-around sm:hidden">
+    <Menu />
+  </nav>
   <h4 class="hidden sm:inline">FOOTER</h4>
 </footer>

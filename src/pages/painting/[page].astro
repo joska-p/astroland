@@ -17,9 +17,7 @@ const { page } = Astro.props
 ---
 
 <Root title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
-  <section
-    class="container mx-auto overflow-y-scroll motion-reduce:scroll-smooth snap-y snap-mandatory h-[calc(100vh-var(--header-height)-var(--footer-height))]"
-  >
+  <section class="container space-y-[100%] mx-auto h-full">
     {
       page.data.map((painting) => {
         const isLastItem = page.data.indexOf(painting) === page.data.length - 1

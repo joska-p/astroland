@@ -1,0 +1,32 @@
+---
+const path2lvldeep = (path: string) => path.split("/").slice(0, 3).join("/") + "/"
+const paths = [
+  {
+    title: "Accueil",
+    href: "/astroland/",
+  },
+  {
+    title: "Peinture",
+    href: "/astroland/painting/1/",
+  },
+  {
+    title: "À propos",
+    href: "/astroland/about/",
+  },
+]
+---
+
+{
+  paths.map((path) => {
+    const isCurrent = path2lvldeep(path.href) === path2lvldeep(Astro.url.pathname)
+    return (
+      <a
+        href={path.href}
+        aria-label={`Go to ${path.title}`}
+        class={`${isCurrent ? "text-gray-900" : "text-gray-600"} hover:text-gray-900 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl`}
+      >
+        {path.title}
+      </a>
+    )
+  })
+}
