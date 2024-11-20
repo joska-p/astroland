@@ -19,7 +19,7 @@ const { id, title, year, width, height, filename } = painting
 
 <article
   id={id}
-  class="md:grid md:justify-items-center md:grid-cols-2 md:items-center snap-start h-full content-center"
+  class="content-center h-full md:grid md:justify-items-center md:grid-cols-2 md:items-center snap-start"
 >
   <Picture src={filename} formats={["avif", "webp"]} alt={title} class="mx-auto" />
   <header class="mt-2 w-full md:mt-0 font-raleway">

@@ -18,7 +18,7 @@ const { page } = Astro.props
 
 <Root title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
   <section
-    class="container mx-auto overflow-y-scroll motion-reduce:scroll-smooth snap-y snap-mandatory h-[calc(100vh-7rem)] md:h-[calc(100vh-8rem)] lg:h-[calc(100vh-9rem)] xl:min-h-[calc(100vh-10rem)] 2xl:min-h-[calc(100vh-11rem)]"
+    class="container mx-auto overflow-y-scroll motion-reduce:scroll-smooth snap-y snap-mandatory h-[calc(100vh-var(--header-height)-var(--footer-height))]"
   >
     {
       page.data.map((painting) => {

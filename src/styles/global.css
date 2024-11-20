@@ -134,3 +134,38 @@
     @apply col-span-full row-span-full;
   }
 }
+
+:root {
+  --header-height: 4rem;
+  --footer-height: 2rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 7rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --header-height: 8rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --header-h: 9rem;
+  }
+}
