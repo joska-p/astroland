@@ -19,7 +19,7 @@ const { id, title, year, width, height, filename } = painting
 
 <article
   id={id}
-  class="flex flex-col content-center h-full md:grid md:justify-items-center md:grid-cols-2 md:items-center snap-start"
+  class="flex flex-col content-center h-full sm:grid sm:justify-items-center sm:grid-cols-2 sm:items-center snap-start"
 >
   <Picture
     src={filename}
@@ -30,24 +30,23 @@ const { id, title, year, width, height, filename } = painting
   />
   <header class="mt-2 w-full md:mt-0 font-raleway">
     <h1
-      class="text-2xl font-bold text-center text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl md:mb-8"
+      class="text-2xl font-bold text-center text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:mb-8"
     >
       {title}
     </h1>
-    <p class="flex flex-row gap-2 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+    <p class="flex flex-row gap-2 sm:text-lg md:text-xl lg:text-2xl">
       <span class="tracking-widest text-right text-amber-800 basis-full">Année:</span>
       <span class="text-left text-gray-900 basis-full"
         ><time datetime={String(year)}>{year === 0 ? "NC" : year}</time></span
       >
     </p>
-    <p class="flex flex-row gap-2 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+    <p class="flex flex-row gap-2 sm:text-lg md:text-xl lg:text-2xl">
       <span class="tracking-widest text-right text-amber-800 basis-full">Hauteur:</span>
       <span class="text-left text-gray-900 basis-full">{height === 0 ? "NC" : height + " cm"}</span>
     </p>
-    <p class="flex flex-row gap-2 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+    <p class="flex flex-row gap-2 sm:text-lg md:text-xl lg:text-2xl">
       <span class="tracking-widest text-right text-amber-800 basis-full">Largeur:</span>
       <span class="text-left text-gray-900 basis-full">{width === 0 ? "NC" : width + " cm"}</span>
     </p>
   </header>
-  <slot />
 </article>
