@@ -34,3 +34,21 @@ const { page } = Astro.props
     }
   </section>
 </Root>
+
+<script>
+  document.addEventListener("astro:after-swap", () => {
+    const articles = document.querySelectorAll("article")
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const url = new URL(location.href)
+          const id = entry.target.id
+          history.replaceState(null, "", url.pathname + "#" + id)
+        }
+      })
+    })
+    articles.forEach((painting) => {
+      observer.observe(painting)
+    })
+  })
+</script>

@@ -81,49 +81,6 @@
     src: url("/src/assets/fonts/Raleway-LightItalic.woff2") format("woff2");
     font-display: auto;
   }
-
-  @font-face {
-    font-family: "jetbrain";
-    font-style: normal;
-    font-weight: normal;
-    src: url("/src/assets/fonts/JetBrainsMonoNerdFont-Regular.ttf") format("truetype");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "jetbrain";
-    font-style: italic;
-    font-weight: normal;
-    src: url("/src/assets/fonts/JetBrainsMonoNerdFont-Italic.ttf") format("truetype");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "jetbrain";
-    font-style: normal;
-    font-weight: bolder;
-    src: url("/src/assets/fonts/JetBrainsMonoNerdFont-Bold.ttf") format("truetype");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "jetbrain";
-    font-style: italic;
-    font-weight: bolder;
-    src: url("/src/assets/fonts/JetBrainsMonoNerdFont-BoldItalic.ttf") format("truetype");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "jetbrain";
-    font-style: normal;
-    font-weight: lighter;
-    src: url("/src/assets/fonts/JetBrainsMonoNerdFont-Light.ttf") format("truetype");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "jetbrain";
-    font-style: italic;
-    font-weight: lighter;
-    src: url("/src/assets/fonts/JetBrainsMonoNerdFont-LightItalic.ttf") format("truetype");
-    font-display: auto;
-  }
 }
 
 @layer components {
