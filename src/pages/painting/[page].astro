@@ -17,7 +17,10 @@ const { page } = Astro.props
 ---
 
 <Root title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
-  <section class="container space-y-[100%] mx-auto h-full">
+  <section
+    id="scrollArea"
+    class="container space-y-[50%] mx-auto overflow-y-scroll motion-reduce:scroll-smooth snap-y snap-mandatory h-[calc(100svh-var(--header-height)-var(--footer-height))]"
+  >
     {
       page.data.map((painting) => {
         const isLastItem = page.data.indexOf(painting) === page.data.length - 1
@@ -36,17 +39,38 @@ const { page } = Astro.props
 </Root>
 
 <script>
-  document.addEventListener("astro:after-swap", () => {
+  const updateHash = (element: HTMLDivElement) => {
+    const url = new URL(location.href)
+    const id = element.id
+    history.replaceState(null, "", url.pathname + "#" + id)
+  }
+
+  const show = (element: HTMLDivElement) => {
+    element.classList.remove("opacity-0")
+  }
+
+  const hide = (element: HTMLDivElement) => {
+    element.classList.add("opacity-0")
+  }
+
+  document.addEventListener("astro:page-load", () => {
     const articles = document.querySelectorAll("article")
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: "0px 0px 0px 0px",
+      root: document.querySelector("#scrollArea"),
+    }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const url = new URL(location.href)
-          const id = entry.target.id
-          history.replaceState(null, "", url.pathname + "#" + id)
+          updateHash(entry.target as HTMLDivElement)
+          show(entry.target as HTMLDivElement)
+        } else {
+          hide(entry.target as HTMLDivElement)
         }
       })
-    })
+    }, observerOptions)
+
     articles.forEach((painting) => {
       observer.observe(painting)
     })

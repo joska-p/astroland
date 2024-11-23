@@ -1,5 +1,9 @@
 ---
-const path2lvldeep = (path: string) => path.split("/").slice(0, 3).join("/") + "/"
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname
+  .slice(1)
+  .split("/")[1] /** remove the first /, split the path by / and get the second element */
+
 const paths = [
   {
     title: "Accueil",
@@ -18,7 +22,11 @@ const paths = [
 
 {
   paths.map((path) => {
-    const isCurrent = path2lvldeep(path.href) === path2lvldeep(Astro.url.pathname)
+    const isCurrent =
+      currentPath ===
+      path.href
+        .slice(1)
+        .split("/")[1] /** remove the first /, split the path by / and get the second element */
     return (
       <a
         href={path.href}
