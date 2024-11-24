@@ -5,7 +5,7 @@ const resumeCollection = await getCollection("resume")
 const resume = await Promise.all(
   resumeCollection
     .sort((a, b) => b.data.start - a.data.start)
-    .map(async (entry) => {
+    .map(async entry => {
       const { Content } = await entry.render()
       return { ...entry.data, Content }
     })
@@ -16,11 +16,11 @@ const resume = await Promise.all(
   {
     resume.map(({ start, end, Content }) => (
       <article class="flex">
-        <h6 class="flex-shrink-0 py-1 px-3 font-semibold border-t border-gray-500 border-solid">
+        <h6 class="flex-shrink-0 border-t border-solid border-gray-500 px-3 py-1 font-semibold">
           {end && <span class="block">{end}</span>}
           <span class="block">{start}</span>
         </h6>
-        <div class="flex-grow max-w-none border-b border-l border-gray-500 border-solid prose md:prose-lg lg:prose-xl prose-ul:list-none">
+        <div class="prose max-w-none flex-grow border-b border-l border-solid border-gray-500 md:prose-lg lg:prose-xl prose-ul:list-none">
           <Content />
         </div>
       </article>

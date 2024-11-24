@@ -3,17 +3,17 @@ import Menu from "../navigation/Menu.astro"
 ---
 
 <header
-  class="sticky top-0 z-50 content-center h-[--header-height] bg-gray-50 container items-center mx-auto sm:flex sm:justify-between"
+  class="container sticky top-0 z-50 mx-auto h-[--header-height] content-center items-center bg-gray-50 sm:flex sm:justify-between"
 >
   <a
     href="/astroland/"
     aria-label={`Go to Homepage`}
-    class="block text-3xl text-center sm:inline sm:w-auto sm:text-start sm:mr-auto font-daniel md:text-4xl lg:text-5xl xl:text-6xl"
+    class="block text-center font-daniel text-3xl sm:mr-auto sm:inline sm:w-auto sm:text-start md:text-4xl lg:text-5xl xl:text-6xl"
   >
     Roland Potin Eizner
   </a>
   <nav
-    class="hidden sm:flex sm:w-auto sm:justify-between sm:gap-8 md:gap-10 lg:gap-12 xl:gap-14 2xl:gap-16"
+    class="fixed bottom-0 left-0 right-0 z-50 flex h-[--footer-height] w-auto items-center justify-around gap-8 bg-gray-200 sm:static sm:h-auto sm:justify-between sm:bg-gray-50 md:gap-10 lg:gap-12 xl:gap-14 2xl:gap-16"
   >
     <Menu />
   </nav>

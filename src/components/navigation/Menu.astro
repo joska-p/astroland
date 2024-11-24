@@ -8,23 +8,22 @@ const currentPath = pathname
 const paths = [
   {
     title: "Accueil",
-    href: "",
+    href: ""
   },
   {
     title: "Peinture",
-    href: "painting/1/",
+    href: "painting/1/"
   },
   {
     title: "À propos",
-    href: "about/",
-  },
+    href: "about/"
+  }
 ]
 ---
 
 {
-  paths.map((path) => {
-    const isCurrent =
-      currentPath === path.href.split("/")[0] /** take only the part before the first / */
+  paths.map(path => {
+    const isCurrent = currentPath === path.href.split("/")[0] /** take only the part before the first / */
     return (
       <a
         href={baseUrl + path.href}

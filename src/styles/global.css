@@ -31,6 +31,7 @@
     src: url("/src/assets/fonts/Raleway-Regular.woff2") format("woff2");
     font-display: auto;
   }
+  /** I don't think we need those
   @font-face {
     font-family: "raleway";
     font-style: italic;
@@ -80,7 +81,8 @@
     src: url("/src/assets/fonts/Raleway-LightItalic.woff") format("woff");
     src: url("/src/assets/fonts/Raleway-LightItalic.woff2") format("woff2");
     font-display: auto;
-  }
+  } 
+  */
 }
 
 @layer components {
