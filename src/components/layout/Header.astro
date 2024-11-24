@@ -2,19 +2,21 @@
 import Menu from "../navigation/Menu.astro";
 ---
 
-<header
-  class="container sticky top-0 z-50 mx-auto h-[--header-height] content-center items-center bg-gray-200 sm:flex sm:justify-between"
->
-  <a
-    href="/astroland/"
-    aria-label={`Go to Homepage`}
-    class="block text-center font-daniel text-3xl sm:mr-auto sm:inline sm:w-auto sm:text-start md:text-4xl lg:text-5xl xl:text-6xl"
+<header class="sticky top-0 z-50 items-center bg-gray-200">
+  <div
+    class="mx-autoh-[--header-height] container content-center items-center sm:flex sm:justify-between"
   >
-    Roland Potin Eizner
-  </a>
-  <nav
-    class="fixed bottom-0 left-0 right-0 z-50 flex h-[--footer-height] w-auto items-center justify-around gap-8 bg-gray-200 sm:static sm:h-auto sm:justify-between md:gap-10 lg:gap-12 xl:gap-14 2xl:gap-16"
-  >
-    <Menu />
-  </nav>
+    <a
+      href="/astroland/"
+      aria-label={`Go to Homepage`}
+      class="block text-center font-daniel text-3xl sm:mr-auto sm:inline sm:w-auto sm:text-start md:text-4xl lg:text-5xl xl:text-6xl"
+    >
+      Roland Potin Eizner
+    </a>
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 flex h-[--footer-height] w-auto items-center justify-around gap-8 bg-gray-200 sm:static sm:h-auto sm:justify-between md:gap-10 lg:gap-12 xl:gap-14 2xl:gap-16"
+    >
+      <Menu />
+    </nav>
+  </div>
 </header>
