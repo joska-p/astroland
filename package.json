@@ -2,6 +2,7 @@
   "name": "astroland",
   "type": "module",
   "version": "0.0.1",
+  "homepage": "https://joska-p.github.io/astroland/",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

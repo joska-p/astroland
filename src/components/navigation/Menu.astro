@@ -1,4 +1,5 @@
 ---
+const baseUrl = import.meta.env.BASE_URL
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname
   .slice(1)
@@ -7,15 +8,15 @@ const currentPath = pathname
 const paths = [
   {
     title: "Accueil",
-    href: "/astroland/",
+    href: "",
   },
   {
     title: "Peinture",
-    href: "/astroland/painting/1/",
+    href: "painting/1/",
   },
   {
     title: "À propos",
-    href: "/astroland/about/",
+    href: "about/",
   },
 ]
 ---
@@ -23,13 +24,10 @@ const paths = [
 {
   paths.map((path) => {
     const isCurrent =
-      currentPath ===
-      path.href
-        .slice(1)
-        .split("/")[1] /** remove the first /, split the path by / and get the second element */
+      currentPath === path.href.split("/")[0] /** take only the part before the first / */
     return (
       <a
-        href={path.href}
+        href={baseUrl + path.href}
         aria-label={`Go to ${path.title}`}
         class={`${isCurrent ? "text-gray-900" : "text-gray-600"} hover:text-gray-900 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl`}
       >
