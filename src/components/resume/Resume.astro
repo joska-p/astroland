@@ -15,12 +15,12 @@ const resume = await Promise.all(
 <section class="container mx-auto space-y-8">
   {
     resume.map(({ start, end, Content }) => (
-      <article class="flex">
-        <h6 class="flex-shrink-0 border-t border-solid border-gray-500 px-3 py-1 font-semibold">
+      <article class="flex flex-col sm:flex-row">
+        <h6 class="flex-shrink-0 border-t border-solid border-gray-500 px-3 py-1 font-semibold lg:text-xl">
           {end && <span class="block">{end}</span>}
           <span class="block">{start}</span>
         </h6>
-        <div class="prose max-w-none flex-grow border-b border-l border-solid border-gray-500 md:prose-lg lg:prose-xl prose-ul:list-none">
+        <div class="prose max-w-none flex-grow md:prose-lg lg:prose-xl prose-ul:list-none prose-ul:px-2 sm:border-b sm:border-l sm:border-solid sm:border-gray-500">
           <Content />
         </div>
       </article>
