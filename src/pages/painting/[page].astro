@@ -37,40 +37,26 @@ const { page } = Astro.props
 </Root>
 
 <script>
-  const updateHash = (element: HTMLDivElement) => {
-    const url = new URL(location.href)
-    const id = element.id
-    history.replaceState(null, "", url.pathname + "#" + id)
-  }
-
-  const show = (element: HTMLDivElement) => {
-    element.classList.remove("opacity-0")
-  }
-
-  const hide = (element: HTMLDivElement) => {
-    element.classList.add("opacity-0")
-  }
-
   document.addEventListener("astro:page-load", () => {
-    const articles = document.querySelectorAll("article")
-    const observerOptions = {
+    const scrollArea = document.querySelector<HTMLDivElement>("#scrollArea")
+    const observerOptions: IntersectionObserverInit = {
       threshold: 0.5,
-      rootMargin: "0px 0px 0px 0px",
-      root: document.querySelector("#scrollArea")
+      rootMargin: "0px",
+      root: scrollArea
     }
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateHash(entry.target as HTMLDivElement)
-          show(entry.target as HTMLDivElement)
-        } else {
-          hide(entry.target as HTMLDivElement)
-        }
-      })
-    }, observerOptions)
+    const observer = new IntersectionObserver(handleIntersection, observerOptions)
 
-    articles.forEach(painting => {
-      observer.observe(painting)
-    })
+    const paintings = document.querySelectorAll("article")
+    paintings.forEach(painting => observer.observe(painting))
   })
+
+  function handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const { pathname } = new URL(location.href)
+        const id = entry.target.id
+        history.replaceState(null, "", `${pathname}#${id}`)
+      }
+    })
+  }
 </script>
