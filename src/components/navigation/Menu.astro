@@ -1,34 +1,42 @@
 ---
-const { BASE_URL } = import.meta.env
-const { pathname } = new URL(Astro.request.url)
+const { BASE_URL } = import.meta.env;
+const { pathname } = new URL(Astro.request.url);
 
 const paths = [
   {
     title: "Accueil",
-    href: ""
+    href: "",
   },
   {
     title: "Peinture",
-    href: "painting/1/"
+    href: "painting/1/",
   },
   {
     title: "À propos",
-    href: "about/"
-  }
-]
+    href: "about/",
+  },
+];
 ---
 
-{
-  paths.map(path => {
-    const isCurrent = pathname.split("/")[2] === path.href.split("/")[0]
-    return (
-      <a
-        href={BASE_URL + path.href}
-        aria-label={`Go to ${path.title}`}
-        class={`${isCurrent ? "text-gray-950" : "text-gray-500"} hover:text-gray-900 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl`}
-      >
-        {path.title}
-      </a>
-    )
-  })
-}
+<ul
+  role="navigation"
+  aria-label="Navigation"
+  class="fixed bottom-0 left-0 right-0 z-50 flex h-[--footer-height] w-auto items-center justify-around gap-8 bg-gray-200 sm:static sm:h-auto sm:justify-between md:gap-10 lg:gap-12 xl:gap-14 2xl:gap-16"
+>
+  {
+    paths.map((path) => {
+      const isCurrent = pathname.split("/")[2] === path.href.split("/")[0];
+      return (
+        <li>
+          <a
+            href={BASE_URL + path.href}
+            aria-label={`Go to ${path.title}`}
+            class={`${isCurrent ? "text-gray-950" : "text-gray-500"} hover:text-gray-900 sm:text-lg md:text-xl lg:text-2xl`}
+          >
+            {path.title}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

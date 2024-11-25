@@ -9,18 +9,7 @@
     src: url("/src/assets/fonts/daniel.ttf");
     font-display: auto;
   }
-  @font-face {
-    font-family: "open-sans";
-    font-style: normal;
-    src: url("/src/assets/fonts/OpenSans-Regular.ttf");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "open-sans";
-    font-style: italic;
-    src: url("/src/assets/fonts/OpenSans-Italic.ttf");
-    font-display: auto;
-  }
+
   @font-face {
     font-family: "raleway";
     font-style: normal;
@@ -31,58 +20,6 @@
     src: url("/src/assets/fonts/Raleway-Regular.woff2") format("woff2");
     font-display: auto;
   }
-  /** I don't think we need those
-  @font-face {
-    font-family: "raleway";
-    font-style: italic;
-    font-weight: normal;
-    src: url("/src/assets/fonts/Raleway-Italic.ttf") format("truetype");
-    src: url("/src/assets/fonts/Raleway-Italic.otf") format("opentype");
-    src: url("/src/assets/fonts/Raleway-Italic.woff") format("woff");
-    src: url("/src/assets/fonts/Raleway-Italic.woff2") format("woff2");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "raleway";
-    font-style: normal;
-    font-weight: bolder;
-    src: url("/src/assets/fonts/Raleway-Bold.ttf") format("truetype");
-    src: url("/src/assets/fonts/Raleway-Bold.otf") format("opentype");
-    src: url("/src/assets/fonts/Raleway-Bold.woff") format("woff");
-    src: url("/src/assets/fonts/Raleway-Bold.woff2") format("woff2");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "raleway";
-    font-style: italic;
-    font-weight: bolder;
-    src: url("/src/assets/fonts/Raleway-BoldItalic.ttf") format("truetype");
-    src: url("/src/assets/fonts/Raleway-BoldItalic.otf") format("opentype");
-    src: url("/src/assets/fonts/Raleway-BoldItalic.woff") format("woff");
-    src: url("/src/assets/fonts/Raleway-BoldItalic.woff2") format("woff2");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "raleway";
-    font-style: normal;
-    font-weight: lighter;
-    src: url("/src/assets/fonts/Raleway-Light.ttf") format("truetype");
-    src: url("/src/assets/fonts/Raleway-Light.otf") format("opentype");
-    src: url("/src/assets/fonts/Raleway-Light.woff") format("woff");
-    src: url("/src/assets/fonts/Raleway-Light.woff2") format("woff2");
-    font-display: auto;
-  }
-  @font-face {
-    font-family: "raleway";
-    font-style: italic;
-    font-weight: lighter;
-    src: url("/src/assets/fonts/Raleway-LightItalic.ttf") format("truetype");
-    src: url("/src/assets/fonts/Raleway-LightItalic.otf") format("opentype");
-    src: url("/src/assets/fonts/Raleway-LightItalic.woff") format("woff");
-    src: url("/src/assets/fonts/Raleway-LightItalic.woff2") format("woff2");
-    font-display: auto;
-  } 
-  */
 }
 
 @layer components {
@@ -105,26 +42,8 @@
   }
 }
 
-@media (min-width: 768px) {
-  :root {
-    --header-height: 6rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --header-height: 7rem;
-  }
-}
-
 @media (min-width: 1280px) {
   :root {
-    --header-height: 8rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  :root {
-    --header-h: 9rem;
+    --header-height: 6rem;
   }
 }

@@ -1,18 +1,18 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection } from "astro:content";
 
-const resumeCollection = await getCollection("resume")
+const resumeCollection = await getCollection("resume");
 const resume = await Promise.all(
   resumeCollection
     .sort((a, b) => b.data.start - a.data.start)
-    .map(async entry => {
-      const { Content } = await entry.render()
-      return { ...entry.data, Content }
-    })
-)
+    .map(async (entry) => {
+      const { Content } = await entry.render();
+      return { ...entry.data, Content };
+    }),
+);
 ---
 
-<section class="container mx-auto space-y-8">
+<section class="container mx-auto mt-6 space-y-8 md:mt-12">
   {
     resume.map(({ start, end, Content }) => (
       <article class="flex flex-col sm:flex-row">
