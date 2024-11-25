@@ -21,7 +21,7 @@ const { page } = Astro.props;
 >
   <section
     id="scroll-area"
-    class="container mx-auto h-[calc(100svh-var(--header-height)-var(--footer-height))] snap-y snap-mandatory space-y-[50%] overflow-y-scroll motion-reduce:scroll-smooth"
+    class="container mx-auto h-[calc(100dvh-var(--header-height)-var(--footer-height))] snap-y snap-mandatory space-y-[50%] overflow-y-scroll motion-reduce:scroll-smooth"
   >
     {
       page.data.map((painting) => {
