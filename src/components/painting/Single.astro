@@ -19,7 +19,7 @@ const { id, title, year, width, height, filename } = painting;
 
 <article
   id={id}
-  class="grid h-full snap-start content-center sm:grid-cols-2 sm:items-center sm:justify-items-center"
+  class="grid h-full snap-start content-center md:grid-cols-2 md:items-center md:justify-items-center"
 >
   <Picture
     src={filename}
@@ -28,9 +28,9 @@ const { id, title, year, width, height, filename } = painting;
     class="mx-auto object-contain"
     pictureAttributes={{ class: "flex max-h-full overflow-hidden" }}
   />
-  <header class="mt-2 w-full md:mt-0">
+  <header class="mt-2 w-full sm:mt-4 md:mt-0">
     <h1
-      class="text-center text-2xl text-gray-900 sm:mb-8 sm:text-3xl xl:text-4xl"
+      class="mb-3 text-center text-2xl text-gray-900 md:mb-8 md:text-3xl xl:text-4xl"
     >
       {title}
     </h1>
@@ -38,7 +38,7 @@ const { id, title, year, width, height, filename } = painting;
       <span class="basis-full text-right tracking-widest text-amber-800"
         >Année:</span
       >
-      <span class="basis-full text-left text-gray-900"
+      <span class="basis-full text-left"
         ><time datetime={String(year)}>{year === 0 ? "NC" : year}</time></span
       >
     </p>
@@ -46,7 +46,7 @@ const { id, title, year, width, height, filename } = painting;
       <span class="basis-full text-right tracking-widest text-amber-800"
         >Hauteur:</span
       >
-      <span class="basis-full text-left text-gray-900"
+      <span class="basis-full text-left"
         >{height === 0 ? "NC" : height + " cm"}</span
       >
     </p>
@@ -54,7 +54,7 @@ const { id, title, year, width, height, filename } = painting;
       <span class="basis-full text-right tracking-widest text-amber-800"
         >Largeur:</span
       >
-      <span class="basis-full text-left text-gray-900"
+      <span class="basis-full text-left"
         >{width === 0 ? "NC" : width + " cm"}</span
       >
     </p>
