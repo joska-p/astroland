@@ -1,16 +1,12 @@
 ---
-import Menu from "../navigation/Menu.astro";
+import Menu from "../navigation/Menu.astro"
 ---
 
 <header class="sticky top-0 z-50 bg-gray-200">
   <nav
-    class="container mx-auto h-[--header-height] content-center items-center pt-[calc(var(--header-height)*0.2)] ~gap-4/8 sm:flex"
+    class="container h-[--header-height] content-center items-center pt-[calc(var(--header-height)*0.2)] ~gap-4/8 md:flex"
   >
-    <a
-      href="/astroland/"
-      aria-label={`Go to Homepage`}
-      class="block text-center font-daniel ~text-3xl/5xl"
-    >
+    <a href="/astroland/" aria-label={`Go to Homepage`} class="block text-center font-daniel ~text-3xl/5xl">
       Roland Potin Eizner
     </a>
     <Menu />

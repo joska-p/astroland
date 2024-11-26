@@ -1,18 +1,18 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from "astro:content"
 
-const resumeCollection = await getCollection("resume");
+const resumeCollection = await getCollection("resume")
 const resume = await Promise.all(
   resumeCollection
     .sort((a, b) => b.data.start - a.data.start)
-    .map(async (entry) => {
-      const { Content } = await entry.render();
-      return { ...entry.data, Content };
-    }),
-);
+    .map(async entry => {
+      const { Content } = await entry.render()
+      return { ...entry.data, Content }
+    })
+)
 ---
 
-<section class="container mx-auto mt-6 space-y-8 md:mt-12">
+<section class="container mt-6 space-y-8 md:mt-12">
   {
     resume.map(({ start, end, Content }) => (
       <article class="flex flex-col sm:flex-row">
@@ -20,7 +20,7 @@ const resume = await Promise.all(
           {end && <span class="block">{end}</span>}
           <span class="block">{start}</span>
         </h6>
-        <div class="prose max-w-none flex-grow md:prose-lg lg:prose-xl prose-ul:list-none prose-ul:px-2 sm:border-b sm:border-l sm:border-solid sm:border-gray-500">
+        <div class="prose max-w-none flex-grow md:prose-lg lg:prose-xl marker:text-gray-400 prose-ul:list-inside prose-ul:list-disc prose-ul:px-2 sm:border-b sm:border-l sm:border-solid sm:border-gray-500">
           <Content />
         </div>
       </article>

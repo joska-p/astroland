@@ -40,7 +40,7 @@ const extractDimensions = (filename: string) => {
 export const getPaintings = async (path: string) => {
   const filenames = await readdir(path)
   if (!filenames) throw new Error(`No files found in ${path}`)
-  return filenames.map((filename) => {
+  return filenames.map(filename => {
     const id = filename.split(".")[0]
     const title = extractTitle(filename).replaceAll("_", " ")
     const year = extractYear(filename)

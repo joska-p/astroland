@@ -1,31 +1,27 @@
 ---
-import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
-import Root from "../../components/layout/Root.astro";
-import Pagination from "../../components/navigation/Pagination.astro";
-import Single from "../../components/painting/Single.astro";
+import type { GetStaticPaths } from "astro"
+import { getCollection } from "astro:content"
+import Root from "../../components/layout/Root.astro"
+import Pagination from "../../components/navigation/Pagination.astro"
+import Single from "../../components/painting/Single.astro"
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const paintings = (await getCollection("painting")).sort(
-    (a, b) => b.data.year.valueOf() - a.data.year.valueOf(),
-  );
+  const paintings = (await getCollection("painting")).sort((a, b) => b.data.year.valueOf() - a.data.year.valueOf())
 
-  return paginate(paintings, { pageSize: 10 });
-}) satisfies GetStaticPaths;
+  return paginate(paintings, { pageSize: 10 })
+}) satisfies GetStaticPaths
 
-const { page } = Astro.props;
+const { page } = Astro.props
 ---
 
-<Root
-  title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}
->
+<Root title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
   <section
     id="scroll-area"
-    class="container mx-auto h-[calc(100dvh-var(--header-height)-var(--footer-height))] snap-y snap-mandatory space-y-[50%] overflow-y-scroll motion-reduce:scroll-smooth"
+    class="container h-[calc(100dvh-var(--header-height)-var(--footer-height))] snap-y snap-mandatory space-y-[50%] overflow-y-scroll motion-reduce:scroll-smooth"
   >
     {
-      page.data.map((painting) => {
-        const isLastItem = page.data.indexOf(painting) === page.data.length - 1;
+      page.data.map(painting => {
+        const isLastItem = page.data.indexOf(painting) === page.data.length - 1
         return (
           <Single painting={painting.data}>
             {isLastItem && (
@@ -34,7 +30,7 @@ const { page } = Astro.props;
               </footer>
             )}
           </Single>
-        );
+        )
       })
     }
   </section>
@@ -42,28 +38,25 @@ const { page } = Astro.props;
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const scrollArea = document.querySelector<HTMLDivElement>("#scroll-area");
+    const scrollArea = document.querySelector<HTMLDivElement>("#scroll-area")
     const observerOptions: IntersectionObserverInit = {
       threshold: 0.5,
       rootMargin: "0px",
       root: scrollArea,
-    };
-    const observer = new IntersectionObserver(
-      handleIntersection,
-      observerOptions,
-    );
+    }
+    const observer = new IntersectionObserver(handleIntersection, observerOptions)
 
-    const paintings = document.querySelectorAll("article");
-    paintings.forEach((painting) => observer.observe(painting));
-  });
+    const paintings = document.querySelectorAll("article")
+    paintings.forEach(painting => observer.observe(painting))
+  })
 
   function handleIntersection(entries: IntersectionObserverEntry[]) {
-    entries.forEach((entry) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const { pathname } = new URL(location.href);
-        const id = entry.target.id;
-        history.replaceState(null, "", `${pathname}#${id}`);
+        const { pathname } = new URL(location.href)
+        const id = entry.target.id
+        history.replaceState(null, "", `${pathname}#${id}`)
       }
-    });
+    })
   }
 </script>

@@ -1,6 +1,6 @@
 ---
-const { BASE_URL } = import.meta.env;
-const { pathname } = new URL(Astro.request.url);
+const { BASE_URL } = import.meta.env
+const { pathname } = new URL(Astro.request.url)
 
 const paths = [
   {
@@ -15,17 +15,17 @@ const paths = [
     title: "À propos",
     href: "about/",
   },
-];
+]
 ---
 
 <ul
   role="navigation"
   aria-label="Navigation"
-  class="fixed bottom-0 left-0 right-0 z-50 flex h-[--footer-height] w-auto items-center justify-around bg-gray-200 ~gap-6/8 sm:static sm:ml-auto sm:h-auto sm:justify-between sm:bg-transparent"
+  class="fixed bottom-0 left-0 right-0 z-50 flex h-[--footer-height] w-auto items-center justify-around bg-gray-200 ~gap-6/8 md:static md:ml-auto md:h-auto md:justify-between md:bg-transparent"
 >
   {
-    paths.map((path) => {
-      const isCurrent = pathname.split("/")[2] === path.href.split("/")[0];
+    paths.map(path => {
+      const isCurrent = pathname.split("/")[2] === path.href.split("/")[0]
       return (
         <li>
           <a
@@ -37,7 +37,7 @@ const paths = [
             {path.title}
           </a>
         </li>
-      );
+      )
     })
   }
 </ul>

@@ -1,5 +1,5 @@
-import fluid, { extract, fontSize, screens } from "fluid-tailwind";
-import type { Config } from "tailwindcss";
+import fluid, { extract, fontSize, screens } from "fluid-tailwind"
+import type { Config } from "tailwindcss"
 
 export default {
   content: {
@@ -7,6 +7,16 @@ export default {
     extract,
   },
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "0.5rem",
+        sm: "1 rem",
+        lg: "1.5 rem",
+        xl: "2 rem",
+        "2xl": "2.5 rem",
+      },
+    },
     screens,
     fontSize,
     extend: {
@@ -16,4 +26,4 @@ export default {
     },
   },
   plugins: [require("@tailwindcss/typography"), fluid],
-} satisfies Config;
+} satisfies Config
