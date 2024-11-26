@@ -4,7 +4,6 @@ import { defineConfig } from "astro/config"
 
 export default defineConfig({
   site: "https://astroland-sigma.vercel.app",
-  base: "/astroland",
   output: "static",
   trailingSlash: "always",
   integrations: [tailwind()],
