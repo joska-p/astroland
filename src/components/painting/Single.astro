@@ -29,12 +29,10 @@ const { id, title, year, width, height, filename } = painting;
     pictureAttributes={{ class: "flex max-h-full overflow-hidden" }}
   />
   <header class="mt-2 w-full sm:mt-4 md:mt-0">
-    <h1
-      class="mb-3 text-center text-2xl text-gray-900 md:mb-8 md:text-3xl xl:text-4xl"
-    >
+    <h1 class="mb-3 text-center text-gray-900 ~text-2xl/4xl md:mb-8">
       {title}
     </h1>
-    <p class="flex flex-row gap-2 sm:text-lg md:text-xl">
+    <p class="flex flex-row gap-2 ~text-base/xl">
       <span class="basis-full text-right tracking-widest text-amber-800"
         >Année:</span
       >
@@ -42,7 +40,7 @@ const { id, title, year, width, height, filename } = painting;
         ><time datetime={String(year)}>{year === 0 ? "NC" : year}</time></span
       >
     </p>
-    <p class="flex flex-row gap-2 sm:text-lg md:text-xl">
+    <p class="flex flex-row gap-2 ~text-base/xl">
       <span class="basis-full text-right tracking-widest text-amber-800"
         >Hauteur:</span
       >
@@ -50,7 +48,7 @@ const { id, title, year, width, height, filename } = painting;
         >{height === 0 ? "NC" : height + " cm"}</span
       >
     </p>
-    <p class="flex flex-row gap-2 sm:text-lg md:text-xl">
+    <p class="flex flex-row gap-2 ~text-base/xl">
       <span class="basis-full text-right tracking-widest text-amber-800"
         >Largeur:</span
       >
