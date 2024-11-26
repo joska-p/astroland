@@ -18,6 +18,7 @@ const pageName = page.url.current.split("/")[1]
         <a
           href={baseUrl.slice(0, -1) + page.url.prev}
           aria-label="Goto Previous Page"
+          title="Goto Previous Page"
           class="border border-r-0 border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
@@ -38,6 +39,7 @@ const pageName = page.url.current.split("/")[1]
             href={baseUrl + pageName + "/" + num + "/"}
             aria-label={ariaLabel}
             aria-current={isCurrent ? "page" : "false"}
+            title={ariaLabel}
             class="rounded-md rounded-l-none rounded-r-none border border-r-0 border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none aria-[current=false]:hidden aria-[current=page]:border-gray-800 aria-[current=page]:bg-gray-800 aria-[current=page]:text-gray-50 md:aria-[current=false]:inline"
             type="button"
           >
@@ -49,6 +51,7 @@ const pageName = page.url.current.split("/")[1]
         <a
           href={baseUrl.slice(0, -1) + page.url.next}
           aria-label="Goto Next Page"
+          title="Goto Next Page"
           class="border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
