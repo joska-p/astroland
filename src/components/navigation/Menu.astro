@@ -19,8 +19,7 @@ const paths = [
 ---
 
 <ul
-  role="navigation"
-  aria-label="Navigation"
+  aria-label="Menu"
   class="fixed bottom-0 left-0 right-0 z-50 flex h-[--footer-height] w-auto items-center justify-around bg-gray-200 ~gap-6/8 md:static md:ml-auto md:h-auto md:justify-between md:bg-transparent"
 >
   {
@@ -32,7 +31,7 @@ const paths = [
             href={BASE_URL + path.href}
             aria-label={`Go to ${path.title}`}
             aria-current={isCurrent ? "page" : "false"}
-            class={`${isCurrent ? "text-gray-950" : "text-gray-500"} ~text-base/2xl hover:text-gray-900`}
+            class={`${isCurrent ? "text-gray-950" : "text-gray-600"} ~text-base/2xl hover:text-gray-900`}
           >
             {path.title}
           </a>
