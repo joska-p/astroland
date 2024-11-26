@@ -1,7 +1,6 @@
 // @ts-check
-import { defineConfig } from "astro/config"
-
-import tailwind from "@astrojs/tailwind"
+import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://joska-p.github.io",
@@ -12,4 +11,4 @@ export default defineConfig({
     defaultStrategy: "load",
     prefetchAll: true,
   },
-})
+});
