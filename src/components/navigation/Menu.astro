@@ -24,7 +24,7 @@ const paths = [
 >
   {
     paths.map(path => {
-      const isCurrent = pathname.split("/")[2] === path.href.split("/")[0]
+      const isCurrent = pathname.split("/")[1] === path.href.split("/")[0]
       return (
         <li>
           <a
