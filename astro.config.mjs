@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind"
 import { defineConfig } from "astro/config"
 
 export default defineConfig({
-  site: "https://joska-p.github.io",
+  site: "https://astroland-sigma.vercel.app",
   base: "/astroland",
   output: "static",
   trailingSlash: "always",

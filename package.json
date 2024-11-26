@@ -2,7 +2,7 @@
   "name": "astroland",
   "type": "module",
   "version": "0.0.1",
-  "homepage": "https://joska-p.github.io/astroland/",
+  "homepage": "https://astroland-sigma.vercel.app/",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
