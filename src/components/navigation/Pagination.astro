@@ -42,7 +42,7 @@ const pageName = page.url.current.split("/")[1]
         const ariaLabel = isCurrent ? `Page courante, page ${num} sur ${page.lastPage}` : `Aller à la page: ${num}`
         return (
           <a
-            href={baseUrl + pageName + "/" + num + "/"}
+            href={`${baseUrl}${pageName}/${num}/`}
             aria-label={ariaLabel}
             aria-current={isCurrent ? "page" : "false"}
             title={ariaLabel}

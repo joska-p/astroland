@@ -1,4 +1,6 @@
 ---
+import { cn } from "../../utils"
+
 const { BASE_URL } = import.meta.env
 const { pathname } = new URL(Astro.request.url)
 
@@ -32,7 +34,10 @@ const paths = [
             aria-label={`Aller à la page: ${path.title}`}
             title={`Aller à la page: ${path.title}`}
             aria-current={isCurrent ? "page" : "false"}
-            class={`${isCurrent ? "text-gray-950" : "text-gray-600"} ~text-base/2xl hover:text-gray-900`}
+            class={cn("~text-base/2xl hover:text-gray-900", {
+              "text-gray-950": isCurrent,
+              "text-gray-600": !isCurrent,
+            })}
           >
             {path.title}
           </a>
