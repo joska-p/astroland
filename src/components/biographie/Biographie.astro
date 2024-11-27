@@ -9,7 +9,7 @@ import photoRoland from "/src/assets/images/roland01.jpg"
     .resume-left::before {
       content: "";
       display: block;
-      width: calc(100% * 4 / 5);
+      width: calc((100% * 4 / 5) + 1rem);
       aspect-ratio: 1/1;
       max-width: 32rem;
     }
@@ -28,7 +28,7 @@ import photoRoland from "/src/assets/images/roland01.jpg"
   <Picture
     src={photoRoland}
     alt="Roland souriant devant des tableaux"
-    class="mx-auto w-full max-w-lg border-4 border-gray-100 object-cover object-center shadow-2xl md:aspect-square md:w-2/5 md:rounded-full"
+    class="mx-auto w-full border-4 border-gray-100 object-cover object-center shadow-2xl md:aspect-square md:w-2/5 md:rounded-full"
   />
 
   <div

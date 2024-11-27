@@ -17,12 +17,18 @@ const pageName = page.url.current.split("/")[1]
       {page.url.prev && (
         <a
           href={baseUrl.slice(0, -1) + page.url.prev}
-          aria-label="Goto Previous Page"
-          title="Goto Previous Page"
+          aria-label="Aller à la page prédédente"
+          title="Aller à la page prédédente"
           class="border border-r-0 border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-4 w-4"
+            aria-label="Flêche pointant vers la gauche"
+          >
             <path
               fill-rule="evenodd"
               d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
@@ -33,7 +39,7 @@ const pageName = page.url.current.split("/")[1]
       )}
       {pageNums.map(num => {
         const isCurrent = num === page.currentPage
-        const ariaLabel = isCurrent ? `Current page, page ${num} of ${page.lastPage}` : `Goto Page ${num}`
+        const ariaLabel = isCurrent ? `Page courante, page ${num} sur ${page.lastPage}` : `Aller à la page: ${num}`
         return (
           <a
             href={baseUrl + pageName + "/" + num + "/"}
@@ -50,12 +56,18 @@ const pageName = page.url.current.split("/")[1]
       {page.url.next && (
         <a
           href={baseUrl.slice(0, -1) + page.url.next}
-          aria-label="Goto Next Page"
-          title="Goto Next Page"
+          aria-label="Aller à la page suivante"
+          title="Aller à la page suivante"
           class="border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-4 w-4"
+            aria-label="Flêche pointant vers la droite"
+          >
             <path
               fill-rule="evenodd"
               d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"

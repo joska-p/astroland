@@ -17,16 +17,21 @@ const { painting } = Astro.props
 const { id, title, year, width, height, filename } = painting
 ---
 
-<article id={id} class="grid h-full snap-start content-center md:grid-cols-2 md:items-center md:justify-items-center">
-  <Picture
-    src={filename}
-    formats={["avif", "webp"]}
-    alt={title}
-    class="mx-auto object-contain"
-    pictureAttributes={{
-      class: "flex max-h-full min-h-[200px] min-w-[200px]",
-    }}
-  />
+<article
+  id={id}
+  class="grid h-full snap-start content-center landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
+>
+  <a href={filename.src} title="Afficher l'image en plein écran">
+    <Picture
+      src={filename}
+      formats={["avif", "webp"]}
+      alt={title}
+      class="mx-auto object-contain"
+      pictureAttributes={{
+        class: "flex max-h-full min-h-[200px] min-w-[200px]",
+      }}
+    />
+  </a>
   <header class="mt-2 w-full sm:mt-4 md:mt-0">
     <h1 class="mb-3 text-center text-gray-900 ~text-2xl/4xl md:mb-8">
       {title}
