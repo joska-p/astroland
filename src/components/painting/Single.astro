@@ -19,7 +19,7 @@ const { id, title, year, width, height, filename } = painting
 
 <article
   id={id}
-  class="grid h-full snap-start content-center landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
+  class="grid h-full snap-start content-stretch landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
 >
   <Picture
     src={filename}
@@ -30,8 +30,8 @@ const { id, title, year, width, height, filename } = painting
       class: "flex max-h-full min-h-[200px] min-w-[200px]",
     }}
   />
-  <header class="w-full portrait:mt-2 portrait:sm:mt-4">
-    <h1 class="mb-3 text-center text-gray-900 ~text-2xl/4xl md:mb-8">
+  <header class="w-full portrait:~mt-3/8">
+    <h1 class="text-center text-gray-900 ~text-2xl/4xl ~mb-3/8">
       {title}
     </h1>
     <p class="flex flex-row gap-2 ~text-base/xl">
