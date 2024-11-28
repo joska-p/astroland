@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro"
 import { getCollection } from "astro:content"
-import Root from "../../components/layout/Root.astro"
+import Layout from "../../layouts/Layout.astro"
 import Pagination from "../../components/navigation/Pagination.astro"
 import Single from "../../components/painting/Single.astro"
 
@@ -14,7 +14,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props
 ---
 
-<Root title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
+<Layout title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
   <section
     id="scroll-area"
     class="container h-[calc(100dvh-var(--header-height)-var(--footer-height))] snap-y snap-mandatory space-y-[50%] overflow-y-scroll motion-reduce:scroll-smooth"
@@ -34,7 +34,7 @@ const { page } = Astro.props
       })
     }
   </section>
-</Root>
+</Layout>
 
 <script>
   document.addEventListener("astro:page-load", () => {
