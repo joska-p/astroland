@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions"
+import { ClientRouter } from "astro:transitions"
 import Footer from "../components/footer/Footer.astro"
 import Header from "../components/header/Header.astro"
 import "../styles/global.css"
@@ -10,7 +10,6 @@ interface Props {
   className?: string
 }
 
-const { BASE_URL } = import.meta.env
 const { title, className } = Astro.props
 ---
 
@@ -19,11 +18,11 @@ const { title, className } = Astro.props
     <meta charset="UTF-8" />
     <meta name="description" content="Roland Potin Eizner artiste peintre" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" type="image/png" href=`${BASE_URL}favicon-16x16.png` sizes="16x16" />
-    <link rel="shortcut icon" type="image/png" href=`${BASE_URL}favicon-32x32.png` sizes="32x32" />
-    <link rel="apple-touch-icon" type="image/png" href=`${BASE_URL}apple-touch-icon.png` />
+    <link rel="shortcut icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="shortcut icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon.png" />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <div class="grid h-dvh grid-rows-[auto_1fr_auto]">

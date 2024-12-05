@@ -1,21 +1,20 @@
 ---
 import { cn } from "../../utils"
 
-const { BASE_URL } = import.meta.env
 const { pathname } = new URL(Astro.request.url)
 
 const paths = [
   {
     title: "Accueil",
-    href: "",
+    href: "/",
   },
   {
     title: "Peinture",
-    href: "painting/1/",
+    href: "/painting/1",
   },
   {
     title: "À propos",
-    href: "about/",
+    href: "/about",
   },
 ]
 ---
@@ -26,11 +25,11 @@ const paths = [
 >
   {
     paths.map(path => {
-      const isCurrent = pathname.split("/")[1] === path.href.split("/")[0]
+      const isCurrent = pathname.split("/")[1] === path.href.split("/")[1]
       return (
         <li>
           <a
-            href={BASE_URL + path.href}
+            href={path.href}
             aria-label={`Aller à la page: ${path.title}`}
             title={`Aller à la page: ${path.title}`}
             aria-current={isCurrent ? "page" : "false"}
