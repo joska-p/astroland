@@ -4,11 +4,8 @@ import Menu from "../navigation/Menu.astro"
 const { BASE_URL } = import.meta.env
 ---
 
-<header role="banner" class="sticky top-0 z-50 bg-gray-100">
-  <nav
-    role="navigation"
-    class="container h-[--header-height] content-center items-center pt-[calc(var(--header-height)*0.2)] ~gap-4/8 md:flex"
-  >
+<header role="banner" class="bg-gray-100 py-5">
+  <nav role="navigation" class="container content-center items-center ~gap-4/8 md:flex">
     <a
       href={BASE_URL}
       aria-label="Aller à la page d'accueil de Roland Potin Eizner"

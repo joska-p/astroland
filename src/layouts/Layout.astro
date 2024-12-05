@@ -25,11 +25,17 @@ const { title, className } = Astro.props
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="flex min-h-dvh flex-col bg-gray-50 font-mono text-gray-800">
-    <Header />
-    <main role="main" class={cn("flex-grow", className)}>
-      <slot />
-    </main>
-    <Footer />
+  <body class="bg-gray-50 text-gray-800">
+    <div class="grid h-dvh grid-rows-[auto_1fr_auto]">
+      <Header />
+      <main
+        id="scrollArea"
+        role="main"
+        class={cn("snap-y snap-mandatory motion-reduce:scroll-smooth overflow-y-scroll", className)}
+      >
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

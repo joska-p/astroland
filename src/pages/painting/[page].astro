@@ -15,10 +15,7 @@ const { page } = Astro.props
 ---
 
 <Layout title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
-  <section
-    id="scroll-area"
-    class="container h-[calc(100dvh-var(--header-height)-var(--footer-height))] snap-y snap-mandatory space-y-[50%] overflow-y-scroll motion-reduce:scroll-smooth"
-  >
+  <section class="container h-full">
     {
       page.data.map(painting => {
         const isLastItem = page.data.indexOf(painting) === page.data.length - 1

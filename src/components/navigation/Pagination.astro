@@ -13,13 +13,18 @@ const pageName = page.url.current.split("/")[1]
 
 {
   page.lastPage > 1 && (
-    <nav role="navigation" id="pagination" aria-label="Pagination Navigation" class="flex justify-center">
+    <nav
+      role="navigation"
+      id="pagination"
+      aria-label="Pagination Navigation"
+      class="flex flex-wrap justify-center gap-1"
+    >
       {page.url.prev && (
         <a
           href={baseUrl.slice(0, -1) + page.url.prev}
           aria-label="Aller à la page prédédente"
           title="Aller à la page prédédente"
-          class="border border-r-0 border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="flex items-center rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
           <svg
@@ -46,7 +51,7 @@ const pageName = page.url.current.split("/")[1]
             aria-label={ariaLabel}
             aria-current={isCurrent ? "page" : "false"}
             title={ariaLabel}
-            class="rounded-md rounded-l-none rounded-r-none border border-r-0 border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none aria-[current=false]:hidden aria-[current=page]:border-gray-800 aria-[current=page]:bg-gray-800 aria-[current=page]:text-gray-50 md:aria-[current=false]:inline"
+            class="rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none aria-[current=page]:border-gray-800 aria-[current=page]:bg-gray-800 aria-[current=page]:text-gray-50"
             type="button"
           >
             {num}
@@ -58,7 +63,7 @@ const pageName = page.url.current.split("/")[1]
           href={baseUrl.slice(0, -1) + page.url.next}
           aria-label="Aller à la page suivante"
           title="Aller à la page suivante"
-          class="border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="flex items-center rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
           <svg
