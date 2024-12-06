@@ -5,12 +5,19 @@ import Menu from "../navigation/Menu.astro"
 <header role="banner" class="bg-gray-200/30 py-5">
   <nav role="navigation" class="container content-center items-center ~gap-4/8 md:flex">
     <a
-      href="/"
-      aria-label="Aller à la page d'accueil de Roland Potin Eizner"
-      title="Aller à la page d'accueil de Roland Potin Eizner"
-      class="block text-center font-daniel ~text-3xl/4xl"
+      title="Pour me contacter par email à rolandpotin@gmail.com"
+      href="mailto:rolandpotin@gmail.com"
+      class="flex items-center justify-center gap-2"
+      aria-label="Pour me contacter par email à rolandpotin@gmail.com"
     >
-      Roland Potin Eizner
+      <span class="block text-center font-daniel ~text-3xl/4xl">Roland Potin Eizner</span>
+      <i class="w-6 text-gray-500/50">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="mail icon">
+          <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"></path>
+          <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+          ></path>
+        </svg>
+      </i>
     </a>
     <Menu />
   </nav>

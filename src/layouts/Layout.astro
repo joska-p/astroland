@@ -1,6 +1,5 @@
 ---
 import { ClientRouter } from "astro:transitions"
-import Footer from "../components/footer/Footer.astro"
 import Header from "../components/header/Header.astro"
 import "../styles/global.css"
 import { cn } from "../utils"
@@ -25,16 +24,15 @@ const { title, className } = Astro.props
     <ClientRouter />
   </head>
   <body class="bg-gray-50 text-gray-800">
-    <div class="grid h-dvh grid-rows-[auto_1fr_auto]">
+    <div class="grid h-dvh grid-rows-[auto_1fr]">
       <Header />
       <main
         id="scrollArea"
         role="main"
-        class={cn("snap-y snap-mandatory motion-reduce:scroll-smooth overflow-y-scroll", className)}
+        class={cn("snap-y snap-mandatory motion-reduce:scroll-smooth overflow-y-scroll mb-11 md:mb-0", className)}
       >
         <slot />
       </main>
-      <Footer />
     </div>
   </body>
 </html>
