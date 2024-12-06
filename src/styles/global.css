@@ -30,3 +30,19 @@
     @apply col-span-full row-span-full;
   }
 }
+
+body {
+  background: repeating-linear-gradient(
+      transparent 0px,
+      transparent 5px,
+      rgba(207, 207, 207, 0.2) 5px,
+      rgba(207, 207, 207, 0.2) 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 5px,
+      rgba(207, 207, 207, 0.2) 5px,
+      rgba(207, 207, 207, 0.2) 6px
+    );
+}
