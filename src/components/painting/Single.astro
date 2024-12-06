@@ -19,7 +19,7 @@ const { id, title, year, width, height, filename } = painting
 
 <article
   id={id}
-  class="grid h-full snap-start content-stretch landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
+  class="grid h-full snap-start overflow-hidden landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
 >
   <Picture
     src={filename}
@@ -27,7 +27,7 @@ const { id, title, year, width, height, filename } = painting
     alt={title}
     class="mx-auto object-contain"
     pictureAttributes={{
-      class: "flex max-h-full min-h-[200px] min-w-[200px]",
+      class: "flex max-h-full max-w-full min-h-52 min-w-52",
     }}
   />
   <header class="w-full portrait:~mt-3/8">
