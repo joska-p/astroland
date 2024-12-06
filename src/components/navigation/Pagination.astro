@@ -1,5 +1,6 @@
 ---
 import type { Page } from "astro"
+import { cn } from "../../utils"
 
 interface Props {
   page: Page
@@ -42,18 +43,27 @@ const pageName = page.url.current.split("/")[1]
         </a>
       )}
       {pageNums.map(num => {
-        const isCurrent = num === page.currentPage
-        const ariaLabel = isCurrent ? `Page courante, page ${num} sur ${page.lastPage}` : `Aller à la page: ${num}`
+        const isCurrentPage = num === page.currentPage
+        const isNextPage = num === page.currentPage + 1
+        const isPreviousPage = num === page.currentPage - 1
+        const isAdjacentPage = isNextPage || isPreviousPage
+        const isTwoPagesAway = num === page.currentPage + 2 || num === page.currentPage - 2
+        const ariaLabel = isCurrentPage ? `Page courante, page ${num} sur ${page.lastPage}` : `Aller à la page: ${num}`
         return (
           <a
             href={`/${pageName}/${num}`}
             aria-label={ariaLabel}
-            aria-current={isCurrent ? "page" : "false"}
+            aria-current={isCurrentPage ? "page" : "false"}
             title={ariaLabel}
-            class="rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none aria-[current=page]:border-gray-800 aria-[current=page]:bg-gray-800 aria-[current=page]:text-gray-50"
+            class={cn(
+              "hidden rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
+              { "border-gray-800 bg-gray-800 text-gray-50": isCurrentPage },
+              { inline: isCurrentPage || isAdjacentPage || isTwoPagesAway },
+              { "pointer-events-none opacity-50 shadow-none": isTwoPagesAway }
+            )}
             type="button"
           >
-            {num}
+            {isTwoPagesAway ? "..." : num}
           </a>
         )
       })}
