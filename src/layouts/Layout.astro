@@ -1,4 +1,6 @@
 ---
+import Favicons from "#components/Favicons.astro"
+import Metadata from "#components/common/Metadata.astro"
 import Header from "#components/widgets/header/Header.astro"
 import { cn } from "#lib/utils.ts"
 import "#styles/global.css"
@@ -14,12 +16,8 @@ const { title, className } = Astro.props
 
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Roland Potin Eizner artiste peintre" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-    <link rel="shortcut icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon.png" />
+    <Metadata />
+    <Favicons />
     <title>{title}</title>
     <ClientRouter />
   </head>
