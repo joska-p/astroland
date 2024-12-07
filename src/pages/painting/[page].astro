@@ -8,7 +8,7 @@ import Single from "#components/painting/Single.astro"
 export const getStaticPaths = (async ({ paginate }) => {
   const paintings = (await getCollection("painting")).sort((a, b) => b.data.year.valueOf() - a.data.year.valueOf())
 
-  return paginate(paintings, { pageSize: 10 })
+  return paginate(paintings, { pageSize: 25 })
 }) satisfies GetStaticPaths
 
 const { page } = Astro.props
