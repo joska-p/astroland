@@ -1,8 +1,8 @@
 ---
+import Header from "#components/widgets/header/Header.astro"
+import { cn } from "#lib/utils.ts"
+import "#styles/global.css"
 import { ClientRouter } from "astro:transitions"
-import Header from "../components/header/Header.astro"
-import "../styles/global.css"
-import { cn } from "../utils"
 
 interface Props {
   title: string

@@ -1,9 +1,9 @@
 ---
 import type { GetStaticPaths } from "astro"
 import { getCollection } from "astro:content"
-import Layout from "../../layouts/Layout.astro"
-import Pagination from "../../components/navigation/Pagination.astro"
-import Single from "../../components/painting/Single.astro"
+import Layout from "#layouts/Layout.astro"
+import Pagination from "#widgets/navigation/Pagination.astro"
+import Single from "#components/painting/Single.astro"
 
 export const getStaticPaths = (async ({ paginate }) => {
   const paintings = (await getCollection("painting")).sort((a, b) => b.data.year.valueOf() - a.data.year.valueOf())

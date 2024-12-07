@@ -1,10 +1,10 @@
 ---
+import photoRoland from "#assets/images/roland01.jpg"
 import { Picture } from "astro:assets"
-import photoRoland from "/src/assets/images/roland01.jpg"
 ---
 
-<section class="prose mx-auto ~mt-6/24">
-  <i class="mx-auto mb-3 block h-8 w-8 text-gray-300 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
+<section class="prose mx-auto">
+  <i class="mx-auto my-5 block h-8 w-8 text-gray-300 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
     ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536.715 451.927" aria-hidden="true" fill="currentColor"
       ><path fill-rule="evenodd" d="M206.125 396.73V0L7.765 198.36v198.36zm330.59 0V0l-198.36 198.36v198.36z"
       ></path></svg
@@ -36,10 +36,13 @@ import photoRoland from "/src/assets/images/roland01.jpg"
   <Picture
     src={photoRoland}
     alt="Roland souriant devant des tableaux"
-    class="mx-auto w-full border-4 border-gray-100 object-cover object-center shadow-2xl ~mt-6/24"
+    class="border-4 border-gray-100 object-cover object-center shadow-2xl"
+    pictureAttributes={{
+      class: "mx-auto my-20 w-full",
+    }}
   />
 
-  <i class="mx-auto mb-3 block h-8 w-8 text-gray-300 ~mt-6/24 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
+  <i class="mx-auto my-5 block h-8 w-8 text-gray-300 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
     ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536.715 451.927" aria-hidden="true" fill="currentColor"
       ><path fill-rule="evenodd" d="M206.125 396.73V0L7.765 198.36v198.36zm330.59 0V0l-198.36 198.36v198.36z"
       ></path></svg
@@ -67,5 +70,5 @@ import photoRoland from "/src/assets/images/roland01.jpg"
   <cite class="mx-auto mt-10 block max-w-[50ch]">
     <p class="text-end">Roland Potin-Eizner</p>
   </cite>
-  <video src="/videos/reportage-fr3.mp4" controls class="w-full ~mt-6/24"></video>
+  <video src="/videos/reportage-fr3.mp4" controls class="my-20 w-full"></video>
 </section>

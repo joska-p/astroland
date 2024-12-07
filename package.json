@@ -11,6 +11,16 @@
     "astro": "astro",
     "format": "prettier --write . --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss"
   },
+  "imports": {
+    "#assets/*": "./src/assets/*",
+    "#components/*": "./src/components/*",
+    "#widgets/*": "./src/components/widgets/*",
+    "#content/*": "./src/content/*",
+    "#layouts/*": "./src/layouts/*",
+    "#lib/*": "./src/lib/*",
+    "#styles/*": "./src/styles/*",
+    "#*": "./src/*"
+  },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.3",
