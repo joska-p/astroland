@@ -1,22 +1,7 @@
 ---
+import { links } from "#lib/navigation.ts"
 import { cn } from "#lib/utils.ts"
-
 const { pathname } = new URL(Astro.request.url)
-
-const paths = [
-  {
-    title: "Accueil",
-    href: "/",
-  },
-  {
-    title: "Peinture",
-    href: "/painting/1",
-  },
-  {
-    title: "À propos",
-    href: "/about",
-  },
-]
 ---
 
 <ul
@@ -24,21 +9,21 @@ const paths = [
   class="fixed bottom-0 left-0 right-0 z-50 flex w-auto items-center justify-around bg-gray-400/50 py-3 ~gap-6/8 md:static md:justify-between md:bg-transparent md:py-0"
 >
   {
-    paths.map(path => {
-      const isCurrent = pathname.split("/")[1] === path.href.split("/")[1]
+    links.map(link => {
+      const isCurrent = pathname.split("/")[1] === link.href.split("/")[1]
       return (
         <li>
           <a
-            href={path.href}
-            aria-label={`Aller à la page: ${path.title}`}
-            title={`Aller à la page: ${path.title}`}
+            href={link.href}
+            aria-label={`Aller à la page: ${link.text}`}
+            title={`Aller à la page: ${link.text}`}
             aria-current={isCurrent ? "page" : "false"}
             class={cn("~text-base/2xl hover:text-gray-900", {
               "text-gray-950": isCurrent,
               "text-gray-600": !isCurrent,
             })}
           >
-            {path.title}
+            {link.text}
           </a>
         </li>
       )
