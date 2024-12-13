@@ -47,9 +47,8 @@ const pageName = page.url.current.split("/")[1]
         const isFirst = pageNum === 1
         const isLast = pageNum === page.lastPage
         const isAdjacent = pageNum === page.currentPage - 1 || pageNum === page.currentPage + 1
-        const isTwoAway = pageNum === page.currentPage - 2 || pageNum === page.currentPage + 2
         const displayNumber = isCurrent || isFirst || isLast || isAdjacent
-        const displayDots = isTwoAway && !(isFirst || isLast || isCurrent || isAdjacent)
+        const displayDots = isFirst || isLast || isCurrent || isAdjacent
         const label = isCurrent ? `Page courante, page ${pageNum} sur ${page.lastPage}` : `Aller à la page: ${pageNum}`
 
         return (
