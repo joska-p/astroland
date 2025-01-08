@@ -1,5 +1,5 @@
 ---
-import { links } from "#lib/navigation.ts"
+import { routes } from "#constants/routes.ts"
 import { cn } from "#lib/utils.ts"
 const { pathname } = new URL(Astro.request.url)
 ---
@@ -9,21 +9,21 @@ const { pathname } = new URL(Astro.request.url)
   class="fixed bottom-0 left-0 right-0 z-50 flex w-auto items-center justify-around bg-gray-400/50 py-3 ~gap-6/8 md:static md:justify-between md:bg-transparent md:py-0"
 >
   {
-    links.map(link => {
-      const isCurrent = pathname.split("/")[1] === link.href.split("/")[1]
+    routes.map(route => {
+      const isCurrent = pathname.split("/")[1] === route.href.split("/")[1]
       return (
         <li>
           <a
-            href={link.href}
-            aria-label={`Aller à la page: ${link.text}`}
-            title={`Aller à la page: ${link.text}`}
+            href={route.href}
+            aria-label={`Aller à la page: ${route.text}`}
+            title={`Aller à la page: ${route.text}`}
             aria-current={isCurrent ? "page" : "false"}
             class={cn("~text-base/2xl hover:text-gray-900", {
               "text-gray-950": isCurrent,
               "text-gray-600": !isCurrent,
             })}
           >
-            {link.text}
+            {route.text}
           </a>
         </li>
       )
@@ -37,9 +37,18 @@ const { pathname } = new URL(Astro.request.url)
       class="text-gray-600 ~text-base/2xl hover:text-gray-900"
     >
       <i class="block w-6">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="mail icon">
-          <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"></path>
-          <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
           ></path>
         </svg>
       </i>
