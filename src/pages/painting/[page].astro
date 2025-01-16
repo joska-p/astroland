@@ -43,7 +43,7 @@ const { page } = Astro.props
     }
     const observer = new IntersectionObserver(handleIntersection, observerOptions)
 
-    const paintings = document.querySelectorAll("article")
+    const paintings = document.querySelectorAll(".painting")
     paintings.forEach(painting => observer.observe(painting))
   })
 
