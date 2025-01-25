@@ -57,10 +57,12 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
             aria-current={isCurrent ? "page" : "false"}
             title={label}
             class={cn(
-              "hidden rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
+              "rounded-md border border-gray-300 py-2 text-center text-sm text-gray-600 transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
+              { "px-3 shadow-xs": displayNumber },
+              { "pointer-events-none border-none px-0 opacity-50 shadow-none": displayDots },
               { "border-gray-800 bg-gray-800 text-gray-50": isCurrent },
-              { inline: displayNumber || displayDots },
-              { "pointer-events-none border-none px-0 opacity-50 shadow-none": displayDots }
+              { "bg-gray-50": !isCurrent },
+              { hidden: !displayNumber && !displayDots }
             )}
             type="button"
           >
