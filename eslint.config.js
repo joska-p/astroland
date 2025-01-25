@@ -10,4 +10,5 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
+  { ignores: ["node_modules", "dist", ".astro"] },
 ]

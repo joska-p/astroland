@@ -2,18 +2,18 @@
   "name": "astroland",
   "type": "module",
   "version": "0.0.1",
-  "homepage": "https://astroland-sigma.vercel.app/",
+  "homepage": "https://joska-p.github.io/astroland",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "rm -rf dist && eslint ./src --fix --report-unused-disable-directives && prettier --write ./src ",
+    "prebuild": "rm -rf dist && eslint . --fix --report-unused-disable-directives && prettier --write . ",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint ./src --report-unused-disable-directives",
-    "lint:fix": "eslint ./src --fix --report-unused-disable-directives",
-    "format": "prettier --write ./src ",
-    "fix": "prettier --write ./src  && eslint ./src --report-unused-disable-directives --fix"
+    "lint": "eslint . --report-unused-disable-directives",
+    "lint:fix": "eslint . --fix --report-unused-disable-directives",
+    "format": "prettier --write . ",
+    "fix": "prettier --write .  && eslint . --report-unused-disable-directives --fix"
   },
   "imports": {
     "#assets/*": "./src/assets/*",
@@ -45,6 +45,5 @@
   },
   "dependencies": {
     "astro": "^5.1.9"
-  },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  }
 }
