@@ -1,5 +1,6 @@
 import fluid, { extract, fontSize, screens } from "fluid-tailwind"
 import type { Config } from "tailwindcss"
+import typography from "@tailwindcss/typography"
 
 export default {
   content: {
@@ -25,5 +26,5 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), fluid],
+  plugins: [typography, fluid],
 } satisfies Config
