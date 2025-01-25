@@ -1,5 +1,7 @@
 ---
 import Layout from "#layouts/Layout.astro"
+
+const baseUrl = import.meta.env.BASE_URL
 ---
 
 <Layout title="Roland Potin Eizner.">
@@ -25,7 +27,7 @@ import Layout from "#layouts/Layout.astro"
     </cite>
   </section>
   <a
-    href="/painting/1"
+    href=`${baseUrl}/painting/1`
     title="Voir mes tableaux"
     class="mx-auto block w-fit rounded-lg bg-gray-700 px-6 py-3.5 text-center text-base font-medium text-gray-50 hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300"
     >Voir mes tableaux</a
