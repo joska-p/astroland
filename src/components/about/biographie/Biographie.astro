@@ -1,6 +1,8 @@
 ---
 import photoRoland from "#assets/images/roland01.jpg"
 import { Picture } from "astro:assets"
+
+const baseUrl = import.meta.env.BASE_URL
 ---
 
 <section class="prose mx-auto">
@@ -70,5 +72,5 @@ import { Picture } from "astro:assets"
   <cite class="mx-auto mt-10 block max-w-[50ch]">
     <p class="text-end">Roland Potin-Eizner</p>
   </cite>
-  <video src="/videos/reportage-fr3.mp4" controls class="my-20 w-full"></video>
+  <video src={`${baseUrl}/videos/reportage-fr3.mp4`} controls class="my-20 w-full"></video>
 </section>

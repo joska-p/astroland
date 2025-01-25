@@ -1,6 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-daniel: Daniel, cursive;
+}
+
+@utility grid-stack {
+  .grid-stack {
+    @apply grid [grid-template-areas:'stack'];
+  }
+  .grid-stack > * {
+    @apply [grid-area:stack];
+  }
+}
 
 @layer base {
   @font-face {
@@ -20,29 +32,20 @@
     src: url("/src/assets/fonts/Raleway-Regular.woff2") format("woff2");
     font-display: auto;
   }
-}
 
-@layer components {
-  .grid-stack {
-    @apply grid place-content-center;
+  body {
+    background: repeating-linear-gradient(
+        transparent 0px,
+        transparent 5px,
+        rgba(229, 231, 235, 0.19) 5px,
+        rgba(229, 231, 235, 0.15) 6px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 5px,
+        rgba(229, 231, 235, 0.19) 5px,
+        rgba(229, 231, 235, 0.19) 6px
+      );
   }
-  .grid-stack > * {
-    @apply col-span-full row-span-full;
-  }
-}
-
-body {
-  background: repeating-linear-gradient(
-      transparent 0px,
-      transparent 5px,
-      rgba(229, 231, 235, 0.19) 5px,
-      rgba(229, 231, 235, 0.15) 6px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 5px,
-      rgba(229, 231, 235, 0.19) 5px,
-      rgba(229, 231, 235, 0.19) 6px
-    );
 }

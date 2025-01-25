@@ -8,7 +8,6 @@ interface Props {
 
 const { page } = Astro.props
 const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
-const pageName = page.url.current.split("/")[1]
 ---
 
 {
@@ -24,7 +23,7 @@ const pageName = page.url.current.split("/")[1]
           href={page.url.prev}
           aria-label="Aller à la page prédédente"
           title="Aller à la page prédédente"
-          class="flex items-center rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="flex items-center rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
           <svg
@@ -53,12 +52,12 @@ const pageName = page.url.current.split("/")[1]
 
         return (
           <a
-            href={`/${pageName}/${pageNum}`}
+            href={`${pageNum}`}
             aria-label={label}
             aria-current={isCurrent ? "page" : "false"}
             title={label}
             class={cn(
-              "hidden rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
+              "hidden rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
               { "border-gray-800 bg-gray-800 text-gray-50": isCurrent },
               { inline: displayNumber || displayDots },
               { "pointer-events-none border-none px-0 opacity-50 shadow-none": displayDots }
@@ -74,7 +73,7 @@ const pageName = page.url.current.split("/")[1]
           href={page.url.next}
           aria-label="Aller à la page suivante"
           title="Aller à la page suivante"
-          class="flex items-center rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-center text-sm text-gray-600 shadow-sm transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="flex items-center rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
           <svg

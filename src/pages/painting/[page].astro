@@ -34,6 +34,9 @@ const { page } = Astro.props
 </Layout>
 
 <script>
+  /**
+   * When a painting is visible in the viewport, the URL is updated with the painting's id.
+   */
   document.addEventListener("astro:page-load", () => {
     const scrollArea = document.querySelector<HTMLDivElement>("#scroll-area")
     const observerOptions: IntersectionObserverInit = {

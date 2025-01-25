@@ -7,7 +7,7 @@ const { pathname } = new URL(Astro.request.url)
 
 <ul
   aria-label="Menu"
-  class="fixed bottom-0 left-0 right-0 z-50 flex w-auto items-center justify-around bg-gray-400/50 py-3 ~gap-6/8 md:static md:justify-between md:bg-transparent md:py-0"
+  class="fixed right-0 bottom-0 left-0 z-50 flex w-auto items-center justify-around gap-6 bg-gray-400/50 py-3 md:static md:justify-between md:bg-transparent md:py-0 lg:gap-7 2xl:gap-8"
 >
   {
     routes.map(route => {
@@ -19,7 +19,7 @@ const { pathname } = new URL(Astro.request.url)
             aria-label={`Aller à la page: ${route.text}`}
             title={`Aller à la page: ${route.text}`}
             aria-current={isCurrent ? "page" : "false"}
-            class={cn("~text-base/2xl hover:text-gray-900", {
+            class={cn("text-sm hover:text-gray-900 md:text-base lg:text-lg xl:text-xl 2xl:text-2xl", {
               "text-gray-950": isCurrent,
               "text-gray-600": !isCurrent,
             })}
@@ -35,7 +35,7 @@ const { pathname } = new URL(Astro.request.url)
       title="Pour me contacter par email à rolandpotin@gmail.com"
       href="mailto:rolandpotin@gmail.com"
       aria-label="Pour me contacter par email à rolandpotin@gmail.com"
-      class="text-gray-600 ~text-base/2xl hover:text-gray-900"
+      class="~text-base/2xl text-gray-600 hover:text-gray-900"
     >
       <i class="block w-6">
         <svg
