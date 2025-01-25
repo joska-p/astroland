@@ -1,6 +1,7 @@
 ---
 import { routes } from "#constants/routes.ts"
 import { cn } from "#lib/utils.ts"
+const baseUrl = import.meta.env.BASE_URL
 const { pathname } = new URL(Astro.request.url)
 ---
 
@@ -14,7 +15,7 @@ const { pathname } = new URL(Astro.request.url)
       return (
         <li>
           <a
-            href={route.href}
+            href={baseUrl + route.href}
             aria-label={`Aller à la page: ${route.text}`}
             title={`Aller à la page: ${route.text}`}
             aria-current={isCurrent ? "page" : "false"}

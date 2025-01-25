@@ -4,7 +4,6 @@ import Metadata from "#components/common/Metadata.astro"
 import Header from "#components/widgets/header/Header.astro"
 import { cn } from "#lib/utils.ts"
 import "#styles/global.css"
-import Analytics from "@vercel/analytics/astro"
 import { ClientRouter } from "astro:transitions"
 
 interface Props {
@@ -21,7 +20,6 @@ const { title, className } = Astro.props
     <Favicons />
     <title>{title}</title>
     <ClientRouter />
-    <Analytics />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <div class="grid h-dvh grid-rows-[auto_1fr]">
