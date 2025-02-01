@@ -16,7 +16,7 @@ const resume = await Promise.all(
   {
     resume.map(({ start, end, Content }) => (
       <article class="flex flex-col md:flex-row">
-        <h6 class="shrink-0 border-t border-solid border-gray-300 px-3 py-1 text-gray-500">
+        <h6 class="shrink-0 self-start border-t border-solid border-gray-300 px-3 py-1 text-gray-500 md:sticky md:top-0">
           {end && <span class="block">{end}</span>}
           <span class="block">{start}</span>
         </h6>
