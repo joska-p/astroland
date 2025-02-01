@@ -2,8 +2,8 @@ import { writeFile } from "node:fs/promises"
 import path from "node:path"
 import { getPaintings } from "./getPaintings.ts"
 
-const INPUT_PATH = "src/content/painting/"
-const OUTPUT_PATH = "contentGeneration/content/paintings/md/"
+const INPUT_PATH = "contentGeneration/input"
+const OUTPUT_PATH = "contentGeneration/output"
 const paintings = await getPaintings(INPUT_PATH)
 
 for (const painting of paintings) {
