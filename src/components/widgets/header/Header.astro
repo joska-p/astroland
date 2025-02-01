@@ -1,5 +1,7 @@
 ---
 import Menu from "#widgets/navigation/Menu.astro"
+import { routes } from "#constants/routes.ts"
+const baseUrl = import.meta.env.BASE_URL
 ---
 
 <header role="banner" class="bg-gray-200/30 py-3 md:py-4 xl:py-5">
@@ -9,7 +11,7 @@ import Menu from "#widgets/navigation/Menu.astro"
   >
     <a
       title="Aller à la page d'accueil"
-      href="/"
+      href={baseUrl + routes[0].href}
       class="font-daniel text-3xl font-bold hover:text-gray-900 xl:text-4xl"
       aria-label="Aller à la page d'accueil"
     >
