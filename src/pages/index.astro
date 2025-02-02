@@ -11,7 +11,12 @@ const baseUrl = import.meta.env.BASE_URL
   <section class="container mx-auto mt-5 max-w-[65ch] px-2 md:mt-10 md:px-8 xl:max-w-[150ch]">
     <h1 class="text-center text-2xl font-bold lg:text-3xl">Bienvenue dans mon atelier.</h1>
     <div class="mt-5 md:mt-10 xl:grid xl:grid-cols-2 xl:gap-5">
-      <Picture src={atelier} alt="Mon atelier à Lyon en 2000" pictureAttributes={{ class: "prose-img:my-0" }} />
+      <Picture
+        src={atelier}
+        alt="Mon atelier à Lyon en 2000"
+        pictureAttributes={{ class: "prose-img:my-0" }}
+        class="border-4 border-gray-100 object-cover object-center shadow-2xl"
+      />
       <div class="prose mt-10 xl:mt-0">
         <p>
           Après un apprentissage dans la veine de l'art de la Renaissance puis de l'art fantastique, j'opère une rupture
