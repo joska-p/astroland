@@ -1,15 +1,15 @@
 ---
-import { getCollection, render } from "astro:content"
+import type { AstroComponentFactory } from "astro/runtime/server/render/astro/factory.js"
 
-const resumeCollection = await getCollection("resume")
-const resume = await Promise.all(
-  resumeCollection
-    .sort((a, b) => b.data.start - a.data.start)
-    .map(async entry => {
-      const { Content } = await render(entry)
-      return { ...entry.data, Content }
-    })
-)
+type Props = {
+  resume: {
+    Content: AstroComponentFactory
+    start: number
+    end?: number | undefined
+  }[]
+}
+
+const { resume } = Astro.props
 ---
 
 <section class="mx-auto mt-24 space-y-8">

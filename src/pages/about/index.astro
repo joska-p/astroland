@@ -2,11 +2,22 @@
 import Biographie from "#components/about/biographie/Biographie.astro"
 import Resume from "#components/about/resume/Resume.astro"
 import Layout from "#layouts/Layout.astro"
+import { getCollection, render } from "astro:content"
+
+const resumeCollection = await getCollection("resume")
+const resume = await Promise.all(
+  resumeCollection
+    .sort((a, b) => b.data.start - a.data.start)
+    .map(async entry => {
+      const { Content } = await render(entry)
+      return { ...entry.data, Content }
+    })
+)
 ---
 
 <Layout title="À propos de Roland Potin Eizner.">
   <div class="container mx-auto mb-6 grid justify-center gap-6 lg:mb-24 lg:grid-cols-2 lg:gap-9">
     <Biographie />
-    <Resume />
+    <Resume resume={resume} />
   </div>
 </Layout>
