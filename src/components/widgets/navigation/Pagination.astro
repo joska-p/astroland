@@ -47,7 +47,7 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
 
         return (
           <a
-            href={pageNum.toString()}
+            href={pageNum.toString() + "/"}
             aria-label={label}
             aria-current={isCurrent ? "page" : "false"}
             title={label}

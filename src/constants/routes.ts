@@ -1,14 +1,14 @@
 export const routes = [
   {
     text: "Accueil",
-    href: "/",
+    href: "",
   },
   {
     text: "Peinture",
-    href: "/painting/1",
+    href: "painting/1/",
   },
   {
     text: "À propos",
-    href: "/about",
+    href: "about/",
   },
 ]
