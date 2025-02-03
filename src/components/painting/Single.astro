@@ -20,7 +20,7 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
 
 <article
   id={id}
-  class="painting grid h-full snap-start overflow-hidden landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
+  class="anchor grid h-full snap-start overflow-hidden landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
 >
   <Picture
     src={filename}
@@ -32,9 +32,9 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
     }}
   />
   <header class="mt-3 w-full lg:mt-6 2xl:mt-8">
-    <h1 class="mb-3 text-center text-2xl text-gray-900 lg:mb-6 lg:text-3xl xl:text-4xl 2xl:mb-8 2xl:text-5xl">
+    <h2 class="mb-3 text-center text-2xl text-gray-900 lg:mb-6 lg:text-3xl xl:text-4xl 2xl:mb-8 2xl:text-5xl">
       {capitalizedTitle}
-    </h1>
+    </h2>
     <p class="flex flex-row gap-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl">
       <span class="basis-full text-right tracking-widest text-amber-800">Année:</span>
       <span class="basis-full text-left"><time datetime={String(year)}>{year === 0 ? "NC" : year}</time></span>

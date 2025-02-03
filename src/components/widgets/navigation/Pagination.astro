@@ -43,11 +43,6 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
       )}
       {pageNums.map(pageNum => {
         const isCurrent = pageNum === page.currentPage
-        const isFirst = pageNum === 1
-        const isLast = pageNum === page.lastPage
-        const isTwoAway = pageNum === page.currentPage - 1 || pageNum === page.currentPage + 1
-        const displayNumber = isCurrent || isFirst || isLast
-        const displayDots = isTwoAway && !(isFirst || isLast || isCurrent)
         const label = isCurrent ? `Page courante, page ${pageNum} sur ${page.lastPage}` : `Aller à la page: ${pageNum}`
 
         return (
@@ -57,16 +52,13 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
             aria-current={isCurrent ? "page" : "false"}
             title={label}
             class={cn(
-              "rounded-md border border-gray-300 py-2 text-center text-sm text-gray-600 transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
-              { "px-3 shadow-xs": displayNumber },
-              { "pointer-events-none border-none px-0 opacity-50 shadow-none": displayDots },
+              "rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
               { "border-gray-800 bg-gray-800 text-gray-50": isCurrent },
-              { "bg-gray-50": !isCurrent },
-              { hidden: !displayNumber && !displayDots }
+              { "bg-gray-50": !isCurrent }
             )}
             type="button"
           >
-            {displayNumber ? pageNum : "..."}
+            {pageNum}
           </a>
         )
       })}
