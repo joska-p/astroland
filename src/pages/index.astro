@@ -1,6 +1,7 @@
 ---
 import Layout from "#layouts/Layout.astro"
 import Testimony from "#components/testimony/testimony.astro"
+import Reference from "#components/reference/reference.astro"
 import { Picture } from "astro:assets"
 import atelier from "#assets/images/atelier-2000.jpg"
 
@@ -20,14 +21,13 @@ const baseUrl = import.meta.env.BASE_URL
       <div class="prose mt-10 xl:mt-0">
         <p>
           Après un apprentissage dans la veine de l'art de la Renaissance puis de l'art fantastique, j'opère une rupture
-          radicale. Je me dirige ensuite vers une peinture plus libre sous la forme de tableaux cosmiques, de
-          nébuleuses, d'autres sujets issus de mon imagination et de l'inventivité de ma main sur la toile.
+          radicale. Je me dirige vers une peinture plus libre sous la forme de tableaux cosmiques, de nébuleuses,
+          d'autres sujets issus de mon imagination et de l'inventivité de ma main sur la toile.
         </p>
         <p>
           De là, se construit petit à petit une écriture qui me rapproche du mouvement psychédélique avec lequel je
-          collabore, puis du milieu des peintres surréalistes avec lesquels je me lie d'amitiés fécondes. Mon chemin se
-          précise alors, pendant une quarantaine d'années. Maintenant, je suis dans mon monde. Mon expression coule
-          limpide.
+          collabore, puis du milieu des peintres surréalistes avec lesquels je me lie d'amitiés. Mon chemin se précise
+          alors, pendant une quarantaine d'années. Maintenant, je suis dans mon monde. Mon expression coule limpide.
         </p>
         <p>
           L'ensemble de mes tableaux constituent un opéra ininterrompu, écrit pour produire ce que j'appelle mon Graal
@@ -44,5 +44,6 @@ const baseUrl = import.meta.env.BASE_URL
       >Commencer la visite</a
     >
   </section>
+  <Reference />
   <Testimony />
 </Layout>
