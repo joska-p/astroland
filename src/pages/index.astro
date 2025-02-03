@@ -4,20 +4,21 @@ import Testimony from "#components/testimony/testimony.astro"
 import Reference from "#components/reference/reference.astro"
 import { Picture } from "astro:assets"
 import atelier from "#assets/images/atelier-2000.jpg"
-
-const baseUrl = import.meta.env.BASE_URL
 ---
 
 <Layout title="Roland Potin Eizner.">
   <section class="container mx-auto mt-5 max-w-[65ch] px-2 md:mt-10 md:px-8 xl:max-w-[150ch]">
     <h1 class="text-center text-2xl font-bold lg:text-3xl">Bienvenue dans mon atelier</h1>
     <div class="mt-5 md:mt-10 xl:grid xl:grid-cols-2 xl:gap-5">
-      <Picture
-        src={atelier}
-        alt="Mon atelier à Lyon en 2000"
-        pictureAttributes={{ class: "my-0" }}
-        class="h-full w-auto rounded-xl border-4 border-gray-200/60 object-cover object-center shadow-xl"
-      />
+      <div>
+        <Picture
+          src={atelier}
+          alt="Mon atelier à Lyon en 2000"
+          pictureAttributes={{ class: "my-0" }}
+          class="h-full w-auto rounded-xl border-4 border-gray-200/60 object-cover object-center shadow-xl"
+        />
+        <span class="mt-4 block text-center">rolandpotin@gmail.com</span>
+      </div>
       <div class="prose mt-10 xl:mt-0">
         <p>
           Après un apprentissage dans la veine de l'art de la Renaissance puis de l'art fantastique, j'opère une rupture
@@ -37,12 +38,6 @@ const baseUrl = import.meta.env.BASE_URL
         <p class="text-end">—Roland Potin Eizner</p>
       </div>
     </div>
-    <a
-      href=`${baseUrl}/painting/1`
-      title="Commencer la visite"
-      class="mx-auto mt-20 block w-fit rounded-xl bg-gray-700 px-6 py-3.5 text-center text-base font-medium text-gray-50 no-underline shadow-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 focus:outline-hidden"
-      >Commencer la visite</a
-    >
   </section>
   <Reference />
   <Testimony />
