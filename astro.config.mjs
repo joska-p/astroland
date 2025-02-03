@@ -8,7 +8,7 @@ const { SITE_URL, BASE_URL } = loadEnv(process.env.NODE_ENV || "development", pr
 export default defineConfig({
   site: SITE_URL,
   base: BASE_URL,
-  trailingSlash: "never",
+  trailingSlash: "always",
   output: "static",
   compressHTML: false,
   prefetch: {
