@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config"
 export default defineConfig({
   site: "https://joska-p.github.io",
   base: "/astroland",
-  trailingSlash: "always",
+  trailingSlash: "never",
   output: "static",
   compressHTML: false,
   prefetch: {
