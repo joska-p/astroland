@@ -3,8 +3,8 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 
 export default defineConfig({
-  site: "https://astroland-livid.vercel.app",
-  base: "/",
+  site: process.env.SITE,
+  base: process.env.BASE,
   trailingSlash: "never",
   output: "static",
   compressHTML: false,
