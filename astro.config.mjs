@@ -1,10 +1,13 @@
 // @ts-check
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
-const BASE_URL = import.meta.env.BASE_URL
+import { loadEnv } from "vite"
+import process from "process"
+
+const { BASE_URL, SITE } = loadEnv(process.env.NODE_ENV || "development", process.cwd(), "")
 
 export default defineConfig({
-  site: "https://joska-p.github.io",
+  site: SITE,
   base: BASE_URL,
   output: "static",
   compressHTML: false,
