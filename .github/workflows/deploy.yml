@@ -17,6 +17,11 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Add environment variables for your site here
+      # See the list of available variables on https://astro.build/config
+      SITE_URL: https://joska-p.github.io
+      BASE_URL: astroland/
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
@@ -33,6 +38,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
