@@ -1,0 +1,3 @@
+{
+  "buildCommand": "SITE=https://astroland-seven.vercel.app BASE_URL=/ astro check && astro build"
+}
