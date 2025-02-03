@@ -34,7 +34,7 @@
   }
 
   body {
-    background: repeating-linear-gradient(
+    background-image: repeating-linear-gradient(
         transparent 0px,
         transparent 5px,
         rgba(229, 231, 235, 0.19) 5px,

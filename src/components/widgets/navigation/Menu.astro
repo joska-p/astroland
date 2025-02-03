@@ -7,7 +7,7 @@ const { pathname } = new URL(Astro.request.url)
 
 <ul
   aria-label="Menu"
-  class="fixed right-0 bottom-0 left-0 z-50 flex w-auto items-center justify-around gap-6 bg-gray-400/50 py-3 md:static md:justify-between md:bg-transparent md:py-0 lg:gap-7 2xl:gap-8"
+  class="fixed right-0 bottom-0 left-0 z-50 flex w-auto items-center justify-around gap-6 bg-gray-200/60 py-3 shadow md:static md:justify-between md:border-none md:bg-transparent md:py-0 md:shadow-none lg:gap-7 2xl:gap-8"
 >
   {
     routes.map(route => {
