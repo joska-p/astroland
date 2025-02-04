@@ -12,15 +12,17 @@ type Props = {
 const { resume } = Astro.props
 ---
 
-<section class="prose mx-auto mt-24 max-w-none space-y-8">
-  <h2 class="text-center text-2xl font-bold lg:text-3xl">Mon parcours</h2>
+<section
+  class="prose prose-h1:text-2xl prose-h1:font-bold lg:prose-h1:text-3xl prose-h2:text-base prose-h2:my-0 mx-auto mt-24 max-w-none space-y-8"
+>
+  <h1 class="text-center">Mon parcours</h1>
   {
     resume.map(({ start, end, Content }) => (
       <article class="flex flex-col md:flex-row">
-        <h6 class="shrink-0 self-start border-t border-solid border-gray-300 px-3 py-1 text-gray-500 md:sticky md:top-0">
+        <h2 class="shrink-0 self-start border-t border-solid border-gray-300 px-3 py-1 text-gray-500 md:sticky md:top-0">
           {end && <span class="block">{end}</span>}
           <span class="block">{start}</span>
-        </h6>
+        </h2>
         <div class="prose-ul:px-[10px] max-w-none grow marker:text-gray-300 md:border-b md:border-l md:border-solid md:border-gray-300">
           <Content />
         </div>
