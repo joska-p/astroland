@@ -6,46 +6,39 @@ const baseUrl = import.meta.env.BASE_URL
 ---
 
 <section
-  class="prose prose-h1:font-bold prose-h2:mt-40 prose-video:my-20 prose-h1:text-2xl lg:prose-h1:text-3xl mx-auto mt-5"
+  class="prose prose-h2:text-center prose-h2:text-xl prose-img:rounded-xl prose-img:object-cover prose-img:object-center prose-img:shadow-xl prose-p:mx-auto prose-p:max-w-[50ch] prose-h1:text-center prose-h1:font-bold prose-h2:mt-40 prose-video:my-20 prose-h1:text-2xl lg:prose-h1:text-3xl mx-auto mt-5"
 >
   <i class="mx-auto my-5 block h-8 w-8 text-gray-300 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
-    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536.715 451.927" aria-hidden="true" fill="currentColor"
-      ><path fill-rule="evenodd" d="M206.125 396.73V0L7.765 198.36v198.36zm330.59 0V0l-198.36 198.36v198.36z"
-      ></path></svg
-    ></i
-  >
-  <h1 class="text-center">Mon histoire</h1>
-  <p class="mx-auto max-w-[50ch]">
+    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536.715 451.927" aria-hidden="true" fill="currentColor">
+      <path fill-rule="evenodd" d="M206.125 396.73V0L7.765 198.36v198.36zm330.59 0V0l-198.36 198.36v198.36z"></path>
+    </svg>
+  </i>
+
+  <h1>Mon histoire</h1>
+  <p>
     Je suis né très petit, recroquevillé sur un monde bizarre. On m’a fait crier tout de suite et le monde fut
     immédiatement trop grand.
   </p>
-  <p class="mx-auto max-w-[50ch]">
+  <p>
     J’ai aimé l’herbe et la lumière passante qui éclaire miraculeusement les petits insectes plein de pattes, d’ailes,
     d’yeux noirs et rouges dans les petits couloirs multiples qui donnaient vers d’autres mondes.
   </p>
-  <p class="mx-auto max-w-[50ch]">
+  <p>
     Bientôt, il a fallu se mettre debout et parler, comme si cela allait de soi. Je retombais sur mon derrière et
     bégayais à l’infini.
   </p>
-  <p class="mx-auto max-w-[50ch]">
+  <p>
     Mes cheveux blanc-blond furent coupés et l’école me mis debout. Il fallait se battre comme un garçon, je le fis avec
     trop de force pour être intelligible, cela me parut encore bizarre. Je fus gentil et muet.
   </p>
-  <p class="mx-auto max-w-[50ch]">
+  <p>
     Un jour, je pénètre dans l’appartement puis le château du collectionneur <b>Henri-Pierre Roché</b>, et là, merveille
     je fais des rencontres extraordinaires: des tableaux, des sculptures, des objets multiples me font face, s’animent
     et me parlent.
   </p>
-  <p class="mx-auto max-w-[50ch]">Ces jours là je parle avec eux, complice et joyeux, je suis dans mon monde...</p>
+  <p>Ces jours là je parle avec eux, complice et joyeux, je suis dans mon monde...</p>
 
-  <Picture
-    src={photoRoland}
-    alt="Roland souriant devant des tableaux"
-    class="rounded-xl object-cover object-center shadow-xl"
-    pictureAttributes={{
-      class: "mx-auto my-20 w-full",
-    }}
-  />
+  <Picture src={photoRoland} alt="Roland de face pointant un élément de sculpture." />
 
   <i class="mx-auto my-5 block h-8 w-8 text-gray-300 md:h-10 md:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
     ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536.715 451.927" aria-hidden="true" fill="currentColor"
@@ -54,8 +47,8 @@ const baseUrl = import.meta.env.BASE_URL
     ></i
   >
 
-  <p class="mx-auto max-w-[50ch]">... Plus tard, j’apprendrais que toutes ces œuvres étaient signées.</p>
-  <p class="mx-auto max-w-[50ch]">
+  <p>... Plus tard, j’apprendrais que toutes ces œuvres étaient signées.</p>
+  <p>
     Les signatures étaient entre autre, celles de <b>Georges Braque</b>, <b>Constantin Brancusi</b>, <b
       >Marcel Duchamp</b
     >, <b>Pablo Picasso</b>,
@@ -63,29 +56,22 @@ const baseUrl = import.meta.env.BASE_URL
       >Sanyu</b
     >, etc.
   </p>
-  <p class="mx-auto max-w-[50ch]">Je compris le sacré et la douleur et ma voie dans l’existence.</p>
-  <p class="mx-auto max-w-[50ch]">
+  <p>Je compris le sacré et la douleur et ma voie dans l’existence.</p>
+  <p>
     Quelques années après, toujours muet et la mémoire pleine, je savais que la communication tant désirée se trouvait
     en moi. Tous ces personnages pouvaient me comprendre, avec eux aussi je pouvais discuter et échanger.
   </p>
-  <p class="mx-auto max-w-[50ch]">
+  <p>
     L’acte de peindre me fut assez vite naturel. Mon destin pris en main fit le reste. La recherche du dialogue au
     travers de tableaux presque autobiographiques, mon Graal quotidien.
   </p>
-  <cite class="mx-auto mt-10 block max-w-[50ch]">
-    <p class="text-end">Roland Potin-Eizner</p>
-  </cite>
+  <p class="text-end">—Roland Potin-Eizner</p>
 
-  <h2 class="text-center">
-    “Les gens d’ici”, réalisé par Sylvie Bosquéro.<small class="block font-normal">Reportage FR3 Lyon Rhône-Alpes</small
-    >
-  </h2>
+  <h2>“Les gens d’ici”, réalisé par Sylvie Bosquéro.</h2>
+  <p class="text-center">Reportage FR3 Lyon Rhône-Alpes</p>
   <video src={`${baseUrl}videos/reportage-fr3.mp4`} controls class="w-full"></video>
 
-  <h2 class="text-center">
-    “Portes ouvertes d'artiste”, réalisé par Julien Prud'homme.<small class="block font-normal"
-      >Pour la ville de Gennevilliers</small
-    >
-  </h2>
+  <h2>“Portes ouvertes d'artiste”, réalisé par Julien Prud'homme.</h2>
+  <p class="text-center">Pour la ville de Gennevilliers</p>
   <video src={`${baseUrl}videos/gennevilliers.mp4`} controls class="w-full"></video>
 </section>
