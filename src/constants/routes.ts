@@ -7,10 +7,10 @@ export const routes = [
   },
   {
     text: "Peinture",
-    href: baseUrl + "painting/1/",
+    href: baseUrl + "/painting/1",
   },
   {
     text: "À propos",
-    href: baseUrl + "about/",
+    href: baseUrl + "/about",
   },
 ]
