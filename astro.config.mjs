@@ -24,6 +24,9 @@ export default defineConfig({
 
   integrations: [
     sitemap({
+      changefreq: "monthly",
+      priority: 0.7,
+      lastmod: new Date(),
       xslURL: "/sitemap.xsl",
     }),
   ],
