@@ -60,7 +60,7 @@ const { page } = Astro.props
       if (entry.isIntersecting) {
         const { pathname } = new URL(location.href)
         const id = entry.target.id
-        history.replaceState(null, "", `${pathname.replace(/\/$/, "")}#${id}`)
+        history.replaceState(null, "", `${pathname.replace(/\/$/, "")}/#${id}`)
       }
     })
   }

@@ -7,8 +7,8 @@ const { SITE_URL, BASE_URL } = loadEnv(process.env.NODE_ENV || "development", pr
 
 export default defineConfig({
   site: SITE_URL || "https://joska-p.github.io",
-  base: BASE_URL || "/astroland",
-  trailingSlash: "never",
+  base: BASE_URL || "astroland/",
+  trailingSlash: "always",
   output: "static",
   compressHTML: false,
   prefetch: {
