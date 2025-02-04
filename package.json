@@ -23,6 +23,7 @@
     "#layouts/*": "./src/layouts/*",
     "#lib/*": "./src/lib/*",
     "#styles/*": "./src/styles/*",
+    "#partials/*": "./src/partials/*",
     "#*": "./src/*"
   },
   "devDependencies": {
