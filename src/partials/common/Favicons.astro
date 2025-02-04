@@ -6,6 +6,7 @@ import favicon48 from "#assets/favicons/favicon-48x48.png"
 import favicon64 from "#assets/favicons/favicon-64x64.png"
 import favicon152 from "#assets/favicons/favicon-152x152.png"
 import favicon192 from "#assets/favicons/favicon-192x192.png"
+import favicon from "#assets/favicons/favicon.svg"
 
 const baseUrl = import.meta.env.BASE_URL
 ---
@@ -25,3 +26,5 @@ const baseUrl = import.meta.env.BASE_URL
 <link rel="icon" type="image/x-icon" href={baseUrl + "favicon-64x64.ico"} sizes="64x64" />
 <link rel="icon" type="image/x-icon" href={baseUrl + "favicon-152x152.ico"} sizes="152x152" />
 <link rel="icon" type="image/x-icon" href={baseUrl + "favicon-192x192.ico"} sizes="192x192" />
+
+<link rel="icon" type="image/svg" href={favicon.src} />
