@@ -13,9 +13,7 @@
     "lint": "eslint . --report-unused-disable-directives",
     "lint:fix": "eslint . --fix --report-unused-disable-directives",
     "format": "prettier --write . ",
-    "fix": "prettier --write .  && eslint . --report-unused-disable-directives --fix",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "fix": "prettier --write .  && eslint . --report-unused-disable-directives --fix"
   },
   "imports": {
     "#assets/*": "./src/assets/*",
@@ -36,7 +34,6 @@
     "clsx": "^2.1.1",
     "eslint": "^9.19.0",
     "eslint-plugin-astro": "^1.3.1",
-    "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
