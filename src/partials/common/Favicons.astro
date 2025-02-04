@@ -2,8 +2,11 @@
 import appleTouchIcon from "#assets/favicons/apple-touch-icon.png"
 import favIcon16 from "#assets/favicons/favicon-16x16.png"
 import favIcon32 from "#assets/favicons/favicon-32x32.png"
+
+const baseUrl = import.meta.env.BASE_URL
 ---
 
 <link rel="shortcut icon" type="image/png" href={favIcon16.src} sizes="16x16" />
 <link rel="shortcut icon" type="image/png" href={favIcon32.src} sizes="32x32" />
 <link rel="apple-touch-icon" type="image/png" href={appleTouchIcon.src} />
+<link rel="icon" href={baseUrl + "favicon.ico"} />
