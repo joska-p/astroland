@@ -5,7 +5,7 @@ import { cn } from "#lib/utils.ts"
 const { pathname } = new URL(Astro.request.url)
 ---
 
-<header role="banner" class="bg-gray-200/60 px-2 py-3 md:px-8 md:py-4 xl:py-5">
+<header role="banner" class="bg-gray-200 px-2 py-3 md:px-8 md:py-4 xl:py-5">
   <nav
     role="navigation"
     class="container mx-auto flex items-center justify-center gap-4 md:justify-between md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8"
@@ -20,7 +20,7 @@ const { pathname } = new URL(Astro.request.url)
     </a>
     <ul
       aria-label="Menu"
-      class="fixed right-0 bottom-0 left-0 z-50 flex w-auto items-center justify-around gap-6 bg-gray-200/60 py-3 shadow md:static md:justify-between md:border-none md:bg-transparent md:py-0 md:shadow-none lg:gap-7 2xl:gap-8"
+      class="fixed right-0 bottom-0 left-0 z-50 flex w-auto items-center justify-around gap-6 bg-gray-200 py-3 shadow md:static md:justify-between md:border-none md:bg-transparent md:py-0 md:shadow-none lg:gap-7 2xl:gap-8"
     >
       {
         routes.map(route => {

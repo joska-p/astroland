@@ -13,17 +13,17 @@ const { resume } = Astro.props
 ---
 
 <section
-  class="prose prose-h1:text-2xl prose-h1:font-bold lg:prose-h1:text-3xl prose-h2:text-base prose-h2:my-0 mx-auto mt-24 max-w-none space-y-8"
+  class="prose prose-ul:px-[10px] prose-h2:shrink-0 prose-h2:self-start prose-h2:border-t prose-h2:border-solid prose-h2:border-gray-300 prose-h2:px-3 prose-h2:py-1 prose-h2:text-gray-500 md:prose-h2:sticky md:prose-h2:top-0 prose-h1:text-center prose-h1:text-2xl prose-h1:font-bold lg:prose-h1:text-3xl prose-h2:text-base prose-h2:my-0 mx-auto mt-20 max-w-none space-y-8"
 >
-  <h1 class="text-center">Mon parcours</h1>
+  <h1>Mon parcours</h1>
   {
     resume.map(({ start, end, Content }) => (
       <article class="flex flex-col md:flex-row">
-        <h2 class="shrink-0 self-start border-t border-solid border-gray-300 px-3 py-1 text-gray-500 md:sticky md:top-0">
+        <h2>
           {end && <span class="block">{end}</span>}
           <span class="block">{start}</span>
         </h2>
-        <div class="prose-ul:px-[10px] max-w-none grow marker:text-gray-300 md:border-b md:border-l md:border-solid md:border-gray-300">
+        <div class="marker:text-gray-300 md:border-b md:border-l md:border-solid md:border-gray-300">
           <Content />
         </div>
       </article>
