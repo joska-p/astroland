@@ -1,10 +1,10 @@
 ---
-id: la_quète_d_amour-2022-92X73
+id: la_quete_d_amour-2022-92X73
 filename: ./la_quete_d_amour-2022-92X73.jpg
-title: la quète d amour
+title: la quête d'amour
 year: 2022
 height: 0
 width: 0
 ---
 
-la quète d amour
+la quête d'amour
