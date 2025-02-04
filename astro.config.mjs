@@ -6,8 +6,8 @@ import process from "process"
 const { SITE_URL, BASE_URL } = loadEnv(process.env.NODE_ENV || "development", process.cwd(), "")
 
 export default defineConfig({
-  site: SITE_URL,
-  base: BASE_URL,
+  site: SITE_URL || "https://joska-p.github.io",
+  base: BASE_URL || "astroland/",
   trailingSlash: "always",
   output: "static",
   compressHTML: false,
