@@ -16,7 +16,10 @@ const { page } = Astro.props
 
 <Layout title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
   <section class="container mx-auto h-full space-y-20">
-    <h1 id="debut-de-la-visite" class="anchor mb-10 snap-start pt-10 text-center text-2xl font-bold lg:text-3xl">
+    <h1
+      id="debut-de-la-visite"
+      class="anchor mb-5 snap-start pt-5 text-center text-2xl font-bold md:mb-10 md:pt-10 lg:text-3xl"
+    >
       Bienvenue dans ma gallerie <small class="text-md block font-normal"
         >page {page.currentPage} sur {page.lastPage}</small
       >
