@@ -16,21 +16,25 @@ const { page } = Astro.props
 
 <Layout title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner.`}>
   <section class="container mx-auto h-full space-y-20">
-    <h1
-      id="debut-de-la-visite"
-      class="anchor mb-5 snap-start pt-5 text-center text-2xl font-bold md:mb-10 md:pt-10 lg:text-3xl"
-    >
-      Bienvenue dans ma gallerie <small class="text-md block font-normal"
-        >page {page.currentPage} sur {page.lastPage}</small
-      >
-    </h1>
     {
       page.data.map(painting => {
+        const isFirstItem = page.data.indexOf(painting) === 0
         const isLastItem = page.data.indexOf(painting) === page.data.length - 1
         return (
           <Single painting={painting.data}>
+            {isFirstItem && (
+              <h1
+                class="col-span-full mb-5 snap-start self-start pt-5 text-center text-2xl font-bold md:mb-10 md:pt-10 lg:text-3xl"
+                slot="before-content"
+              >
+                Bienvenue dans ma gallerie{" "}
+                <small class="text-md block font-normal">
+                  page {page.currentPage} sur {page.lastPage}
+                </small>
+              </h1>
+            )}
             {isLastItem && (
-              <footer class="col-span-full mt-8">
+              <footer class="col-span-full my-5 self-start" slot="after-content">
                 <Pagination page={page} />
               </footer>
             )}

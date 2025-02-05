@@ -20,8 +20,9 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
 
 <article
   id={id}
-  class="anchor grid h-full snap-start overflow-hidden landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
+  class="anchor grid h-full snap-start overflow-hidden has-[footer]:grid-rows-[1fr_auto] has-[h1]:grid-rows-[auto_1fr] landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
 >
+  <slot name="before-content" />
   <Picture
     src={filename}
     formats={["avif", "webp"]}
@@ -48,5 +49,5 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
       <span class="basis-full text-left">{width === 0 ? "NC" : width + " cm"}</span>
     </p>
   </header>
-  <slot />
+  <slot name="after-content" />
 </article>
