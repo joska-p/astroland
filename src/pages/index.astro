@@ -8,30 +8,32 @@ import atelier from "#assets/images/atelier-2000.jpg"
 
 <Layout title="Roland Potin Eizner.">
   <section
-    class="prose prose-img:rounded-xl prose-figcaption:mt-4 prose-figcaption:text-center prose-figure:my-0 prose-img:shadow-xl prose-img:object-cover prose-img:object-center prose-h1:text-center prose-h1:text-2xl lg:prose-h1:text-3xl prose-h1:font-bold container mx-auto mt-5 md:mt-10 xl:max-w-[150ch]"
+    class="prose prose-img:rounded-xl prose-img:shadow-xl prose-img:object-cover prose-img:object-center prose-h1:text-center prose-h1:text-2xl lg:prose-h1:text-3xl prose-h1:font-bold container mx-auto mt-5 md:mt-10 xl:max-w-[150ch]"
   >
     <h1>Bienvenue dans mon atelier</h1>
-    <div class="mt-5 md:mt-20 xl:columns-2 xl:gap-x-4">
-      <figure>
-        <Picture src={atelier} alt="Mon atelier à Lyon en 2000" />
-        <figcaption>rolandpotin@gmail.com</figcaption>
-      </figure>
-      <p>
-        Après un apprentissage dans la veine de l'art de la Renaissance puis de l'art fantastique, j'opère une rupture
-        radicale. Je me dirige vers une peinture plus libre sous la forme de tableaux cosmiques, de nébuleuses, d'autres
-        sujets issus de mon imagination et de l'inventivité de ma main sur la toile.
-      </p>
-      <p>
-        De là, se construit petit à petit une écriture qui me rapproche du mouvement psychédélique avec lequel je
-        collabore, puis du milieu des peintres surréalistes avec lesquels je me lie d'amitiés. Mon chemin se précise
-        alors, pendant une quarantaine d'années. Maintenant, je suis dans mon monde. Mon expression coule limpide.
-      </p>
-      <p>
-        L'ensemble de mes tableaux constituent un opéra ininterrompu, écrit pour produire ce que j'appelle mon Graal
-        quotidien. Rien n'est définitif et mon expression évolue vers une destinée qui me surprend encore chaque jour.
-      </p>
-      <p>L'horizon est ouvert.</p>
-      <p class="text-end">—Roland Potin Eizner</p>
+    <div class="mt-5 md:mt-20 xl:grid xl:grid-cols-2 xl:gap-5">
+      <div>
+        <Picture src={atelier} alt="Mon atelier à Lyon en 2000" pictureAttributes={{ class: "mt-0" }} />
+        <p class="text-center">rolandpotin@gmail.com</p>
+      </div>
+      <div>
+        <p class="mt-0">
+          Après un apprentissage dans la veine de l'art de la Renaissance puis de l'art fantastique, j'opère une rupture
+          radicale. Je me dirige vers une peinture plus libre sous la forme de tableaux cosmiques, de nébuleuses,
+          d'autres sujets issus de mon imagination et de l'inventivité de ma main sur la toile.
+        </p>
+        <p>
+          De là, se construit petit à petit une écriture qui me rapproche du mouvement psychédélique avec lequel je
+          collabore, puis du milieu des peintres surréalistes avec lesquels je me lie d'amitiés. Mon chemin se précise
+          alors, pendant une quarantaine d'années. Maintenant, je suis dans mon monde. Mon expression coule limpide.
+        </p>
+        <p>
+          L'ensemble de mes tableaux constituent un opéra ininterrompu, écrit pour produire ce que j'appelle mon Graal
+          quotidien. Rien n'est définitif et mon expression évolue vers une destinée qui me surprend encore chaque jour.
+        </p>
+        <p>L'horizon est ouvert.</p>
+        <p class="text-end">—Roland Potin Eizner</p>
+      </div>
     </div>
   </section>
   <Reference />
