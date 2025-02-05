@@ -11,7 +11,7 @@ export default defineConfig({
   base: BASE_URL || "astroland/",
   trailingSlash: "always",
   output: "static",
-  compressHTML: false,
+  compressHTML: true,
 
   prefetch: {
     defaultStrategy: "load",
