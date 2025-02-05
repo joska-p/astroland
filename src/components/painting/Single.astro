@@ -20,7 +20,7 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
 
 <article
   id={id}
-  class="anchor grid h-full snap-start overflow-hidden has-[footer]:grid-rows-[1fr_auto] landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
+  class="anchor grid h-full snap-start overflow-hidden pb-12 has-[footer]:grid-rows-[1fr_auto] md:pb-0 landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
 >
   <slot name="before-content" />
   <Picture
@@ -29,7 +29,7 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
     alt={title}
     class="mx-auto object-contain shadow-xl"
     pictureAttributes={{
-      class: "flex max-h-full max-w-full min-h-52 min-w-52",
+      class: "self-center",
     }}
   />
   <header class="mt-3 w-full lg:mt-6 2xl:mt-8">
