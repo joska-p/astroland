@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        with:
+        env:
           SITE_URL: ${{ SITE_URL }}
           BASE_URL: ${{ BASE_URL }}
         # path: . # The root location of your Astro project inside the repository. (optional)
