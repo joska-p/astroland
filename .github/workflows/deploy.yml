@@ -14,9 +14,10 @@ permissions:
   pages: write
   id-token: write
 
+# Setting an environment variable with the value of a configuration variable
 env:
-  SITE_URL: ${{ SITE_URL}}
-  BASE_URL: ${{ BASE_URL}}
+  SITE_URL: ${{ vars.SITE_URL}}
+  BASE_URL: ${{ vars.BASE_URL}}
 
 jobs:
   build:
