@@ -12,7 +12,7 @@ const { pathname } = new URL(Astro.request.url)
   >
     <a
       title="Aller à la page d'accueil"
-      href={routes[0].href}
+      href={routes.home.href}
       class="font-daniel text-3xl font-bold hover:text-gray-900 xl:text-4xl"
       aria-label="Aller à la page d'accueil"
     >
@@ -23,7 +23,7 @@ const { pathname } = new URL(Astro.request.url)
       class="fixed right-0 bottom-0 left-0 z-50 flex w-auto items-center justify-around gap-6 bg-gray-200 py-3 shadow md:static md:justify-between md:border-none md:bg-transparent md:py-0 md:shadow-none lg:gap-7 2xl:gap-8"
     >
       {
-        routes.map(route => {
+        Object.values(routes).map(route => {
           const isCurrent = pathname.split("/")[1] === route.href.split("/")[1]
           return (
             <li>
