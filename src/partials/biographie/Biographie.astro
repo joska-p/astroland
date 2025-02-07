@@ -1,5 +1,7 @@
 ---
 import photoRoland from "#assets/images/roland01.jpg"
+import fr3Thumbnail from "#assets/images/video-thumbnail-reportage_fr3.png"
+import porteOuvertesThumbnail from "#assets/images/video-thumbnail-porte_ouvert.png"
 import { Picture } from "astro:assets"
 
 const baseUrl = import.meta.env.BASE_URL
@@ -72,11 +74,11 @@ const baseUrl = import.meta.env.BASE_URL
 
   <h2>“Les gens d’ici”, réalisé par Sylvie Bosquéro.</h2>
   <p class="text-center">Reportage FR3 Lyon Rhône-Alpes</p>
-  <video src={`${baseUrl}videos/reportage-fr3.mp4`} controls class="w-full"></video>
+  <video src={`${baseUrl}videos/reportage-fr3.mp4`} controls class="w-full" poster={fr3Thumbnail.src}></video>
 
   <hr class="separator opacity-10" />
 
   <h2>“Portes ouvertes d'artiste”, réalisé par Julien Prud'homme.</h2>
   <p class="text-center">Pour la ville de Gennevilliers</p>
-  <video src={`${baseUrl}videos/gennevilliers.mp4`} controls class="w-full"></video>
+  <video src={`${baseUrl}videos/gennevilliers.mp4`} controls class="w-full" poster={porteOuvertesThumbnail.src}></video>
 </section>
