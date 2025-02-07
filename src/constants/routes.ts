@@ -15,11 +15,11 @@ export const routes: Routes = {
 
   painting: {
     text: "Peinture",
-    href: baseUrl + "painting/1/",
+    href: baseUrl + "painting/1",
   },
 
   about: {
     text: "À propos",
-    href: baseUrl + "about/",
+    href: baseUrl + "about",
   },
 } as const

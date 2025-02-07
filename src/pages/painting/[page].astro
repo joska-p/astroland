@@ -56,12 +56,15 @@ const { page } = Astro.props
     anchors.forEach(anchor => observer.observe(anchor))
   })
 
+  /**
+   * Updates the URL when an anchor is visible in the viewport.
+   */
   function handleIntersection(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const { pathname } = new URL(location.href)
         const id = entry.target.id
-        history.replaceState(null, "", `${pathname.replace(/\/$/, "")}/#${id}`)
+        history.replaceState(null, "", `${pathname.replace(/\/$/, "")}#${id}`)
       }
     })
   }

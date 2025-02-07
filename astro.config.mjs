@@ -9,7 +9,7 @@ const { SITE_URL, BASE_URL } = loadEnv(process.env.NODE_ENV || "development", pr
 export default defineConfig({
   site: SITE_URL,
   base: BASE_URL,
-  trailingSlash: "always",
+  trailingSlash: "never",
   output: "static",
   compressHTML: true,
 

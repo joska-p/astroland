@@ -44,12 +44,12 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
       {pageNums.map(pageNum => {
         const isCurrent = pageNum === page.currentPage
         const label = isCurrent ? `Page courante, page ${pageNum} sur ${page.lastPage}` : `Aller à la page: ${pageNum}`
-        const currentUrl = page.url.current
-        const url = currentUrl.split("/").slice(0, -2).join("/") + "/" + pageNum + "/"
+        // const currentUrl = page.url.current
+        // const url = currentUrl.split("/").slice(0, -2).join("/") + "/" + pageNum + "/"
 
         return (
           <a
-            href={url}
+            href={pageNum.toString()}
             aria-label={label}
             aria-current={isCurrent ? "page" : "false"}
             title={label}
