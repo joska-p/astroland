@@ -11,9 +11,10 @@ interface Props {
     width: number
     height: number
   }
+  lazy?: boolean
 }
 
-const { painting } = Astro.props
+const { painting, lazy } = Astro.props
 const { id, title, year, width, height, filename } = painting
 const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
 ---
@@ -24,6 +25,7 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
 >
   <slot name="before-content" />
   <Picture
+    loading={lazy ? "lazy" : "eager"}
     src={filename}
     formats={["avif", "webp"]}
     alt={title}
