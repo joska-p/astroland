@@ -38,34 +38,3 @@ const { page } = Astro.props
     }
   </section>
 </Layout>
-
-<script>
-  /**
-   * When a anchor is visible in the viewport, the URL is updated with the anchor's id.
-   */
-  document.addEventListener("astro:page-load", () => {
-    const scrollArea = document.querySelector<HTMLDivElement>("#scroll-area")
-    const observerOptions: IntersectionObserverInit = {
-      threshold: 0.5,
-      rootMargin: "0px",
-      root: scrollArea,
-    }
-    const observer = new IntersectionObserver(handleIntersection, observerOptions)
-
-    const anchors = document.querySelectorAll(".anchor")
-    anchors.forEach(anchor => observer.observe(anchor))
-  })
-
-  /**
-   * Updates the URL when an anchor is visible in the viewport.
-   */
-  function handleIntersection(entries: IntersectionObserverEntry[]) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const { pathname } = new URL(location.href)
-        const id = entry.target.id
-        history.replaceState(null, "", `${pathname.replace(/\/$/, "")}#${id}`)
-      }
-    })
-  }
-</script>
