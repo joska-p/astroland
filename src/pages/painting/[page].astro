@@ -26,10 +26,11 @@ const { page } = Astro.props
       </small>
     </h1>
     {
-      page.data.map(painting => {
-        const isLastItem = page.data.indexOf(painting) === page.data.length - 1
+      page.data.map((painting, index) => {
+        const loading = index < 2 ? "eager" : "lazy"
+        const isLastItem = index === page.data.length - 1
         return (
-          <Single painting={painting.data}>
+          <Single painting={painting.data} loading={loading}>
             {isLastItem && (
               <footer class="col-span-full my-5 self-start" slot="after-content">
                 <Pagination page={page} />
