@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config"
 import { loadEnv } from "vite"
 import process from "process"
 import sitemap from "@astrojs/sitemap"
+import partytown from "@astrojs/partytown"
 const { SITE_URL, BASE_URL } = loadEnv(process.env.NODE_ENV || "development", process.cwd(), "")
 
 export default defineConfig({
@@ -23,6 +24,11 @@ export default defineConfig({
   },
 
   integrations: [
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
     sitemap({
       changefreq: "monthly",
       priority: 0.7,
