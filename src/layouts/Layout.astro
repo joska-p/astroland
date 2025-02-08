@@ -1,6 +1,7 @@
 ---
 import Favicons from "#partials/common/Favicons.astro"
 import Metadata from "#partials/common/Metadata.astro"
+import Posthog from "#partials/common/Posthog.astro"
 import Header from "./Header.astro"
 import { cn } from "#lib/utils.ts"
 import "#styles/global.css"
@@ -18,6 +19,8 @@ const { title, className } = Astro.props
     <Metadata />
     <Favicons />
     <title>{title}</title>
+
+    <Posthog />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <div class="grid h-dvh grid-rows-[auto_1fr]">
@@ -33,14 +36,3 @@ const { title, className } = Astro.props
     </div>
   </body>
 </html>
-
-<script is:inline type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-6S9SG6EJ93"></script>
-<script is:inline type="text/partytown">
-  window.dataLayer = window.dataLayer || []
-  function gtag(...args) {
-    dataLayer.push(args)
-  }
-  gtag("js", new Date())
-
-  gtag("config", "G-6S9SG6EJ93")
-</script>
