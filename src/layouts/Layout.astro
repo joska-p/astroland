@@ -1,8 +1,8 @@
 ---
 import Favicons from "#partials/common/Favicons.astro"
 import Metadata from "#partials/common/Metadata.astro"
-import Posthog from "#partials/common/Posthog.astro"
 import Header from "./Header.astro"
+import Analytic from "#partials/common/Analytic.astro"
 import { cn } from "#lib/utils.ts"
 import "#styles/global.css"
 
@@ -19,8 +19,6 @@ const { title, className } = Astro.props
     <Metadata />
     <Favicons />
     <title>{title}</title>
-
-    <Posthog />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <div class="grid h-dvh grid-rows-[auto_1fr]">
@@ -34,5 +32,6 @@ const { title, className } = Astro.props
         <slot />
       </main>
     </div>
+    <Analytic />
   </body>
 </html>
