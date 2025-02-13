@@ -50,13 +50,7 @@
   }
 
   .separator {
-    display: block;
-    height: 48px;
-    margin: 0 auto;
-    border: none;
-    background-image: url("/src/assets/images/hr.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    @apply mx-auto block h-12 border-none bg-[url('/src/assets/images/hr.png')] bg-center bg-no-repeat;
   }
 }
 
