@@ -32,7 +32,7 @@ const { page } = Astro.props
         return (
           <Single painting={painting.data} loading={loading}>
             {isLastItem && (
-              <footer class="col-span-full my-5 self-start" slot="after-content">
+              <footer class="my-5 self-start landscape:col-span-full" slot="after-content">
                 <Pagination page={page} />
               </footer>
             )}
