@@ -7,8 +7,6 @@ import favicon64 from "#assets/favicons/favicon-64x64.png"
 import favicon152 from "#assets/favicons/favicon-152x152.png"
 import favicon192 from "#assets/favicons/favicon-192x192.png"
 import favicon from "#assets/favicons/favicon.svg"
-
-const baseUrl = import.meta.env.BASE_URL
 ---
 
 <link rel="shortcut icon" type="image/png" href={favicon16.src} sizes="16x16" />
@@ -19,12 +17,4 @@ const baseUrl = import.meta.env.BASE_URL
 <link rel="shortcut icon" type="image/png" href={favicon192.src} sizes="192x192" />
 
 <link rel="apple-touch-icon" type="image/png" href={appleTouchIcon.src} />
-
-<link rel="icon" type="image/x-icon" href={baseUrl + "favicon-16x16.ico"} sizes="16x16" />
-<link rel="icon" type="image/x-icon" href={baseUrl + "favicon-32x32.ico"} sizes="32x32" />
-<link rel="icon" type="image/x-icon" href={baseUrl + "favicon-48x48.ico"} sizes="48x48" />
-<link rel="icon" type="image/x-icon" href={baseUrl + "favicon-64x64.ico"} sizes="64x64" />
-<link rel="icon" type="image/x-icon" href={baseUrl + "favicon-152x152.ico"} sizes="152x152" />
-<link rel="icon" type="image/x-icon" href={baseUrl + "favicon-192x192.ico"} sizes="192x192" />
-
 <link rel="icon" type="image/svg" href={favicon.src} />
