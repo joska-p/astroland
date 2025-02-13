@@ -15,14 +15,10 @@ export default defineConfig({
   compressHTML: true,
 
   prefetch: {
-    defaultStrategy: "load",
     prefetchAll: true,
   },
 
   vite: {
-    build: {
-      sourcemap: "inline",
-    },
     plugins: [tailwindcss()],
   },
 
