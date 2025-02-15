@@ -13,7 +13,16 @@ export default defineConfig({
   trailingSlash: "never",
   output: "static",
   compressHTML: true,
-
+  redirects: {
+    "/galerie": {
+      status: 308,
+      destination: "/painting/1",
+    },
+    "/biographie": {
+      status: 308,
+      destination: "/about",
+    },
+  },
   prefetch: {
     prefetchAll: true,
   },
