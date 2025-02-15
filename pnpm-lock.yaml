@@ -14,8 +14,8 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1
       astro:
-        specifier: ^5.2.5
-        version: 5.2.5(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.0)(typescript@5.7.3)(yaml@2.7.0)
+        specifier: ^5.3.0
+        version: 5.3.0(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.0)(typescript@5.7.3)(yaml@2.7.0)
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -1063,9 +1063,9 @@ packages:
       { integrity: sha512-3oqANMjrvJ+IE5pwlUWsH/4UztmYf/GTL0HPUkWnYBNAHiGVGrOh2EbegxS5niAwlO0w9dRYk0CkCPlJcu8c3Q== }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
 
-  astro@5.2.5:
+  astro@5.3.0:
     resolution:
-      { integrity: sha512-AYXyYkc+c5xbKTm48FyQA91y81nXyNPAaoyafR0LUugE4lAwuvIUcXDBfMzmbuP1lGRvsE33G2oypv6gbGaPFg== }
+      { integrity: sha512-e88l/Yk/6enR/ZDddLbqtM+oblBFk5mneNSmNesyVYGL/6Dj4UA67GPAZOk79VxT5dbLlclZSyyw/wlxN1aj3A== }
     engines: { node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: ">=9.6.5", pnpm: ">=7.1.0" }
     hasBin: true
 
@@ -3877,7 +3877,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.2.5(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.0)(typescript@5.7.3)(yaml@2.7.0):
+  astro@5.3.0(@types/node@22.13.0)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.0)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       "@astrojs/compiler": 2.10.3
       "@astrojs/internal-helpers": 0.5.1
