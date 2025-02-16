@@ -5,7 +5,11 @@ import { loadEnv } from "vite";
 import process from "process";
 import sitemap from "@astrojs/sitemap";
 
-const { SITE_URL, BASE_URL } = loadEnv(process.env.NODE_ENV || "development", process.cwd(), "");
+const { SITE_URL, BASE_URL } = loadEnv(
+  process.env.NODE_ENV || "development",
+  process.cwd(),
+  "",
+);
 
 export default defineConfig({
   site: SITE_URL,

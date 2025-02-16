@@ -27,7 +27,10 @@ const { title, className } = Astro.props;
       <main
         id="scrollArea"
         role="main"
-        class={cn("snap-y snap-mandatory motion-reduce:scroll-smooth overflow-y-scroll px-2", className)}
+        class={cn(
+          "snap-y snap-mandatory motion-reduce:scroll-smooth overflow-y-scroll px-2",
+          className,
+        )}
         tabindex="0"
       >
         <slot />

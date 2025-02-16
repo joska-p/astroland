@@ -8,18 +8,25 @@ import { routes } from "#constants/routes.ts";
     class="prose prose-a:no-underline container mx-auto flex h-full flex-col content-center justify-center px-2 text-center"
   >
     <h1 class="text-6xl font-bold">404</h1>
-    <h2><span class="block">Oups !</span> On dirait que vous vous êtes égaré(e) sur la toile.</h2>
+    <h2>
+      <span class="block">Oups !</span> On dirait que vous vous êtes égaré(e) sur
+      la toile.
+    </h2>
     <p>La page que vous cherchez n'existe pas.</p>
     <p>
       <b>Peut-être que l'artiste est encore en train de la peindre ?</b>
     </p>
 
     <p>
-      <a href={routes.home.href} class="mr-5 rounded bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700">
+      <a
+        href={routes.home.href}
+        class="mr-5 rounded bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
+      >
         Retourez à l'accueil
       </a> ou <a
         href={routes.painting.href}
-        class="ml-3 rounded bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700">commencez la viste</a
+        class="ml-3 rounded bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-700"
+        >commencez la viste</a
       >
     </p>
 

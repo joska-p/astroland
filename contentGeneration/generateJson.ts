@@ -12,4 +12,6 @@ for (const painting of paintings) {
   console.log(`Successfully wrote ${painting.id}.json`);
 }
 
-console.log(`Successfully wrote ${paintings.length} json files in ${OUTPUT_PATH}`);
+console.log(
+  `Successfully wrote ${paintings.length} json files in ${OUTPUT_PATH}`,
+);

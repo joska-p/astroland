@@ -1,6 +1,9 @@
 import type { APIRoute } from "astro";
 
-const environment = import.meta.env.SITE === "https://www.potineizner.com" ? "production" : "development";
+const environment =
+  import.meta.env.SITE === "https://www.potineizner.com"
+    ? "production"
+    : "development";
 
 let getRobotsTxt;
 

@@ -6,7 +6,9 @@ import Pagination from "#widgets/Pagination.astro";
 import Single from "#components/painting/Single.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const paintings = (await getCollection("painting")).sort((a, b) => b.data.year.valueOf() - a.data.year.valueOf());
+  const paintings = (await getCollection("painting")).sort(
+    (a, b) => b.data.year.valueOf() - a.data.year.valueOf(),
+  );
 
   return paginate(paintings, { pageSize: 25 });
 }) satisfies GetStaticPaths;
@@ -14,7 +16,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<Layout title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner`}>
+<Layout
+  title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner`}
+>
   <section class="container mx-auto h-full space-y-20">
     <h1
       id="top-of-the-page"
@@ -32,7 +36,10 @@ const { page } = Astro.props;
         return (
           <Single painting={painting.data} loading={loading}>
             {isLastItem && (
-              <footer class="my-5 self-start landscape:col-span-full" slot="after-content">
+              <footer
+                class="my-5 self-start landscape:col-span-full"
+                slot="after-content"
+              >
                 <Pagination page={page} />
               </footer>
             )}

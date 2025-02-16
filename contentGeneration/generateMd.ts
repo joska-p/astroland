@@ -12,8 +12,13 @@ for (const painting of paintings) {
   const frontMatter = Object.entries(painting)
     .map(([key, value]) => `${key}: ${value}`)
     .join("\n");
-  await writeFile(outputFilePath, `---\n${frontMatter}\n---\n\n${markdownContent}`);
+  await writeFile(
+    outputFilePath,
+    `---\n${frontMatter}\n---\n\n${markdownContent}`,
+  );
   console.log(`Successfully wrote ${painting.id}.md`);
 }
 
-console.log(`Successfully wrote ${paintings.length} md files in ${OUTPUT_PATH}`);
+console.log(
+  `Successfully wrote ${paintings.length} md files in ${OUTPUT_PATH}`,
+);

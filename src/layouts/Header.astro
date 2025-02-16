@@ -32,10 +32,13 @@ const { pathname } = new URL(Astro.request.url);
                 aria-label={`Aller à la page: ${route.text}`}
                 title={`Aller à la page: ${route.text}`}
                 aria-current={isCurrent ? "page" : "false"}
-                class={cn("text-sm hover:text-gray-900 md:text-base lg:text-lg xl:text-xl 2xl:text-2xl", {
-                  "text-gray-950": isCurrent,
-                  "text-gray-600": !isCurrent,
-                })}
+                class={cn(
+                  "text-sm hover:text-gray-900 md:text-base lg:text-lg xl:text-xl 2xl:text-2xl",
+                  {
+                    "text-gray-950": isCurrent,
+                    "text-gray-600": !isCurrent,
+                  },
+                )}
               >
                 {route.text}
               </a>
