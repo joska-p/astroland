@@ -1,17 +1,17 @@
 ---
-import Favicons from "#partials/common/Favicons.astro"
-import Metadata from "#partials/common/Metadata.astro"
-import Header from "./Header.astro"
-import Analytics from "@vercel/analytics/astro"
-import { cn } from "#lib/utils.ts"
-import "#styles/global.css"
+import Favicons from "#partials/common/Favicons.astro";
+import Metadata from "#partials/common/Metadata.astro";
+import Header from "./Header.astro";
+import Analytics from "@vercel/analytics/astro";
+import { cn } from "#lib/utils.ts";
+import "#styles/global.css";
 
 interface Props {
-  title: string
-  className?: string
+  title: string;
+  className?: string;
 }
 
-const { title, className } = Astro.props
+const { title, className } = Astro.props;
 ---
 
 <html lang="fr">

@@ -1,17 +1,17 @@
 ---
-import type { GetStaticPaths } from "astro"
-import { getCollection } from "astro:content"
-import Layout from "#layouts/Layout.astro"
-import Pagination from "#widgets/Pagination.astro"
-import Single from "#components/painting/Single.astro"
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "#layouts/Layout.astro";
+import Pagination from "#widgets/Pagination.astro";
+import Single from "#components/painting/Single.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const paintings = (await getCollection("painting")).sort((a, b) => b.data.year.valueOf() - a.data.year.valueOf())
+  const paintings = (await getCollection("painting")).sort((a, b) => b.data.year.valueOf() - a.data.year.valueOf());
 
-  return paginate(paintings, { pageSize: 25 })
-}) satisfies GetStaticPaths
+  return paginate(paintings, { pageSize: 25 });
+}) satisfies GetStaticPaths;
 
-const { page } = Astro.props
+const { page } = Astro.props;
 ---
 
 <Layout title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner`}>
@@ -27,8 +27,8 @@ const { page } = Astro.props
     </h1>
     {
       page.data.map((painting, index) => {
-        const loading = index < 2 ? "eager" : "lazy"
-        const isLastItem = index === page.data.length - 1
+        const loading = index < 2 ? "eager" : "lazy";
+        const isLastItem = index === page.data.length - 1;
         return (
           <Single painting={painting.data} loading={loading}>
             {isLastItem && (
@@ -37,7 +37,7 @@ const { page } = Astro.props
               </footer>
             )}
           </Single>
-        )
+        );
       })
     }
   </section>

@@ -1,7 +1,7 @@
-import globals from "globals"
-import pluginJs from "@eslint/js"
-import tseslint from "typescript-eslint"
-import eslintPluginAstro from "eslint-plugin-astro"
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import tseslint from "typescript-eslint";
+import eslintPluginAstro from "eslint-plugin-astro";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -11,4 +11,4 @@ export default [
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   { ignores: ["node_modules", "dist", ".astro"] },
-]
+];

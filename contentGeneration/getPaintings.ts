@@ -1,4 +1,4 @@
-import { readdir } from "node:fs/promises"
+import { readdir } from "node:fs/promises";
 
 // The image filenames are in the following format:
 // [title_of_the_painting]-[year]-[height]x[width].[extension]
@@ -16,35 +16,35 @@ import { readdir } from "node:fs/promises"
 //   "width": 81
 // }
 
-const TITLE_REGEX = /^[^-]*/ // Everything from the start to the first "-"
-const YEAR_REGEX = /-\d{4}-/ // Four digits between "-"
-const DIMENSIONS_REGEX = /-\d+x\d+/ // Two groups of digits with "x" in between
+const TITLE_REGEX = /^[^-]*/; // Everything from the start to the first "-"
+const YEAR_REGEX = /-\d{4}-/; // Four digits between "-"
+const DIMENSIONS_REGEX = /-\d+x\d+/; // Two groups of digits with "x" in between
 
 const extractTitle = (filename: string): string => {
-  const match = filename.match(TITLE_REGEX)
-  return match ? match[0] : filename
-}
+  const match = filename.match(TITLE_REGEX);
+  return match ? match[0] : filename;
+};
 
 const extractYear = (filename: string) => {
-  const match = filename.match(YEAR_REGEX)
-  return match ? match[0].slice(1, 5) : "0"
-}
+  const match = filename.match(YEAR_REGEX);
+  return match ? match[0].slice(1, 5) : "0";
+};
 
 const extractDimensions = (filename: string) => {
-  const match = filename.match(DIMENSIONS_REGEX)
-  if (!match) return { height: "0", width: "0" }
-  const [height, width] = match[0].slice(1).split("x")
-  return { height, width }
-}
+  const match = filename.match(DIMENSIONS_REGEX);
+  if (!match) return { height: "0", width: "0" };
+  const [height, width] = match[0].slice(1).split("x");
+  return { height, width };
+};
 
 export const getPaintings = async (path: string) => {
-  const filenames = await readdir(path)
-  if (!filenames) throw new Error(`No files found in ${path}`)
-  return filenames.map(filename => {
-    const id = filename.split(".")[0]
-    const title = extractTitle(filename).replaceAll("_", " ")
-    const year = extractYear(filename)
-    const { height, width } = extractDimensions(filename)
+  const filenames = await readdir(path);
+  if (!filenames) throw new Error(`No files found in ${path}`);
+  return filenames.map((filename) => {
+    const id = filename.split(".")[0];
+    const title = extractTitle(filename).replaceAll("_", " ");
+    const year = extractYear(filename);
+    const { height, width } = extractDimensions(filename);
     return {
       id,
       filename: `./${filename}`,
@@ -52,6 +52,6 @@ export const getPaintings = async (path: string) => {
       year,
       height,
       width,
-    }
-  })
-}
+    };
+  });
+};

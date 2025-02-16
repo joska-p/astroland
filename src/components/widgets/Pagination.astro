@@ -1,13 +1,13 @@
 ---
-import { cn } from "#lib/utils.ts"
-import type { Page } from "astro"
+import { cn } from "#lib/utils.ts";
+import type { Page } from "astro";
 
 interface Props {
-  page: Page
+  page: Page;
 }
 
-const { page } = Astro.props
-const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
+const { page } = Astro.props;
+const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1);
 ---
 
 {
@@ -41,9 +41,9 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
           </svg>
         </a>
       )}
-      {pageNums.map(pageNum => {
-        const isCurrent = pageNum === page.currentPage
-        const label = isCurrent ? `Page courante, page ${pageNum} sur ${page.lastPage}` : `Aller à la page: ${pageNum}`
+      {pageNums.map((pageNum) => {
+        const isCurrent = pageNum === page.currentPage;
+        const label = isCurrent ? `Page courante, page ${pageNum} sur ${page.lastPage}` : `Aller à la page: ${pageNum}`;
         // const currentUrl = page.url.current
         // const url = currentUrl.split("/").slice(0, -2).join("/") + "/" + pageNum + "/"
 
@@ -56,13 +56,13 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1)
             class={cn(
               "rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
               { "border-gray-800 bg-gray-800 text-gray-50": isCurrent },
-              { "bg-gray-50": !isCurrent }
+              { "bg-gray-50": !isCurrent },
             )}
             type="button"
           >
             {pageNum}
           </a>
-        )
+        );
       })}
       {page.url.next && (
         <a

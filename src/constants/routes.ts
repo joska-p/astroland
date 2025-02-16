@@ -1,11 +1,11 @@
-const baseUrl = import.meta.env.BASE_URL
+const baseUrl = import.meta.env.BASE_URL;
 
 type Route = {
-  text: string
-  href: string
-}
+  text: string;
+  href: string;
+};
 
-type Routes = Record<string, Route>
+type Routes = Record<string, Route>;
 
 export const routes: Routes = {
   home: {
@@ -22,4 +22,4 @@ export const routes: Routes = {
     text: "À propos",
     href: baseUrl + "about",
   },
-} as const
+} as const;

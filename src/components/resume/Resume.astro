@@ -1,15 +1,15 @@
 ---
-import type { AstroComponentFactory } from "astro/runtime/server/render/astro/factory.js"
+import type { AstroComponentFactory } from "astro/runtime/server/render/astro/factory.js";
 
 type Props = {
   resume: {
-    Content: AstroComponentFactory
-    start: number
-    end?: number | undefined
-  }[]
-}
+    Content: AstroComponentFactory;
+    start: number;
+    end?: number | undefined;
+  }[];
+};
 
-const { resume } = Astro.props
+const { resume } = Astro.props;
 ---
 
 <section

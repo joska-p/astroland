@@ -1,5 +1,5 @@
-import { glob } from "astro/loaders"
-import { defineCollection, z } from "astro:content"
+import { glob } from "astro/loaders";
+import { defineCollection, z } from "astro:content";
 
 const painting = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/painting" }),
@@ -12,7 +12,7 @@ const painting = defineCollection({
       height: z.number(),
       width: z.number(),
     }),
-})
+});
 
 const resume = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/resume" }),
@@ -20,6 +20,6 @@ const resume = defineCollection({
     start: z.number(),
     end: z.number().optional(),
   }),
-})
+});
 
-export const collections = { painting, resume }
+export const collections = { painting, resume };

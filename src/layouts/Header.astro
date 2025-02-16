@@ -1,8 +1,8 @@
 ---
-import { routes } from "#constants/routes.ts"
-import { cn } from "#lib/utils.ts"
+import { routes } from "#constants/routes.ts";
+import { cn } from "#lib/utils.ts";
 
-const { pathname } = new URL(Astro.request.url)
+const { pathname } = new URL(Astro.request.url);
 ---
 
 <header role="banner" class="bg-gray-200 px-2 py-3 md:px-8 md:py-4 xl:py-5">
@@ -23,8 +23,8 @@ const { pathname } = new URL(Astro.request.url)
       class="fixed right-0 bottom-0 left-0 z-50 flex w-auto items-center justify-around gap-6 bg-gray-200 py-3 shadow md:static md:justify-between md:border-none md:bg-transparent md:py-0 md:shadow-none lg:gap-7 2xl:gap-8"
     >
       {
-        Object.values(routes).map(route => {
-          const isCurrent = pathname.split("/")[1] === route.href.split("/")[1]
+        Object.values(routes).map((route) => {
+          const isCurrent = pathname.split("/")[1] === route.href.split("/")[1];
           return (
             <li>
               <a
@@ -40,7 +40,7 @@ const { pathname } = new URL(Astro.request.url)
                 {route.text}
               </a>
             </li>
-          )
+          );
         })
       }
     </ul>
