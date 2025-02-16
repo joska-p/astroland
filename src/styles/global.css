@@ -22,17 +22,6 @@
     font-display: auto;
   }
 
-  @font-face {
-    font-family: "raleway";
-    font-style: normal;
-    font-weight: normal;
-    src: url("/src/assets/fonts/Raleway-Regular.ttf") format("truetype");
-    src: url("/src/assets/fonts/Raleway-Regular.otf") format("opentype");
-    src: url("/src/assets/fonts/Raleway-Regular.woff") format("woff");
-    src: url("/src/assets/fonts/Raleway-Regular.woff2") format("woff2");
-    font-display: auto;
-  }
-
   body {
     background-image: repeating-linear-gradient(
         transparent 0px,
