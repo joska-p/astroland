@@ -56,7 +56,7 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1);
             aria-current={isCurrent ? "page" : "false"}
             title={label}
             class={cn(
-              "rounded-md border border-gray-300 px-3 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50",
+              "rounded-md border border-gray-300 px-2 py-2 text-center text-sm text-gray-600 shadow-xs transition-all hover:border-gray-800 hover:bg-gray-800 hover:text-gray-50 hover:shadow-lg focus:border-gray-800 focus:bg-gray-800 focus:text-gray-50 active:border-gray-800 active:bg-gray-800 active:text-gray-50 sm:px-3",
               { "border-gray-800 bg-gray-800 text-gray-50": isCurrent },
               { "bg-gray-50": !isCurrent },
             )}
