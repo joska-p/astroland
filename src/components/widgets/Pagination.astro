@@ -46,12 +46,14 @@ const pageNums = Array.from({ length: page.lastPage }, (_, i) => i + 1);
         const label = isCurrent
           ? `Page courante, page ${pageNum} sur ${page.lastPage}`
           : `Aller à la page: ${pageNum}`;
-        // const currentUrl = page.url.current
-        // const url = currentUrl.split("/").slice(0, -2).join("/") + "/" + pageNum + "/"
+        const currentUrl = page.url.current;
+        // replace the page number in the current URL with the new page number
+        const newUrl =
+          currentUrl.split("/").slice(0, -1).join("/") + `/${pageNum}`;
 
         return (
           <a
-            href={pageNum.toString()}
+            href={newUrl}
             aria-label={label}
             aria-current={isCurrent ? "page" : "false"}
             title={label}
