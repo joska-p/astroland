@@ -3,12 +3,12 @@ import Layout from "#layouts/Layout.astro";
 import Testimony from "#partials/testimonies/Testimonies.astro";
 import Reference from "#partials/references/References.astro";
 import { Picture } from "astro:assets";
-import atelier from "#assets/images/atelier-2000.jpg";
+import atelier from "#assets/images/atelier-2025.webp";
 ---
 
 <Layout title="Roland Potin Eizner">
   <section
-    class="prose prose-img:rounded-xl prose-img:shadow-xl prose-img:object-cover prose-img:object-center prose-h1:text-center prose-h1:text-2xl lg:prose-h1:text-3xl prose-h1:font-bold container mx-auto mt-5 md:mt-10 xl:max-w-[150ch]"
+    class="prose prose-img:rounded-sm prose-img:shadow-xl prose-img:object-cover prose-img:object-center prose-h1:text-center prose-h1:text-2xl lg:prose-h1:text-3xl prose-h1:font-bold container mx-auto mt-5 md:mt-10 xl:max-w-[150ch]"
   >
     <h1>Bienvenue dans mon atelier</h1>
     <div class="mt-5 md:mt-20 xl:grid xl:grid-cols-2 xl:gap-5">
@@ -18,6 +18,7 @@ import atelier from "#assets/images/atelier-2000.jpg";
           loading="eager"
           alt="Mon atelier à Lyon en 2000"
           pictureAttributes={{ class: "mt-0" }}
+          class="mx-auto object-cover"
         />
         <p class="text-center">rolandpotin@gmail.com</p>
       </div>
