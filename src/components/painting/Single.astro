@@ -21,9 +21,8 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
 
 <article
   id={id}
-  class="grid h-full snap-start overflow-hidden pb-12 has-[footer]:grid-rows-[1fr_auto] md:pb-0 landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
+  class="mt-20 grid h-full snap-start overflow-hidden landscape:grid-cols-2 landscape:items-center landscape:justify-items-center"
 >
-  <slot name="before-content" />
   <Picture
     loading={loading}
     src={filename}
@@ -34,7 +33,7 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
       class: "self-center",
     }}
   />
-  <header class="mt-3 w-full lg:mt-6 2xl:mt-8">
+  <header class="mt-3 lg:mt-6 2xl:mt-8">
     <h2
       class="mb-3 text-center text-2xl text-gray-900 lg:mb-6 lg:text-3xl xl:text-4xl 2xl:mb-8 2xl:text-5xl"
     >
@@ -65,5 +64,4 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
       >
     </p>
   </header>
-  <slot name="after-content" />
 </article>

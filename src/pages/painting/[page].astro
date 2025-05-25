@@ -19,9 +19,8 @@ const { page } = Astro.props;
 <Layout
   title={`Peinture. Page ${page.currentPage} of ${page.lastPage}. - Roland Potin Eizner`}
 >
-  <section class="container mx-auto h-full space-y-20">
+  <section class="container mx-auto h-full">
     <h1
-      id="top-of-the-page"
       class="mb-5 snap-start self-start pt-5 text-center text-2xl font-bold md:mb-10 md:pt-10 lg:text-3xl"
     >
       Bienvenue dans ma galerie
@@ -32,20 +31,14 @@ const { page } = Astro.props;
     {
       page.data.map((painting, index) => {
         const loading = index < 2 ? "eager" : "lazy";
-        const isLastItem = index === page.data.length - 1;
-        return (
-          <Single painting={painting.data} loading={loading}>
-            {isLastItem && (
-              <footer
-                class="my-5 self-start landscape:col-span-full"
-                slot="after-content"
-              >
-                <Pagination page={page} />
-              </footer>
-            )}
-          </Single>
-        );
+        return <Single painting={painting.data} loading={loading} />;
       })
     }
+    <div
+      class="snap-start self-start pb-5 landscape:col-span-full"
+      id="pagination-footer"
+    >
+      <Pagination page={page} />
+    </div>
   </section>
 </Layout>
