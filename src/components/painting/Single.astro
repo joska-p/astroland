@@ -23,7 +23,7 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
   id={id}
   class="mt-20 flex h-full snap-start flex-col items-center justify-center gap-3 overflow-hidden lg:gap-6 2xl:mt-8 landscape:flex-row"
 >
-  <div class="flex max-h-full min-h-0 shrink">
+  <div class="flex max-h-full min-h-0 shrink justify-center landscape:w-1/2">
     <Picture
       loading={loading}
       src={filename}
@@ -32,7 +32,7 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
       class="mx-auto max-h-full w-auto object-contain shadow-xl"
     />
   </div>
-  <div class="min-w-1/2">
+  <div class="landscape:w-1/2">
     <h2
       class="mb-3 text-center text-2xl text-gray-900 lg:mb-6 lg:text-3xl xl:text-4xl 2xl:mb-8 2xl:text-5xl"
     >
