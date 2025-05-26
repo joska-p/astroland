@@ -21,19 +21,18 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
 
 <article
   id={id}
-  class="mt-20 flex h-full snap-start flex-col items-center justify-center gap-3 overflow-hidden lg:gap-6 2xl:mt-8 landscape:flex-row landscape:justify-between"
+  class="mt-20 flex h-full snap-start flex-col items-center justify-center gap-3 overflow-hidden lg:gap-6 2xl:mt-8 landscape:flex-row"
 >
-  <Picture
-    loading={loading}
-    src={filename}
-    formats={["avif", "webp"]}
-    alt={title}
-    class="mx-auto max-h-full w-auto object-contain"
-    pictureAttributes={{
-      class: "flex shrink min-h-0 max-h-full",
-    }}
-  />
-  <header class="min-w-1/2">
+  <div class="flex max-h-full min-h-0 shrink">
+    <Picture
+      loading={loading}
+      src={filename}
+      formats={["avif", "webp"]}
+      alt={title}
+      class="mx-auto max-h-full w-auto object-contain shadow-xl"
+    />
+  </div>
+  <div class="min-w-1/2">
     <h2
       class="mb-3 text-center text-2xl text-gray-900 lg:mb-6 lg:text-3xl xl:text-4xl 2xl:mb-8 2xl:text-5xl"
     >
@@ -63,5 +62,5 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
         >{width === 0 ? "NC" : width + " cm"}</span
       >
     </p>
-  </header>
+  </div>
 </article>
