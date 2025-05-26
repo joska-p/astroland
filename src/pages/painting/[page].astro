@@ -21,11 +21,11 @@ const { page } = Astro.props;
 >
   <section class="container mx-auto h-full">
     <h1
-      class="mb-5 snap-start self-start pt-5 text-center text-2xl font-bold md:mb-10 md:pt-10 lg:text-3xl"
+      class="mb-5 snap-start pt-5 text-center text-2xl font-bold md:mb-10 md:pt-10 lg:text-3xl"
     >
       Bienvenue dans ma galerie
     </h1>
-    <div class="my-5 self-start">
+    <div class="my-5">
       <Pagination page={page} />
     </div>
     {
@@ -34,7 +34,7 @@ const { page } = Astro.props;
         return <Single painting={painting.data} loading={loading} />;
       })
     }
-    <div class="snap-start self-start pb-5" id="pagination-footer">
+    <div class="snap-start pb-5" id="pagination-footer">
       <Pagination page={page} />
     </div>
   </section>

@@ -21,19 +21,19 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
 
 <article
   id={id}
-  class="mt-20 flex h-full w-full snap-start flex-col items-center gap-3 overflow-hidden lg:gap-6 2xl:mt-8 portrait:justify-center landscape:flex-row landscape:justify-around"
+  class="mt-20 flex h-full snap-start flex-col items-center justify-center gap-3 overflow-hidden lg:gap-6 2xl:mt-8 landscape:flex-row landscape:justify-between"
 >
   <Picture
     loading={loading}
     src={filename}
     formats={["avif", "webp"]}
     alt={title}
-    class="max-h-full w-auto object-contain shadow-xl"
+    class="mx-auto max-h-full w-auto object-contain"
     pictureAttributes={{
       class: "flex shrink min-h-0 max-h-full",
     }}
   />
-  <header>
+  <header class="min-w-1/2">
     <h2
       class="mb-3 text-center text-2xl text-gray-900 lg:mb-6 lg:text-3xl xl:text-4xl 2xl:mb-8 2xl:text-5xl"
     >
