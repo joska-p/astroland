@@ -28,6 +28,8 @@ const capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1);
       loading={loading}
       src={filename}
       formats={["avif", "webp"]}
+      widths={[240, 640, filename.width]}
+      sizes={`(max-width: 360px) 340px, (max-width: 720px) 640px, ${filename.width}px`}
       alt={title}
       class="mx-auto max-h-full w-auto object-contain shadow-xl"
     />
